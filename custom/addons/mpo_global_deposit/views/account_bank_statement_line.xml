@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bank_statement_line_search_bank_rec_widget" model="ir.ui.view">
+        <field name="name">view_bank_statement_line_form_bank_rec_widget.mpo_global_deposit</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="inherit_id" ref="account_accountant.view_bank_statement_line_search_bank_rec_widget"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="sir_id"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_bank_statement_line_form_bank_rec_widget" model="ir.ui.view">
+        <field name="name">view_bank_statement_line_form_bank_rec_widget.mpo_global_deposit</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="inherit_id" ref="mpo_sir_bank_reconciliation.view_bank_statement_line_form_bank_rec_widget"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="global_deposit" attrs="{'readonly': [('is_reconciled', '=', True)], 'invisible': [('partner_id', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_reconciled', '=', True), ('amount', '!=', 0)], 'required': [('global_deposit','=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='sir_id']" position="attributes">
+                <attribute name="attrs">{'invisible': [('global_deposit','=', True)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_bank_rec_widget_form" model="ir.ui.view">
+        <field name="name">view_bank_rec_widget_form.mpo_global_deposit</field>
+        <field name="model">bank.rec.widget</field>
+        <field name="inherit_id" ref="account_accountant.view_bank_rec_widget_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='to_check']" position="after">
+                <field name="global_deposit" invisible="1"/>
+            </xpath>
+            <xpath expr="//button[@name='button_set_as_checked']" position="after">
+                <button name="button_open_global_deposit_form"
+                    string="Gestionar Deposito Global"
+                    type="object"
+                    accesskey="g"
+                    attrs="{'invisible': ['|', ('state', '!=', 'reconciled'), ('global_deposit', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

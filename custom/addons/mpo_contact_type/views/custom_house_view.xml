@@ -1,0 +1,39 @@
+<odoo>
+    <record model="ir.ui.view" id="custom_house_tree">
+        <field name="name">custom.house.tree</field>
+        <field name="model">custom.house</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="custom_house_form">
+        <field name="name">custom.house.form</field>
+        <field name="model">custom.house</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="number"/>
+                            <field name="section"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_custom_house" model="ir.actions.act_window">
+        <field name="name">Aduana</field>
+        <field name="res_model">custom.house</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_custom_house" name="Aduana"
+        parent="contacts.menu_contacts" action="action_custom_house"/>
+</odoo>

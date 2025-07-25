@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_change_reference_sir_wizard,access_change_reference_sir_wizard,model_change_reference_sir_wizard,base.group_system,1,1,1,1
+access_account_payment_register_sir,access_account_payment_register_sir,model_account_payment_register_sir,,1,1,1,1

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="cfdiv40_extended_addenda" inherit_id="l10n_mx_edi_carta_porte.cfdiv40_extended_carta_porte">
+        <xpath expr="//t[@t-if='record.carta_porte']/*[name()='cfdi:Comprobante']" position="inside">
+            <t t-if="customer.cortefiel_vendor">
+                <cfdi:Addenda
+                    xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <CORTEFIELPROVEEDORES>
+                        <GENERAL t-att-COD_APROB="customer.cortefiel_vendor"/>
+                    </CORTEFIELPROVEEDORES>
+                </cfdi:Addenda>
+            </t>
+            <t t-elif="customer.addenda_pedimento and record.pedimento">
+                <cfdi:Addenda
+                    xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <NUMEROPEDIMENTO>
+                        <GENERAL t-att-NUMPED="record.pedimento"/>
+                    </NUMEROPEDIMENTO>
+                </cfdi:Addenda>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-if='not record.carta_porte']/*[name()='cfdi:Comprobante']" position="inside">
+            <t t-if="customer.cortefiel_vendor">
+                <cfdi:Addenda
+                    xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <CORTEFIELPROVEEDORES>
+                        <GENERAL t-att-COD_APROB="customer.cortefiel_vendor"/>
+                    </CORTEFIELPROVEEDORES>
+                </cfdi:Addenda>
+            </t>
+            <t t-elif="customer.addenda_pedimento and record.pedimento">
+                <cfdi:Addenda
+                    xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <NUMEROPEDIMENTO>
+                        <GENERAL t-att-NUMPED="record.pedimento"/>
+                    </NUMEROPEDIMENTO>
+                </cfdi:Addenda>
+            </t>
+        </xpath>
+    </template>
+</odoo>

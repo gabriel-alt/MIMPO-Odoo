@@ -1,0 +1,303 @@
+<odoo>
+    <record id="transport_request_view_kanban" model="ir.ui.view">
+        <field name="name">transport.request.view.kanban</field>
+        <field name="model">transport.request</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_mobile" sample="1">
+                <field name="name"/>
+                <field name="company_bill_id"/>
+                <field name="company_shipper_id"/>
+                <field name="company_deliver_id"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb16">
+                                <div class="o_kanban_record_headings mt4">
+                                    <strong class="o_kanban_record_title">
+                                        <span t-out="record.name.value"/>
+                                    </strong>
+                                </div>
+                            </div>
+                            <div class="o_kanban_card_content">
+                                <div class="row">
+                                    <div name="company_bill" class="col-12 mt-1">
+                                        Billing : <span t-out="record.company_bill_id.value"/>
+                                    </div>
+                                    <div name="company_shipper" class="col-12 mt-1">
+                                        Shipper : <span t-out="record.company_shipper_id.value"/>
+                                    </div>
+                                    <div name="company_deliver" class="col-12 mt-1">
+                                        Deliver : <span t-out="record.company_deliver_id.value"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="transport_request_view_tree" model="ir.ui.view">
+        <field name="name">transport.request.view.tree</field>
+        <field name="model">transport.request</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="company_bill_id"/>
+                <field name="company_shipper_id"/>
+                <field name="company_deliver_id"/>
+                <!-- <field name="billing_reference"/> -->
+            </tree>
+        </field>
+    </record>
+    <record id="transport_request_view_form" model="ir.ui.view">
+        <field name="name">transport.request.view.form</field>
+        <field name="model">transport.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="load_order_ids" invisible="1"/>
+                    <field name="purchase_ids" invisible="1"/>
+                    <button name="action_progress" string="Set Progress"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('state', '!=', '0_new')]}" />
+                    <button name="action_assigned1" string="Set Assigned"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : ['|', ('state', '!=', '1_progress'), ('transport_detail_line_ids', '=', False)]}" />
+                    <button name="action_assigned2" string="Set Assigned 2"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('state', '!=', '3_assigned1')]}" />
+                    <button name="action_assigned3" string="Set Assigned 3"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('state', '!=', '3_assigned2')]}" />
+                    <button name="action_create_load_order" string="Create Load order"
+                        type="object" class="oe_highlight"
+                        groups="mpo_transport_request.transportation_executive_group_user"
+                        attrs="{'invisible' : ['|', ('state', '!=', '3_assigned3'), ('load_order_ids', '=', False)]}" />
+                    <!-- <button name="action_unit_assignment_rfq" string="Unit Assignment"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('state', '!=', '3_assigned1')]}" /> -->
+                    <button name="action_pod1" string="Set Pending POD1"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('state', '!=', '5_monitoring')]}" />
+                    <button name="action_pod2" string="Set Pending POD2"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('state', '!=', '7_pod1')]}" />
+                    <button name="action_ended" string="Set Ended"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('state', '!=', '7_pod2')]}" />
+                    <field name="state" widget="statusbar" statusbar_visible="0_new,1_progress,9_ended"/>
+                </header>
+                <sheet string="Solicitudes de carga">
+                    <div class="oe_button_box" name="button_box">
+                        <!-- <button type="object" name="action_view_purchase_order"
+                            class="oe_stat_button" icon="fa-credit-card"
+                            attrs="{'invisible':['|', ('purchase_ids', '=', False), ('state', 'in', ('0_new', '1_progress'))]}">
+                            <span class="o_stat_text">Purchased</span>
+                        </button> -->
+                        <button type="object" name="action_view_load_order"
+                            class="oe_stat_button" icon="fa-truck"
+                            attrs="{'invisible':['|', ('load_order_ids', '=', False), ('state', 'in', ('0_new', '1_progress', '3_assigned1', '3_assigned2'))]}">
+                            <span class="o_stat_text">Load Order</span>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1" placeholder="Order..."/>
+                        </h1>
+                    </div>
+                    <group attrs="{'invisible' : [('billing_reference_id', '=', False)]}">
+                        <group>
+                            <field name="billing_reference_id" attrs="{'invisible' : [('billing_reference_id', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group name="group_bill_to" string="BILL TO">
+                        <group>
+                            <field name="company_id" invisible="1"/>
+                            <field name="company_bill_id" context="{'show_address': 1}"
+                                attrs="{'readonly' : [('state', '!=', '0_new')]}"
+                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="company_bill_vat"/>
+                        </group>
+                        <group>
+                            <field name="company_bill_contact_id" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="company_bill_email" widget="email"/>
+                            <field name="company_bill_phone" widget="phone" options="{'enable_sms': True}"/>
+                        </group>
+                    </group>
+                    <group name="group_shipper" string="SHIPPER">
+                        <group>
+                            <field name="company_shipper_id" context="{'show_address': 1}"
+                                attrs="{'readonly' : [('state', '!=', '0_new')]}"
+                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="company_shipper_vat"/>
+                        </group>
+                        <group>
+                            <field name="company_shipper_contact_id" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="company_shipper_email" widget="email"/>
+                            <field name="company_shipper_phone" widget="phone" options="{'enable_sms': True}"/>
+                        </group>
+                    </group>
+                    <group name="group_deliver" string="DELIVERY">
+                        <group>
+                            <field name="company_deliver_id" context="{'show_address': 1}"
+                                attrs="{'readonly' : [('state', '!=', '0_new')]}"
+                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="company_deliver_vat"/>
+                            <field name="rate_service_id" options="{'no_create': True}"
+                                domain="[('partner_ids', 'in', company_deliver_id)]"
+                                attrs="{'invisible' : [('company_deliver_id', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="deliver_date" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="company_deliver_contact_id" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="company_deliver_email" widget="email"/>
+                            <field name="company_deliver_phone" widget="phone" options="{'enable_sms': True}"/>
+                        </group>
+                    </group>
+                    <group name="group_special" string="SPECIAL INSTRUCTIONS">
+                        <group>
+                            <field name="load_instructions" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="observations_load" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="add_equipment" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="load_rate" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="currency_id" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                        </group>
+                        <group>
+                            <field name="add_costs" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="load_total" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="load_imo" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="load_custody_id" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="load_comment" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                        </group>
+                    </group>
+                    <group name="group_broker" string="BROKER">
+                        <group>
+                            <field name="company_broker_id" context="{'show_address': 1}"
+                                 attrs="{'readonly' : [('state', '!=', '0_new')]}"
+                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="company_broker_vat"/>
+                        </group>
+                        <group>
+                            <field name="aa_cb"  attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="company_broker_contact_id" attrs="{'readonly' : [('state', '!=', '0_new')]}"/>
+                            <field name="company_broker_email" widget="email"/>
+                            <field name="company_broker_phone" widget="phone" options="{'enable_sms': True}"/>
+                            <field name="sir_ref_ids" invisible="1" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="load_detail_goods" string="Load Details of Goods">
+                            <field name="load_detail_goods_ids">
+                                <tree>
+                                    <field name="sir_request_id"/>
+                                    <field name="pedimento" optional="show"/>
+                                    <field name="qty_request" optional="show"/>
+                                    <field name="scheme_request" optional="show"/>
+                                    <field name="kum_request" optional="show"/>
+                                    <field name="cubication_request" optional="hide"/>
+                                    <field name="long_request" optional="hide"/>
+                                    <field name="high_request" optional="hide"/>
+                                    <field name="width_request" optional="hide"/>
+                                    <field name="keyprod_request" optional="show"/>
+                                    <field name="gross_request" optional="hide"/>
+                                    <field name="packages_request" optional="show"/>
+                                    <field name="stamp_request" optional="show"/>
+                                    <field name="date_delay_request" optional="show"/>
+                                    <field name="chm_request" optional="hide"/>
+                                    <field name="sat_request" optional="hide"/>
+                                    <field name="bol_request" optional="hide"/>
+                                    <field name="container_request" optional="show"/>
+                                    <field name="t_container_request" optional="show"/>
+                                    <field name="packing_request" optional="show"/>
+                                    <field name="commodity_request" optional="hide"/>
+                                    <field name="fraction_request" optional="hide"/>
+                                    <field name="hazardous_request" optional="hide"/>
+                                    <field name="container2" string='Container' optional="hide"/>
+                                    <field name="importer" optional="hide"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="sir_request_id"/>
+                                            <field name="pedimento"/>
+                                            <field name="qty_request"/>
+                                            <field name="scheme_request"/>
+                                            <field name="kum_request"/>
+                                            <field name="cubication_request"/>
+                                            <field name="long_request"/>
+                                            <field name="high_request"/>
+                                            <field name="width_request"/>
+                                            <field name="keyprod_request"/>
+                                            <field name="gross_request"/>
+                                        </group>
+                                        <group>
+                                            <field name="packages_request"/>
+                                            <field name="stamp_request"/>
+                                            <field name="date_delay_request"/>
+                                            <field name="chm_request"/>
+                                            <field name="sat_request"/>
+                                            <field name="bol_request"/>
+                                            <field name="container_request"/>
+                                            <field name="t_container_request"/>
+                                            <field name="packing_request"/>
+                                            <field name="commodity_request"/>
+                                            <field name="fraction_request"/>
+                                            <field name="hazardous_request"/>
+                                            <field name="container2" string='Container'/>
+                                            <field name="importer"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="transport_detail_line" string="Transport Details">
+                            <field name="transport_detail_line_ids">
+                                <tree editable="bottom">
+                                    <field name="local_foreign" optional="show" />
+                                    <field name="transport_company_id" optional="show"/>
+                                    <field name="solo_transporte" invisible="1"/>
+                                    <field name="tarif_element_id" optional="show"
+                                        domain="[('rate_id', '=', parent.rate_service_id), '|', ('freight', '=', solo_transporte), ('freight', '=', True)]"/>
+                                    <field name="assign_date" optional="show"/>
+                                    <field name="sir_request_ids" widget="many2many_tags" optional="show"
+                                        domain="[('id', 'in', parent.sir_ref_ids)]"/>
+                                    <field name="vehicle_economic" optional="show"/>
+                                    <field name="vehicle_plates" optional="show"/>
+                                    <field name="vehicle_operator" optional="show"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter" name="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="transport_request_view_search" model="ir.ui.view">
+        <field name="name">transport.request.view.search</field>
+        <field name="model">transport.request</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="company_bill_id"/>
+                <field name="company_shipper_id"/>
+                <field name="company_deliver_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Status" name="group_state" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="transport_request_action" model="ir.actions.act_window">
+        <field name="name">Transport Request</field>
+        <field name="res_model">transport.request</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

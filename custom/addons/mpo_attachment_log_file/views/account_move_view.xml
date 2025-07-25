@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form.view.mpo_attachment_log_file</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='analytic_distribution']" position="after">
+                <field name="related_attachment_id"
+                    string="Attachment" options="{'no_create': True}" optional="show"
+                    attrs="{'column_invisible': [('parent.move_type', 'not in', ['in_invoice', 'out_refund'])]}"
+                    domain="[('res_model', '=', 'account.move'), ('res_id', '=', parent.id)]"/>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='analytic_distribution']" position="after">
+                <field name="related_attachment_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

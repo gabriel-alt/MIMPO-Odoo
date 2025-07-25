@@ -1,0 +1,32 @@
+16.0.0.1 ==>fixed issue of manual currency exchange functionality in payment.
+16.0.0.2 ==>fixed issue of readonly manual exchange on payment.
+
+=> 16.0.0.3 : Improved an index with proper flow of the module.
+
+date: 28/05/24 | version: 16.0.0.4
+
+====>>> fixedd --> solved some module related errors and few failed test cases error in odoo.sh 
+                related to price and currency like ===>> AssertionError: The records and expected_values do not match.
+
+=================================================================================
+
+
+Date: 24 june, 2024
+Version : 16.0.0.5
+ADD
+--> Fix issue, journal entry amount goes wrong when apply with manual curreny rate.
+--> Fix issue, Total price goes wrong when apply with manual currency rate.
+
+
+=================================================================================
+
+
+Date: 1 july, 2024
+Version : 16.0.0.6
+ADD
+--> In create payment form when apply Internal Transfer after show apply manual exchange field, fix that issue and apply can direct without select internal transfer and for selected customer can apply manual currency rate.
+
+
+16.0.0.7 ==> Fixed issue of when we create payment with differen currecny at that time in payment wizard show wrong amount and also currency rate can't be updated on journal entry.
+
+

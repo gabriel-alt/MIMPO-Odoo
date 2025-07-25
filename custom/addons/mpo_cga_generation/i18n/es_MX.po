@@ -1,0 +1,357 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mpo_cga_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-02 07:53+0000\n"
+"PO-Revision-Date: 2024-02-02 07:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mpo_cga_generation
+#: model:ir.model,name:mpo_cga_generation.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: mpo_cga_generation
+#: model:ir.model,name:mpo_cga_generation.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea del estado de cuenta"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__cga_line
+msgid "Cga Line"
+msgstr "Línea de CGA"
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_move.py:0
+#, python-format
+msgid "Currency exchange rate difference"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model,name:mpo_cga_generation.model_account_edi_format
+msgid "EDI format"
+msgstr "Formato EDI"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__expense_description
+msgid "Expense Description"
+msgstr "Descripción en factura"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__expense_move_id
+msgid "Expense Move"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__expense_price_unit
+msgid "Expense Unit Price"
+msgstr "Precio en factura"
+
+#. module: mpo_cga_generation
+#: model_terms:ir.ui.view,arch_db:mpo_cga_generation.view_move_form
+msgid "Expenses Incurred by the Client"
+msgstr "Gastos Generados"
+
+#. module: mpo_cga_generation
+#: model:ir.model,name:mpo_cga_generation.model_account_edi_xml_cii
+msgid "Factur-x/XRechnung CII 2.2.0"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_account__trust_fund
+msgid "Fondo Confiado"
+msgstr ""
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"Invoice lines having a negative amount are not allowed to generate the CFDI."
+" Please create a credit note instead."
+msgstr ""
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"Invoice lines having a negative amount without a tax set is not allowed to "
+"generate the CFDI."
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model,name:mpo_cga_generation.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: mpo_cga_generation
+#: model:ir.model,name:mpo_cga_generation.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte de diario"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,help:mpo_cga_generation.field_account_move_line__cga_line
+msgid "Line Generated from CGA Operation"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model_terms:ir.ui.view,arch_db:mpo_cga_generation.view_move_form
+msgid "Link Expense"
+msgstr "Vincular gastos"
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_edi_format.py:0
+#, python-format
+msgid "No PAC credentials specified."
+msgstr ""
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_edi_format.py:0
+#, python-format
+msgid "No PAC specified."
+msgstr ""
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_edi_format.py:0
+#, python-format
+msgid "No valid certificate found"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__origin_expense_line_id
+msgid "Origin Expense Line"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_bank_statement_line__partner_expense_line_ids
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move__partner_expense_line_ids
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_payment__partner_expense_line_ids
+msgid "Partner Expense"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model_terms:ir.ui.view,arch_db:mpo_cga_generation.view_move_form
+msgid "Remaining Balance"
+msgstr "Saldo Restante"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_bank_statement_line__remaining_trusted_fund_balance
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move__remaining_trusted_fund_balance
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_payment__remaining_trusted_fund_balance
+msgid "Remaining Trusted Fund Balance"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__subtotal_expense
+msgid "Subtotal Expense"
+msgstr ""
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"The SAT does not provide information for the currency %s.\n"
+"You must get manually a key from the PAC to confirm the currency rate is accurate enough."
+msgstr ""
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_move.py:0
+#, python-format
+msgid ""
+"There are no published documents for reference SIR %s or were already used "
+"in a previous invoice"
+msgstr ""
+"No existen documentos publicados para la referencia SIR %s o han sido "
+"utilizados en una factura previa"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__exchange_rate
+msgid "Tipo de cambio"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_bank_statement_line__total_expense
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move__total_expense
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__total_expense
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_payment__total_expense
+msgid "Total Expense"
+msgstr "Total de gastos"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move_line__trust_fund_account_id
+msgid "Trust Fund Account"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_bank_statement_line__trusted_fund_balance
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move__trusted_fund_balance
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_payment__trusted_fund_balance
+msgid "Trusted Fund Balance"
+msgstr "Saldo del Fondo Confiado"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_bank_statement_line__trusted_fund_move_ids
+msgid "Trusted Fund Move"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_bank_statement_line__trusted_fund_statement_line_ids
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_move__trusted_fund_statement_line_ids
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_account_payment__trusted_fund_statement_line_ids
+msgid "Trusted Fund Statement Line"
+msgstr ""
+
+#. module: mpo_cga_generation
+#. odoo-python
+#: code:addons/mpo_cga_generation/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"You need to define an 'UNSPSC Product Category' on the following products: "
+"%s"
+msgstr ""
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__g01
+msgid "Acquisition of merchandise"
+msgstr "Adquisición de mercancías"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i04
+msgid "Computer equipment and accessories"
+msgstr "Equipo de cómputo y accesorios"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i01
+msgid "Constructions"
+msgstr "Construcciones"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d09
+msgid "Deposits in savings accounts, premiums based on pension plans."
+msgstr "Depósitos en cuentas para el ahorro, primas que tengan como base planes de pensiones."
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i05
+msgid "Dices, dies, molds, matrices and tooling"
+msgstr "Dados, troqueles, moldes, matrices y herramental"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d04
+msgid "Donations"
+msgstr "Donativos"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d03
+msgid "Funeral expenses"
+msgstr "Gastos funerales"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__g03
+msgid "General expenses"
+msgstr "Gastos en general"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d08
+msgid "Mandatory School Transportation Expenses"
+msgstr "Gastos de transportación escolar obligatoria"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d02
+msgid "Medical expenses for disability"
+msgstr "Gastos médicos por incapacidad o discapacidad"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d07
+msgid "Medical insurance premiums"
+msgstr "Primas por seguros de gastos médicos"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d01
+msgid "Medical, dental and hospital expenses."
+msgstr "Honorarios médicos, dentales y gastos hospitalarios."
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i02
+msgid "Office furniture and equipment investment"
+msgstr "Mobilario y equipo de oficina por inversiones"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i08
+msgid "Other machinery and equipment"
+msgstr "Otra maquinaria y equipo"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d10
+msgid "Payments for educational services (Colegiatura)"
+msgstr "Pagos por servicios educativos (colegiaturas)"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d05
+msgid "Real interest effectively paid for mortgage loans (room house)"
+msgstr "Intereses reales efectivamente pagados por créditos hipotecarios (casa habitación)"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__g02
+msgid "Returns, discounts or bonuses"
+msgstr "Devoluciones, descuentos o bonificaciones"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i07
+msgid "Satellite communications"
+msgstr "Comunicaciones satelitales"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i06
+msgid "Telephone communications"
+msgstr "Comunicaciones telefónicas"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__p01
+msgid "To define  (CFDI 3.3 only)"
+msgstr "Por definir (solo CFDI 3.3)"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__i03
+msgid "Transportation equipment"
+msgstr "Equipo de transporte"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,field_description:mpo_cga_generation.field_res_partner__l10n_mx_edi_usage
+msgid "Usage"
+msgstr "Uso"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields,help:mpo_cga_generation.field_res_partner__l10n_mx_edi_usage
+msgid ""
+"Used in CFDI 3.3 to express the key to the usage that will gives the receiver to this invoice. This value is defined by the "
+"customer.\n"
+"Note: It is not cause for cancellation if the key set is not the usage that will give the receiver of the document."
+msgstr ""
+"Usado en CFDI 3.3 para expresar la clave del uso que le dará el receptor a esta factura. Este valor lo define el cliente.\n"
+"Nota: No es motivo de cancelación si la clave no es el uso que le dará al destinatario del documento."
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__d06
+msgid "Voluntary contributions to SAR"
+msgstr "Aportaciones voluntarias al SAR"
+
+#. module: mpo_cga_generation
+#: model:ir.model.fields.selection,name:mpo_cga_generation.selection__res_partner__l10n_mx_edi_usage__s01
+msgid "Without fiscal effects"
+msgstr "Sin efectos fiscales"

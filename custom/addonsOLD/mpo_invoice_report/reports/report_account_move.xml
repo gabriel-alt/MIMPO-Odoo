@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- MS Invoice Report -->
+    <template id="mimpo_account_move_template">
+        <t t-call="web.basic_layout">
+            <style>
+                .table_mimpo {
+                    margin-bottom: 10px;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_normal {
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_double_border {
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid black;
+                    padding: 5px;
+                    text-align: center;
+                    vertical-align: middle;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_double_border2 {
+                    border-top: 1px solid black;
+                    font-size: 1px;padding: 0px;
+                }
+                .table_mimpo .td_double_border3 {
+                    border-bottom: 1px solid black;
+                    font-size: 1px;padding: 0px;
+                }
+                .table_mimpo .td_border_top_blue {
+                    border-top: 1px solid black;
+                    color: #3c78d8;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_border_top {
+                    border-top: 1px solid black;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .th_line_left {
+                    border-bottom: 1px solid black;
+                    text-align: left;
+                    bold: 1px;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .th_line_right {
+                    border-bottom: 1px solid black;
+                    text-align: right;
+                    bold: 1px;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_head_mimpo {
+                    margin-bottom: 10px;
+                    font-size: 9px;
+                }
+                .table_head_mimpo tr td{
+                    border : 0 hidden black;
+                    vertical-align: middle !important;
+                }
+                .table_head_mimpo .tdnb{
+                    border : 0 hidden white;
+                }
+                .table_head_mimpo .tdb_bottom{
+                    border-top: 0 hidden white;
+                    border-left: 0 hidden white;
+                    border-right: 0 hidden white;
+                    border-bottom: 1px solid black;
+                }
+            </style>
+            <div class="header">
+                <div class="row" style="font-size: 8px;">
+                    <table class="table-sm table_head_mimpo">
+                        <tr>
+                            <td width="15%" style="border : 0 hidden black;"></td>
+                            <td width="3%" style="border : 0 hidden black;"></td>
+                            <td width="37%" style="border : 0 hidden black;"></td>
+                            <td width="5%" style="border : 0 hidden black;"></td>
+                            <td width="20%" style="border : 0 hidden black;" ></td>
+                            <td width="20%" style="border : 0 hidden black;border-bottom: 1px solid black"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" rowspan="3" style="border: 0 hidden black;border-bottom: 1px solid black;padding-bottom: 3px">
+                                <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)"
+                                    style="max-height: 45px;" alt="Logo"/>
+                            </td>
+                            <td colspan="2" rowspan="3" style="vertical-align: top;font-size: 9px;border: 0 hidden black;border-bottom: 1px solid black;padding-bottom: 3px">
+                                <strong>
+                                    <!-- <span t-if="doc.company_id.company_details" t-field="doc.company_id.company_details"/>
+                                    <span t-else="" t-field="doc.company_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                                    Suc. Tahel 427 Interior 7<br/>Deleg. Venustiano Carranza<br/>Mexico, CDMX. CP. 15510 -->
+                                    MIMPO SERVICIOS ADUANALES SA DE CV<br/>
+                                </strong>
+                                <strong t-if="doc.move_type != 'out_refund'">
+                                    MSA020627T41<br/>
+                                    INDEPENDENCIA 778 COL. CENTRO C.P. 91700<br/>
+                                    VERACRUZ, VERACRUZ.<br/>
+                                    Suc. Tahel 427 Interior 7<br/>
+                                    Deleg. Venustiano Carranza<br/>
+                                    Mexico, CDMX.CP. 15510
+                                </strong>
+                                <span t-if="doc.move_type == 'out_refund'">
+                                    MSA020627T41<br/>
+                                    INDEPENDENCIA 778 COL. CENTRO C.P. 91700<br/>
+                                    VERACRUZ, VERACRUZ.<br/>
+                                    Suc. Tahel 427 Interior 7<br/>
+                                    Deleg. Venustiano Carranza<br/>
+                                    Mexico, CDMX.CP. 15510
+                                </span>
+                            </td>
+                            <td width="20%" rowspan="2" style="border : 0 hidden black;border-right: 1px solid black"></td>
+                            <td width="20%" style="text-align: center; background-color:#D3D3D3;border:1px solid black !important">
+                                <t t-if="doc.move_type == 'out_refund'">FOLIO</t>
+                                <t t-else="">FACTURA</t></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;border:1px solid black !important"><span t-field="doc.name"/>
+                                <span t-if="not doc.name or doc.name == '/'" t-field="doc.id"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="border: 0 hidden black;border-top: 1px solid black;border-bottom: 1px solid black;padding-bottom: 3px">
+                                <t t-if="doc.move_type == 'out_refund'"><strong>
+                                    Expedido en <span t-field="doc.company_id.zip"/> el: <span t-esc="doc.create_date.strftime('%Y-%m-%dT%H:%M:%S')" />
+                                </strong></t>
+                                <t t-else="">
+                                    Expedido en <span t-field="doc.company_id.zip"/> el: <span t-esc="doc.create_date.strftime('%Y-%m-%dT%H:%M:%S')" />
+                                </t>
+                                <br/>
+                                Certificado SAT: 00001000000503727538<br/>
+                                Certificado Emisor: 00001000000505885023<br/>
+                                Folio Fiscal: <span t-field="doc.l10n_mx_edi_cfdi_uuid"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%" style="border: 0 hidden black;border-top: 1px solid black;"></td>
+                            <td colspan="2" style="border: 0 hidden black;border-top: 1px solid black;">
+                                601 - GENERAL DE LEY PERSONAS MORALES<br/>
+                                USO DEL CFDI: <span t-field="doc.l10n_mx_edi_usage"/>
+                            </td>
+                            <td colspan="3" style="border: 0 hidden black;border-top: 1px solid black;">
+                                Froma de pago: <span t-field="doc.l10n_mx_edi_payment_method_id"/><br/>
+                                CONDICIONES DE PAGO: <span t-field="doc.invoice_payment_term_id"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="page">
+                <div class="row col-12" style="font-size: 9px;margin-bottom:5px">
+                    <div class="col-5 mb4">
+                        <strong>CLIENTE:  </strong>
+                        <t t-if="doc.partner_id.commercial_name">
+                            <strong t-field="doc.partner_id.commercial_name"/></t>
+                        <t t-else=""><strong t-field="doc.partner_id"/></t><br/>
+                        <!-- DOMICILIO: <span t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;], &quot;no_marker&quot;: true}"/>
+                        RFC: <span t-field="doc.partner_id.vat"/><br/> -->
+                        <span t-raw="doc.partner_id._display_address_mx()"/><br/>
+                        REGIMEN FISCAL: <span t-esc="doc.partner_id.l10n_mx_edi_fiscal_regime"/> - <span t-field="doc.partner_id.l10n_mx_edi_fiscal_regime"/><br/>
+                        FACTURAS: <span t-field="doc.sir_id.pedimento_invoice"/><br/>
+                        MARCAS Y NÚMEROS: <span t-field="doc.sir_id.number_mark"/><br/>
+                        MERCANCÍA: <span t-field="doc.sir_id.ware"/><br/>
+                        CANTIDAD DE BULTOS: <span t-field="doc.sir_id.total_package"/><br/>
+                        RECEPCIÓN: <span t-field="doc.sir_id.reception"/><br/>
+                        N° PEDIDO: <span t-field="doc.sir_id.order_number"/>
+                    </div>
+                    <div class="col-3 mb4"/>
+                    <div class="col-4 mb4">
+                        <strong>REFERENCIA: </strong><span t-field="doc.sir_id"/><br/>
+                        PEDIMENTO: <span t-field="doc.sir_id.pedimento"/><br/>
+                        FECHA PED: <span t-field="doc.pedimento_date"/><br/>
+                        REGIMEN: <span t-field="doc.sir_id.operation_type"/><br/>
+                        ADUANA: <span t-field="doc.sir_id.custom_house"/><br/><br/><br/>
+                        BUQUE: <span t-field="doc.sir_id.ship"/><br/>
+                        PROVEEDOR: <span t-field="doc.sir_id.supplier"/><br/><br/>
+                        PESO EN KGS: <span t-field="doc.sir_id.total_weight"/>
+                    </div>
+                </div>
+                <div class="row" t-if="doc.move_type != 'out_refund'">
+                <table class="table_mimpo table-borderless" name="gastos_info" width="100%">
+                    <tr>
+                        <td colspan="3" class="td_double_border2">&amp;nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="td_double_border">
+                            <b>GASTOS EFECTUADOS POR CUENTA DEL CLIENTE</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="td_double_border3">&amp;nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">&amp;nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">&amp;nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="td_normal" width="80%"></td>
+                        <td class="td_normal" width="10%">SUMA</td>
+                        <td class="td_normal" width="10%" name="gastos_suma" style="border-top: 1px solid black;text-align: right;"></td>
+                    </tr>
+                </table>
+                </div>
+                <t t-set="cfdi_vals" t-value="doc._l10n_mx_edi_decode_cfdi()"/>
+                <t t-set="is_cfdi_signed" t-value="bool(doc._get_l10n_mx_edi_signed_edi_document())"/>
+                <t t-set="downpayment" t-value="doc.get_related_downpayment()"/>
+                <!-- <table class="table_mimpo table-borderless" name="sir_information" width="100%" style="font-size: 8px; margin-bottom: 10px;">
+                    <tr>
+                        <td width="60%"><strong>Expedido en</strong><span t-field="doc.company_id.zip"/> el: <span t-esc="doc.create_date.strftime('%Y-%m-%dT%H:%M:%S')" /></td>
+                        <td><span t-field="doc.partner_id" /></td>
+                    </tr>
+                    <tr>
+                        <td>Certificado SAT: 00001000000503727538</td>
+                        <td><span t-field="doc.partner_id" />USO DE CFDI: <span t-field="doc.l10n_mx_edi_usage"/></td>
+                    </tr>
+                    <tr>
+                        <td>Certificado Emisor: 00001000000505885023</td>
+                        <td>Forma de Pago: <span t-field="doc.l10n_mx_edi_payment_method_id"/></td>
+                    </tr>
+                    <tr>
+                        <td>Folio Fiscal: <span t-field="doc.l10n_mx_edi_cfdi_uuid"/></td>
+                        <td>CONDICIONES DE PAGO: <span t-field="doc.invoice_payment_term_id"/></td>
+                    </tr>
+                </table>
+
+                <table class="table_mimpo table-borderless" name="sir_information" width="100%" style="font-size: 9px !important;">
+                    <tbody>
+                        <tr>
+                            <td width="10%" class="td_normal" style="margin-top: 10px; font-size: 9px !important;"><b>REFERENCIA</b></td>
+                            <td width="16%" class="td_normal" style="margin-top: 10px; font-size: 9px !important;">: <span t-field="doc.sir_id.number"/></td>
+                            <td width="14%" class="td_normal" style="margin-top: 10px; font-size: 9px !important;"><b>BUQUE</b></td>
+                            <td width="16%" class="td_normal" style="margin-top: 10px; font-size: 9px !important;">: <span t-field="doc.sir_id.ship"/></td>
+                            <td width="22%" class="td_normal" style="margin-top: 10px; font-size: 9px !important;"><b>FACTURAS</b></td>
+                            <td width="22%" class="td_normal" style="margin-top: 10px; font-size: 9px !important;">: <span t-field="doc.sir_id.pedimento_invoice"/></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal" style="font-size: 9px !important;">PEDIMENTO</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.pedimento"/></td>
+                            <td class="td_normal" style="font-size: 9px !important;">PROVEEDOR</td>
+                            <td class="td_normal" rowspan="2" style="font-size: 9px !important;">: <span t-field="doc.sir_id.supplier"/></td>
+                            <td class="td_normal" style="font-size: 9px !important;">MARCAS Y NUMEROS</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.number_mark"/></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal" style="font-size: 9px !important;">FECHA PED</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.pedimento_date"/></td>
+                            <td class="td_normal" style="font-size: 9px !important;"></td>
+                            <td class="td_normal" style="font-size: 9px !important;">MERCANCIA</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.ware"/></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal" style="font-size: 9px !important;">REGIMEN</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.operation_type"/></td>
+                            <td class="td_normal" style="font-size: 9px !important;">PESO EN KGS</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.total_weight"/></td>
+                            <td class="td_normal" style="font-size: 9px !important;">CANTIDAD DE BULTOS</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.total_package"/></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal" style="font-size: 9px !important;">ADUANA</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.custom_house"/></td>
+                            <td class="td_normal" style="font-size: 9px !important;"></td>
+                            <td class="td_normal" rowspan="2" style="font-size: 9px !important;"></td>
+                            <td class="td_normal" style="font-size: 9px !important;">RECEPCION</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.reception"/></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal"></td>
+                            <td class="td_normal"></td>
+                            <td class="td_normal"></td>
+                            <td class="td_normal" style="font-size: 9px !important;">N* PEDIDO</td>
+                            <td class="td_normal" style="font-size: 9px !important;">: <span t-field="doc.sir_id.order_number"/></td>
+                        </tr>
+                        <tr t-if="downpayment">
+                            <td class="td_normal"></td>
+                            <td class="td_normal"></td>
+                            <td class="td_normal"></td>
+                            <td class="td_normal" style="font-size: 9px !important;" colspan="2">
+                                OBSERVACIONES: ANTICIPO DEL <span t-esc="downpayment.get('invoice_date')" />: <span t-esc="'{:,.2f}'.format(downpayment.get('amount', 0.0))" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                <div class="row" t-if="doc.move_type != 'out_refund'">
+                <table class="table_mimpo table-borderless" name="table_hono" width="100%">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="td_double_border" style="margin-bottom: 15px;"><b>HONORARIOS</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="td_double_border3">&amp;nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td width="20%" class="td_normal" rowspan="6" style="padding-top: 5px; padding-left: 10px;">
+                                <t t-if="is_cfdi_signed">
+                                    <div t-if="cfdi_vals.get('sello')" class="barcode col-3">
+                                        <img alt="Barcode" t-att-src="'/report/barcode/?barcode_type=QR&amp;value=%s&amp;width=100&amp;height=100' % quote_plus(
+                                            'https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx?' + keep_query(
+                                                re=doc.l10n_mx_edi_cfdi_supplier_rfc, rr=doc.l10n_mx_edi_cfdi_customer_rfc,
+                                                tt='%.*f' % (doc.currency_id.decimal_places, doc.l10n_mx_edi_cfdi_amount), id=doc.l10n_mx_edi_cfdi_uuid)
+                                                + '&amp;fe=%s' % quote_plus(
+                                                    cfdi_vals['sello'][-8:], 'utf-8', 'strict', '=/').replace('%2B', '+'))"/>
+                                    </div>
+                                </t>
+                            </td>
+                            <td width="32%" class="td_normal">VALOR FACTURAS EN MONEDA</td>
+                            <td width="32%" class="td_normal" style="text-align:right;"><span t-field="doc.sir_id.total_custom_house"/></td>
+                            <td width="16%" class="td_normal" rowspan="6"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal">IMPUESTOS</td>
+                            <td class="td_normal" style="text-align:right;"><span t-field="doc.sir_id.paid_tax"/></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal">OTRAS CONTRIBUCIONES</td>
+                            <td class="td_normal"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal">EROGACIONES</td>
+                            <td class="td_normal" name="td_eroga" style="text-align:right;"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal">SUMA</td>
+                            <td class="td_normal" name="table_suma_hono" style="border-top: 1px solid black;text-align:right;"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_normal"></td>
+                            <td class="td_normal"></td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="td_normal"></td>
+                            <td class="td_normal">HONORARIOS</td>
+                            <td class="td_normal"></td>
+                            <td class="td_normal"></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                </div>
+
+                <table t-if="doc.move_type != 'out_refund'" name="prod_info" class="table_mimpo table-borderless" width="100%" style="margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <!-- <th width="42%" class="th_line_left"><b>Description</b></th>
+                            <th width="16%" class="th_line_right" style="padding-right:2px;"><b>Cantidad</b></th>
+                            <th width="16%" class="th_line_right"><b>Precio unitario</b></th>
+                            <th width="13%" class="th_line_left" style="padding-left:15px;"><b>Impuestos</b></th>
+                            <th width="13%" class="th_line_right"><b>Importe</b></th> -->
+                            <th width="8%" class="th_line_left"><b>N. IDEN</b></th>
+                            <th width="20%" class="th_line_left"><b>CONCEPTO</b></th>
+                            <th width="10%" class="th_line_left"><b>PROD</b></th>
+                            <th width="8%" class="th_line_left"><b>C. UNI</b></th>
+                            <th width="12%" class="th_line_left"><b>U. MEDIDA</b></th>
+                            <th width="14%" class="th_line_right"><b>P. UNITARIO</b></th>
+                            <th width="16%" class="th_line_left" style="padding-left:5px;"><b>IMPUESTO</b></th>
+                            <th width="13%" class="th_line_right"><b>IMPORTE</b></th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <t t-set="current_subtotal" t-value="0"/>
+                        <t t-set="lines" t-value="doc.get_ms_invoice_lines()"/>
+                        <t t-foreach="lines" t-as="line">
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.get('price_subtotal', 0.0)" groups="account.group_show_line_subtotals_tax_excluded"/>
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.get('price_total', 0.0)" groups="account.group_show_line_subtotals_tax_included"/>
+
+                            <tr t-att-class="'bg-200 fw-bold o_line_section' if line.get('display_type') == 'line_section' else 'fst-italic o_line_note' if line.get('display_type') == 'line_note' else ''">
+                                <t t-if="line.get('display_type') == 'product'" name="account_invoice_line_accountable">
+                                    <!-- <td name="account_invoice_line_name" class="td_normal"><span t-esc="line.get('name')" t-options="{'widget': 'text'}"/></td>
+                                    <td class="text-end td_normal">
+                                        <span t-esc="line.get('quantity')"/>
+                                        <span t-esc="line.get('product_uom_id').name"  groups="uom.group_uom"/>
+                                    </td>
+                                    <td clas="td_normal" style="padding-right:2px;" t-attf-class="text-end {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span class="text-nowrap" t-esc="'{:,.2f}'.format(line.get('price_unit'))"/>
+                                    </td>
+                                    <td class="td_normal" style="padding-left:15px;" t-attf-class="text-start {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.get('tax_ids')))" id="line_tax_ids"/>
+                                    </td>
+                                    <td class="text-end o_price_total td_normal">
+                                        <span class="text-nowrap" t-esc="line.get('price_subtotal')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <span class="text-nowrap" t-esc="line.get('price_total')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_included"/>
+                                    </td> -->
+                                    <td class="td_normal"><span t-esc="line.get('product_code')"/></td>
+                                    <td name="account_invoice_line_name" class="td_normal"><span t-esc="line.get('product_name')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('product_unspsc_code')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('uom_unspsc_code')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('uom_unspsc_name')"/></td>
+                                    <td clas="td_normal" style="padding-right:2px;" t-attf-class="text-end {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span class="text-nowrap" t-esc="line.get('price_unit')"/>
+                                    </td>
+                                    <td class="td_normal" style="padding-left:15px;" t-attf-class="text-start {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span t-if="line.get('list_tax')" t-esc="', '.join(line.get('list_tax'))" id="line_tax_ids"/>
+                                    </td>
+                                    <td class="text-end o_price_total td_normal">
+                                        <span class="text-nowrap" t-esc="line.get('price_subtotal')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <span class="text-nowrap" t-esc="line.get('price_total')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_included"/>
+                                    </td>
+                                </t>
+                                <t t-if="line.get('display_type') == 'line_section'">
+                                    <td colspan="99" class="td_normal">
+                                        <span t-esc="line.get('name')" t-options="{'widget': 'text'}"/>
+                                    </td>
+                                    <!-- <t t-set="current_section" t-value="line"/>
+                                    <t t-set="current_subtotal" t-value="0"/> -->
+                                </t>
+                                <t t-if="line.get('display_type') == 'line_note'">
+                                    <td colspan="99" class="td_normal">
+                                        <span t-esc="line.get('name')" t-options="{'widget': 'text'}"/>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                        <t t-set="tax_totals" t-value="doc.tax_totals"/>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td class="td_normal" colspan="3"></td>
+                            <td></td>
+                        </tr>
+                        <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+                            <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                            <tr t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]" t-as="amount_by_group">
+                                <!-- <td colspan="4"></td> -->
+                                <td class="td_normal" colspan="5" style="text-align:center;">
+                                    <!-- <span t-esc="amount_by_group['tax_group_name']"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BASE <span t-esc="'{:,.2f}'.format(amount_by_group['tax_group_base_amount'])"/> -->
+                                    TOTAL IMPUESTOS TRASLADADOS 16%&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BASE <span t-esc="'{:,.2f}'.format(amount_by_group['tax_group_base_amount'])"/>
+                                </td>
+                                <td colspan="2"></td>
+                                <td class="td_normal" style="text-align:right;">
+                                    <span>
+                                        <t t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                                    </span>
+                                </td>
+                            </tr>
+                        </t>
+                        <tr>
+                            <td colspan="4"/>
+                            <td class="td_normal" colspan="3"><b>SUMA TOTAl</b></td>
+                            <td class="td_normal" style="text-align: right;"><strong t-esc="tax_totals['formatted_amount_total']"/></td>
+                            <!-- <strong t-esc="current_subtotal" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/> -->
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td class="td_normal" colspan="3">ANTICIPO</td>
+                            <td style="text-align:right;"><span t-esc="'{:,.2f}'.format(downpayment.get('amount', 0.0))"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td class="td_normal" colspan="3"><b>SALDO</b></td>
+                            <t t-set="total_saldo" t-value="downpayment.get('amount', 0.0) + tax_totals['amount_total']"/>
+                            <td class="td_border_top" style="text-align: right;"><strong t-esc="total_saldo" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table t-if="doc.move_type == 'out_refund'" name="table_line" class="table_mimpo table-borderless" width="100%" style="margin-top: 5px;">
+                    <thead>
+                        <tr>
+                            <th width="14%" class="th_line_left"><b>CLAVE PROD/SERV</b></th>
+                            <th width="8%" class="th_line_left"><b>CANT</b></th>
+                            <th width="10%" class="th_line_left"><b>C. UNIDAD</b></th>
+                            <th width="25%" class="th_line_left"><b>DESCRIPCION</b></th>
+                            <th width="14%" class="th_line_right"><b>P. UNITARIO</b></th>
+                            <th width="16%" class="th_line_left" style="padding-left:5px;"><b>IMPUESTO</b></th>
+                            <th width="13%" class="th_line_right"><b>IMPORTE</b></th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <t t-set="current_subtotal" t-value="0"/>
+                        <t t-set="lines" t-value="doc.get_ms_invoice_lines()"/>
+                        <t t-foreach="lines" t-as="line">
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.get('price_subtotal', 0.0)" groups="account.group_show_line_subtotals_tax_excluded"/>
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.get('price_total', 0.0)" groups="account.group_show_line_subtotals_tax_included"/>
+
+                            <tr t-att-class="'bg-200 fw-bold o_line_section' if line.get('display_type') == 'line_section' else 'fst-italic o_line_note' if line.get('display_type') == 'line_note' else ''">
+                                <t t-if="line.get('display_type') == 'product'" name="account_invoice_line_accountable">
+                                    <td class="td_normal"><span t-esc="line.get('product_unspsc_code')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('quantity')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('uom_unspsc_code')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('name')"/></td>
+                                    <td clas="td_normal" style="padding-right:2px;" t-attf-class="text-end {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span class="text-nowrap" t-esc="line.get('price_unit')"/>
+                                    </td>
+                                    <td class="td_normal" style="padding-left:15px;" t-attf-class="text-start {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span t-if="line.get('list_tax')" t-esc="', '.join(line.get('list_tax'))" id="line_tax_ids"/>
+                                    </td>
+                                    <td class="text-end o_price_total td_normal">
+                                        <span class="text-nowrap" t-esc="line.get('price_subtotal')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <span class="text-nowrap" t-esc="line.get('price_total')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_included"/>
+                                    </td>
+                                </t>
+                                <t t-if="line.get('display_type') == 'line_section'">
+                                    <td colspan="99" class="td_normal">
+                                        <span t-esc="line.get('name')" t-options="{'widget': 'text'}"/>
+                                    </td>
+                                </t>
+                                <t t-if="line.get('display_type') == 'line_note'">
+                                    <td colspan="99" class="td_normal">
+                                        <span t-esc="line.get('name')" t-options="{'widget': 'text'}"/>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                        <t t-set="tax_totals" t-value="doc.tax_totals"/> 
+                        <tr>
+                            <td colspan="3"/>
+                            <td class="td_border_top_blue" colspan="3"><b>Importe sin impuestos</b></td>
+                            <td class="td_border_top" style="text-align: right;"><span t-esc="current_subtotal" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td class="td_normal" colspan="3"></td>
+                            <td></td>
+                        </tr>
+                        <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+                            <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                            <tr t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]" t-as="amount_by_group">
+                                <td colspan="3"></td>
+                                <td class="td_normal" colspan="3">
+                                    <span t-esc="amount_by_group['tax_group_name']"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BASE <span t-esc="'{:,.2f}'.format(amount_by_group['tax_group_base_amount'])"/>
+                                </td>
+                                <td class="td_normal" style="text-align:right;">
+                                    <span>
+                                        <t t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                                    </span>
+                                </td>
+                            </tr>
+                        </t>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td class="td_normal" colspan="3">SUMA TOTAL</td>
+                            <td style="text-align:right;"><t t-esc="'{:,.2f}'.format(0.0)"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td class="td_border_top_blue" colspan="3"><b>SALDO</b></td>
+                            <td class="td_border_top" style="text-align: right;"><span t-esc="tax_totals['formatted_amount_total']"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div t-if="doc.move_type == 'out_refund'" class="row">
+                    <div class="col-12" style="font-size: 9px;border-top: 1px double black; border-bottom: 1px solid black;margin-top: 3px;">
+                        Ingresos + IVA: (<span t-esc="doc._l10n_mx_edi_cfdi_amount_to_text()"/>)
+                    </div>
+                </div>
+                <div t-else="" class="row">
+                    <div class="col-2"/>
+                    <div class="col-10" style="font-size: 9px;">
+                        <div style="border-bottom: 1px solid black; margin-bottom: 3px;"><strong>SALDO: (<span t-esc="doc._l10n_mx_edi_cfdi_amount_to_text()"/>)</strong></div>
+                        <div style="border-top: 1px solid black; margin-top: 2px;">Ingresos + IVA: (<span t-esc="doc._l10n_mx_edi_cfdi_amount_to_text()"/>)</div>
+                    </div>
+                </div>
+
+                <table t-if="doc.move_type == 'out_refund'" class="table_mimpo table-borderless" name="cfdi_relation" width="100%" style="margin-top: 5px; font-size: 10px !important;">
+                    <t t-set="cfdi_origin" t-value="doc.get_cfdi_origin()" />
+                    <tr style="border-top: 1px solid black; font-size: 11px !important; margin-bottom: 5px;">
+                        <td colspan="2" class="text-center"><strong>CFDI RELACIONADO</strong></td>
+                    </tr>
+                    <tr style="border-top: 1px solid black;">
+                        <td width="50%"><strong>Tipo de Relación:</strong> <span t-if="cfdi_origin" t-esc="cfdi_origin[0]" /></td>
+                        <td width="50%"><strong>UUID Relacionado:</strong> <span t-if="cfdi_origin" t-esc="cfdi_origin[1]" /></td>
+                    </tr>
+                </table>
+
+                <t t-if="is_cfdi_signed">
+                    <div class="complement-details col-12" style="page-break-inside: avoid; margin-top: 5px; border: 1px solid black; font-size: 8px; padding-left: 5px; padding-right: 5px;">
+                        Fecha y Hora de Certificación: <span t-esc="cfdi_vals.get('emission_date_str')"/><br/>
+                        <strong>Cadena original del complemento de certificación digital del SAT</strong><br/>
+                        <div class="digital-stamp-content">
+                            <span class="nowrap" t-esc="cfdi_vals.get('cadena')"/>
+                        </div>
+                        <strong>Sello del SAT</strong><br/>
+                        <div class="digital-stamp-content">
+                            <span t-esc="cfdi_vals.get('sello_sat')"/>
+                        </div>
+                        <strong>Sello digital del CFDI</strong><br/>
+                        <div class="digital-stamp-content">
+                            <span t-esc="cfdi_vals.get('sello')"/>
+                        </div>
+                    </div>
+                </t>
+                <div class="row" style="font-size: 9px; margin-top: 10px; page-break-inside: avoid;">
+                    <div class="col-3"><t t-if="doc.move_type != 'out_refund'">CLAVE CONFIRMACION:</t></div>
+                    <div class="col-9" style="text-align: right">
+                        <t t-if="doc.l10n_mx_edi_payment_policy">
+                            METODO DO PAGO: <span t-field="doc.l10n_mx_edi_payment_policy" /> - 
+                            <span t-if="doc.l10n_mx_edi_payment_policy == 'PPD'">PAGO EN PARCIALIDADES O DIFERIDO</span>
+                            <span t-if="doc.l10n_mx_edi_payment_policy == 'PUE'">PAGO EN UNA SOLA EXHIBICION</span>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_invoice_mpo">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="lang" t-value="doc.partner_id.lang"/>
+                <t t-call="mpo_invoice_report.mimpo_account_move_template" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_mpo_report" model="report.paperformat">
+        <field name="name">Custom Paperformat for MIMPO MS</field>
+        <field name="default" eval="False"/>
+        <field name="disable_shrinking" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_spacing">47</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="account_invoices_mpo_invoice_report" model="ir.actions.report">
+        <field name="name">Factura MS</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mpo_invoice_report.report_invoice_mpo</field>
+        <field name="report_file">mpo_invoice_report.report_invoice_mpo</field>
+        <field name="print_report_name">(object._get_report_base_filename())</field>
+        <!-- <field name="binding_model_id" ref="account.model_account_move"/> -->
+        <field name="paperformat_id" ref="mpo_invoice_report.paperformat_mpo_report"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Downpayment Invoice Report -->
+    <template id="mimpo_downpayment_invoice_report_template">
+        <t t-call="web.basic_layout">
+            <style>
+                .table_mimpo {
+                    margin-bottom: 10px;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_normal {
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_double_border {
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid black;
+                    padding: 5px;
+                    text-align: center;
+                    vertical-align: middle;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_border_top_blue {
+                    border-top: 1px solid black;
+                    color: #3c78d8;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .td_border_top {
+                    border-top: 1px solid black;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .th_line_left {
+                    border-bottom: 1px solid black;
+                    text-align: left;
+                    bold: 1px;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+                .table_mimpo .th_line_right {
+                    border-bottom: 1px solid black;
+                    text-align: right;
+                    bold: 1px;
+                    padding-left: 0px;
+                    padding-top: 2px;
+                    padding-right: 2px;
+                    padding-bottom: 2px;
+                    font-size: 9px;
+                }
+            </style>
+            <div class="header">
+                <div class="row" style="font-size: 8px;">
+                    <table class="table-sm table_head_mimpo">
+                        <tr>
+                            <td width="15%" style="border : 0 hidden black;"></td>
+                            <td width="3%" style="border : 0 hidden black;"></td>
+                            <td width="37%" style="border : 0 hidden black;"></td>
+                            <td width="5%" style="border : 0 hidden black;"></td>
+                            <td width="20%" style="border : 0 hidden black;" ></td>
+                            <td width="20%" style="border : 0 hidden black;border-bottom: 1px solid black"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" rowspan="3" style="border: 0 hidden black;border-bottom: 1px solid black;padding-bottom: 3px">
+                                <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)"
+                                    style="max-height: 45px;" alt="Logo"/>
+                            </td>
+                            <td colspan="2" rowspan="3" style="vertical-align: top;font-size: 9px;border: 0 hidden black;border-bottom: 1px solid black;padding-bottom: 3px">
+                                <strong style="font-size:10px">
+                                    <!-- <span t-if="doc.company_id.company_details" t-field="doc.company_id.company_details"/>
+                                    <span t-else="" t-field="doc.company_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                                    Suc. Tahel 427 Interior 7<br/>Deleg. Venustiano Carranza<br/>Mexico, CDMX. CP. 15510 -->
+                                    MIMPO SERVICIOS ADUANALES SA DE CV<br/>
+                                </strong>
+                                <span>
+                                    MSA020627T41<br/>
+                                    INDEPENDENCIA 778 COL. CENTRO C.P. 91700<br/>
+                                    VERACRUZ, VERACRUZ.<br/>
+                                    Suc. Tahel 427 Interior 7<br/>
+                                    Deleg. Venustiano Carranza<br/>
+                                    Mexico, CDMX.CP. 15510
+                                </span>
+                            </td>
+                            <td width="20%" rowspan="2" style="border : 0 hidden black;border-right: 1px solid black"></td>
+                            <td width="20%" style="text-align: center; background-color:#D3D3D3;border:1px solid black !important">FOLIO</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;border:1px solid black !important"><span t-field="doc.name"/>
+                                <span t-if="not doc.name or doc.name == '/'" t-field="doc.id"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="border: 0 hidden black;border-top: 1px solid black;border-bottom: 1px solid black;padding-bottom: 3px">
+                                <strong>
+                                    Expedido en <span t-field="doc.company_id.zip"/> el: <span t-esc="doc.create_date.strftime('%Y-%m-%dT%H:%M:%S')" />
+                                </strong><br/>
+                                Certificado SAT: 00001000000503727538<br/>
+                                Certificado Emisor: 00001000000505885023<br/>
+                                Folio Fiscal: <span t-field="doc.l10n_mx_edi_cfdi_uuid"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%" style="text-valign: middle;font-size: 10px;border: 0 hidden black;border-top: 1px solid black;">
+                                <t t-if="credit_note">E - EGRESO</t>
+                                <t t-else="">I - INGRESO</t>
+                            </td>
+                            <td colspan="3" style="border: 0 hidden black;border-top: 1px solid black;">
+                                601 - GENERAL DE LEY PERSONAS MORALES<br/>
+                                USO DEL CFDI: <span t-field="doc.l10n_mx_edi_usage"/>
+                            </td>
+                            <td colspan="2" style="border: 0 hidden black;border-top: 1px solid black;">
+                                Froma de pago: <span t-field="doc.l10n_mx_edi_payment_method_id"/><br/>
+                                CONDICIONES DE PAGO: <span t-field="doc.invoice_payment_term_id"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="page">
+                <t t-set="cfdi_vals" t-value="doc._l10n_mx_edi_decode_cfdi()"/>
+                <t t-set="is_cfdi_signed" t-value="bool(doc._get_l10n_mx_edi_signed_edi_document())"/>
+                <div class="row" name="div_client" style="font-size: 8px; margin-bottom: 10px;page-break-inside: avoid;">
+                    <div class="col-8">
+                        <!-- <strong>CLIENTE:  </strong><strong t-field="doc.partner_id"/><br/>
+                        <span t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;], &quot;no_marker&quot;: true}"/>
+                        RFC: <span t-field="doc.partner_id.vat"/><br/> -->
+                        <strong>CLIENTE: </strong>
+                        <t t-if="doc.partner_id.commercial_name">
+                            <strong t-field="doc.partner_id.commercial_name"/></t>
+                        <t t-else=""><strong t-field="doc.partner_id"/></t><br/>
+                        <span t-raw="doc.partner_id._display_address_mx()"/><br/>
+                        REGIMEN FISCAL: <span t-esc="doc.partner_id.l10n_mx_edi_fiscal_regime"/> - <span t-field="doc.partner_id.l10n_mx_edi_fiscal_regime"/><br/>
+                        FACTURAS: <span t-field="doc.sir_id.pedimento_invoice"/><br/>
+                        MARCAS Y NÚMEROS: <span t-field="doc.sir_id.number_mark"/><br/>
+                        MERCANCÍA: <span t-field="doc.sir_id.ware"/><br/>
+                        CANTIDAD DE BULTOS: <span t-field="doc.sir_id.total_package"/><br/>
+                        RECEPCIÓN: <span t-field="doc.sir_id.reception"/><br/>
+                        N° PEDIDO: <span t-field="doc.sir_id.order_number"/>
+                    </div>
+                    <div class="col-4" style="">
+                        <strong>REFERENCIA: </strong><span t-field="doc.sir_id"/><br/>
+                        PEDIMENTO: <span t-field="doc.sir_id.pedimento"/><br/>
+                        FECHA PEDIMENTO: <span t-field="doc.pedimento_date"/><br/>
+                        REGIMEN: <span t-field="doc.sir_id.operation_type"/><br/>
+                        ADUANA: <span t-field="doc.sir_id.custom_house"/><br/><br/><br/>
+                        BUQUE: <span t-field="doc.sir_id.ship"/><br/>
+                        PROVEEDOR: <span t-field="doc.sir_id.supplier"/><br/><br/>
+                        PESO EN KGS: <span t-field="doc.sir_id.total_weight"/>
+                    </div>
+                </div>
+                <table name="table_line" class="table_mimpo table-borderless" width="100%" style="margin-top: 5px;">
+                    <thead>
+                        <tr>
+                            <!-- <th width="42%" class="th_line_left"><b>Description</b></th>
+                            <th width="16%" class="th_line_right" style="padding-right:2px;"><b>Cantidad</b></th>
+                            <th width="16%" class="th_line_right"><b>Precio unitario</b></th>
+                            <th width="13%" class="th_line_left" style="padding-left:15px;"><b>Impuestos</b></th>
+                            <th width="13%" class="th_line_right"><b>Importe</b></th> -->
+                            <!-- <th width="8%" class="th_line_left"><b>N. IDEN</b></th>
+                            <th width="20%" class="th_line_left"><b>CONCEPTO</b></th> -->
+                            <th width="14%" class="th_line_left"><b>CLAVE PROD/SERV</b></th>
+                            <th width="8%" class="th_line_left"><b>CANT</b></th>
+                            <th width="10%" class="th_line_left"><b>C. UNIDAD</b></th>
+                            <th width="25%" class="th_line_left"><b>DESCRIPCION</b></th>
+                            <th width="14%" class="th_line_right"><b>P. UNITARIO</b></th>
+                            <th width="16%" class="th_line_left" style="padding-left:5px;"><b>IMPUESTO</b></th>
+                            <th width="13%" class="th_line_right"><b>IMPORTE</b></th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <t t-set="current_subtotal" t-value="0"/>
+                        <t t-set="lines" t-value="doc.get_ms_invoice_lines()"/>
+                        <t t-foreach="lines" t-as="line">
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.get('price_subtotal', 0.0)" groups="account.group_show_line_subtotals_tax_excluded"/>
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.get('price_total', 0.0)" groups="account.group_show_line_subtotals_tax_included"/>
+
+                            <tr t-att-class="'bg-200 fw-bold o_line_section' if line.get('display_type') == 'line_section' else 'fst-italic o_line_note' if line.get('display_type') == 'line_note' else ''">
+                                <t t-if="line.get('display_type') == 'product'" name="account_invoice_line_accountable">
+                                    <!-- <td name="account_invoice_line_name" class="td_normal"><span t-esc="line.get('name')" t-options="{'widget': 'text'}"/></td>
+                                    <td class="text-end td_normal">
+                                        <span t-esc="line.get('quantity')"/>
+                                        <span t-esc="line.get('product_uom_id').name"  groups="uom.group_uom"/>
+                                    </td>
+                                    <td clas="td_normal" style="padding-right:2px;" t-attf-class="text-end {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span class="text-nowrap" t-esc="'{:,.2f}'.format(line.get('price_unit'))"/>
+                                    </td>
+                                    <td class="td_normal" style="padding-left:15px;" t-attf-class="text-start {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.get('tax_ids')))" id="line_tax_ids"/>
+                                    </td> -->
+                                    <!-- <td class="td_normal"><span t-esc="line.get('product_code')"/></td>
+                                    <td name="account_invoice_line_name" class="td_normal"><span t-esc="line.get('product_name')"/></td> -->
+                                    <td class="td_normal"><span t-esc="line.get('product_unspsc_code')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('quantity')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('uom_unspsc_code')"/></td>
+                                    <td class="td_normal"><span t-esc="line.get('name')"/></td>
+                                    <td clas="td_normal" style="padding-right:2px;" t-attf-class="text-end {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span class="text-nowrap" t-esc="line.get('price_unit')"/>
+                                    </td>
+                                    <td class="td_normal" style="padding-left:15px;" t-attf-class="text-start {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span t-if="line.get('list_tax')" t-esc="', '.join(line.get('list_tax'))" id="line_tax_ids"/>
+                                    </td>
+                                    <td class="text-end o_price_total td_normal">
+                                        <span class="text-nowrap" t-esc="line.get('price_subtotal')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <span class="text-nowrap" t-esc="line.get('price_total')" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' groups="account.group_show_line_subtotals_tax_included"/>
+                                    </td>
+                                </t>
+                                <t t-if="line.get('display_type') == 'line_section'">
+                                    <td colspan="99" class="td_normal">
+                                        <span t-esc="line.get('name')" t-options="{'widget': 'text'}"/>
+                                    </td>
+                                    <!-- <t t-set="current_section" t-value="line"/>
+                                    <t t-set="current_subtotal" t-value="0"/> -->
+                                </t>
+                                <t t-if="line.get('display_type') == 'line_note'">
+                                    <td colspan="99" class="td_normal">
+                                        <span t-esc="line.get('name')" t-options="{'widget': 'text'}"/>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                        <t t-set="tax_totals" t-value="doc.tax_totals"/> 
+                        <!-- <tr>
+                            <td colspan="3"/>
+                            <td class="td_border_top_blue" colspan="3"><b>Importe sin impuestos</b></td>
+                            <td class="td_border_top" style="text-align: right;"><span t-esc="current_subtotal" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="5"></td>
+                            <td class="td_normal"></td>
+                            <td></td>
+                        </tr>
+                        <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+                            <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                            <tr t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]" t-as="amount_by_group">
+                                <!-- <td colspan="4"></td> -->
+                                <td class="td_normal" colspan="5" style="text-align:right;">
+                                    <!-- <span t-esc="amount_by_group['tax_group_name']"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BASE <span t-esc="'{:,.2f}'.format(amount_by_group['tax_group_base_amount'])"/> -->
+                                    TOTAL IMPUESTOS TRASLADADOS 16%&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BASE <span t-esc="'{:,.2f}'.format(amount_by_group['tax_group_base_amount'])"/>
+                                </td>
+                                <td></td>
+                                <td class="td_normal" style="text-align:right;">
+                                    <span>
+                                        <t t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                                    </span>
+                                </td>
+                            </tr>
+                        </t>
+                        <tr>
+                            <td colspan="5"/>
+                            <td class="td_normal" style="text-align: right;"><b>SUMA TOTAL</b></td>
+                            <td class="td_normal" style="text-align: right;"><strong t-esc="tax_totals['formatted_amount_total']"/></td>
+                        </tr>
+                        <!-- <tr>
+                            <td colspan="3"></td>
+                            <td class="td_normal" colspan="3">ANTICIPO</td>
+                            <td style="text-align:right;"><t t-esc="'{:,.2f}'.format(0.0)"/></td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="5"></td>
+                            <td class="td_normal" style="text-align: right;"><b>SALDO</b></td>
+                            <td class="td_border_top" style="text-align: right;"><strong t-esc="tax_totals['formatted_amount_total']"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-12" style="font-size: 9px;">
+                        <div style="border-bottom: 1px solid black; margin-bottom: 3px;"></div>
+                        <div style="border-top: 1px solid black; margin-top: 2px;">Ingresos + IVA: (<span t-esc="doc._l10n_mx_edi_cfdi_amount_to_text()"/>)</div>
+                    </div>
+                </div>
+
+                <t t-set="cfdi_origin" t-value="doc.get_cfdi_origin()" />
+                <table t-if="credit_note" class="table_mimpo table-borderless" name="cfdi_relation" width="100%" style="margin-top: 5px; font-size: 9px !important;">
+                    <tr style="border-top: 1px solid black; font-size: 11px !important; margin-bottom: 5px;">
+                        <td colspan="2" class="text-center"><strong>CFDI RELACIONADO</strong></td>
+                    </tr>
+                    <tr style="border-top: 1px solid black;">
+                        <td width="50%"><strong>Tipo Relacion:</strong> <span t-if="cfdi_origin" t-esc="cfdi_origin[0]" /></td>
+                        <td width="50%"><strong>UUID Relacionado:</strong> <span t-if="cfdi_origin" t-esc="cfdi_origin[1]" /></td>
+                    </tr>
+                </table>
+
+                <t t-if="is_cfdi_signed">
+                    <div class="complement-details col-12" style="page-break-inside: avoid; margin-top: 5px; border: 1px solid black; font-size: 8px; padding-left: 5px; padding-right: 5px;">
+                        Fecha y Hora de Certificación: <span t-esc="cfdi_vals.get('emission_date_str')"/><br/>
+                        <strong>Cadena original del complemento de certificación digital del SAT</strong><br/>
+                        <div class="digital-stamp-content">
+                            <span class="nowrap" t-esc="cfdi_vals.get('cadena')"/>
+                        </div>
+                        <strong>Sello del SAT</strong><br/>
+                        <div class="digital-stamp-content">
+                            <span t-esc="cfdi_vals.get('sello_sat')"/>
+                        </div>
+                        <strong>Sello digital del CFDI</strong><br/>
+                        <div class="digital-stamp-content">
+                            <span t-esc="cfdi_vals.get('sello')"/>
+                        </div>
+                    </div>
+                </t>
+                <div class="row" style="font-size: 9px; margin-top: 10px; page-break-inside: avoid;">
+                    <!-- <div class="col-3">CLAVE CONFIRMACION:</div> -->
+                    <div class="col-12" style="text-align: right">
+                        <t t-if="doc.l10n_mx_edi_payment_policy">
+                            METODO DO PAGO: <span t-field="doc.l10n_mx_edi_payment_policy" /> - 
+                            <span t-if="doc.l10n_mx_edi_payment_policy == 'PPD'">PAGO EN PARCIALIDADES O DIFERIDO</span>
+                            <span t-if="doc.l10n_mx_edi_payment_policy == 'PUE'">PAGO EN UNA SOLA EXHIBICION</span>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_downpayment_invoice_mpo">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="lang" t-value="doc.partner_id.lang"/>
+                <t t-call="mpo_invoice_report.mimpo_downpayment_invoice_report_template" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="account_invoices_mpo_downpayment_invoice_report" model="ir.actions.report">
+        <field name="name">Factura Downpayment</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mpo_invoice_report.report_downpayment_invoice_mpo</field>
+        <field name="report_file">mpo_invoice_report.report_downpayment_invoice_mpo</field>
+        <field name="print_report_name">(object._get_report_base_filename())</field>
+        <!-- <field name="binding_model_id" ref="account.model_account_move"/> -->
+        <field name="paperformat_id" ref="mpo_invoice_report.paperformat_mpo_report"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_credit_note_mpo">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="lang" t-value="doc.partner_id.lang"/>
+                <t t-set="credit_note" t-value="1"/>
+                <t t-call="mpo_invoice_report.mimpo_downpayment_invoice_report_template" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="account_invoices_mpo_credit_note_report" model="ir.actions.report">
+        <field name="name">Factura Credit Note</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mpo_invoice_report.report_credit_note_mpo</field>
+        <field name="report_file">mpo_invoice_report.report_credit_note_mpo</field>
+        <field name="print_report_name">(object._get_report_base_filename())</field>
+        <!-- <field name="binding_model_id" ref="account.model_account_move"/> -->
+        <field name="paperformat_id" ref="mpo_invoice_report.paperformat_mpo_report"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

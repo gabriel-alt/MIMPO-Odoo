@@ -1,0 +1,17 @@
+<odoo>
+
+        <!-- <template id="cfdiv33" inherit_id="l10n_mx_edi.cfdiv33">
+            <xpath expr="//*[name()='cfdi:Comprobante']" position="attributes">
+                <attribute name="t-att-Total">format_float(total_price_non_cga, currency_precision)</attribute>
+            </xpath>
+        </template> -->
+
+        <template id="cfdiv40" inherit_id="l10n_mx_edi_carta_porte.cfdiv40_extended_carta_porte">
+            <xpath expr="//t[@t-if='record.carta_porte']/*[name()='cfdi:Comprobante']" position="attributes">
+                <attribute name="t-att-Total">format_float(total_price_non_cga, currency_precision)</attribute>
+            </xpath>
+            <xpath expr="//t[@t-if='not record.carta_porte']/*[name()='cfdi:Comprobante']" position="attributes">
+                <attribute name="t-att-Total">format_float(total_price_non_cga, currency_precision)</attribute>
+            </xpath>
+        </template>
+</odoo>

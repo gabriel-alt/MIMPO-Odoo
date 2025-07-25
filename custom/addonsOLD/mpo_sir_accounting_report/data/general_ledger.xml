@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="general_ledger_report_partner_name" model="account.report.column">
+        <field name="name">REF SIR</field>
+        <field name="expression_label">sir_id</field>
+        <field name="figure_type">none</field>
+        <field name="report_id" ref="account_reports.general_ledger_report"/>
+    </record>
+</odoo>

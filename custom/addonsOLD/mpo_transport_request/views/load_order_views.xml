@@ -1,0 +1,83 @@
+<odoo>
+    <record id="load_order_view_tree" model="ir.ui.view">
+        <field name="name">load.order.view.tree</field>
+        <field name="model">load.order</field>
+        <field name="arch" type="xml">
+            <tree create="0">
+                <field name="name"/>
+                <field name="transport_company_id"/>
+                <field name="company_bill_id"/>
+                <field name="purchase_id"/>
+                <field name="sale_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="load_order_view_form" model="ir.ui.view">
+        <field name="name">load.order.view.form</field>
+        <field name="model">load.order</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <header>
+                    <button name="action_create_purchase_order" string="Create Purchase Order"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('purchase_id', '!=', False)]}" />
+                    <button name="action_create_sale_order" string="Create Sale Order"
+                        type="object" class="oe_highlight"
+                        attrs="{'invisible' : [('sale_id', '!=', False)]}" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1" placeholder="Order..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_id" invisible="1"/>
+                            <field name="transport_company_id"/>
+                            <field name="company_bill_id" context="{'show_address': 1}"
+                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="company_deliver_id" context="{'show_address': 1}"
+                                options='{"always_reload": True, "highlight_first_line": True}'/>
+                            <field name="company_deliver_contact_id"/>
+                            <field name="company_deliver_phone"/>
+                            <field name="sir_request_ids" widget="many2many_tags"/>
+                            <field name="transport_request_id"/>
+                            <field name="transport_request_line_id" invisible="1"/>
+                            <field name="unit_type_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="company_deliver_id"/>
+                            <field name="folio"/>
+                            <field name="driver"/>
+                            <field name="nombre_transpor"/>
+                            <field name="purchase_id" domain="[('request_purchase', '=', True), ('transport_request_id', '=', transport_request_id)]"/>
+                            <field name="sale_id" domain="[('request_purchase', '=', True), ('transport_request_id', '=', transport_request_id)]"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="concept_line_ids" nolabel="1" colspan="2" force_save="1">
+                            <tree editable="bottom">
+                                <field name="purchase_line_id" invisible="1"/>
+                                <field name="sale_line_id" invisible="1"/>
+                                <field name="product_id" force_save="1" attrs="{'readonly': ['|', ('purchase_line_id', '!=', False), ('sale_line_id', '!=', False)]}"/>
+                                <field name="category" force_save="1" attrs="{'readonly': ['|', ('purchase_line_id', '!=', False), ('sale_line_id', '!=', False)]}"/>
+                                <field name="vendor_price" force_save="1" attrs="{'readonly': [('purchase_line_id', '!=', False)]}"/>
+                                <field name="customer_price" force_save="1" attrs="{'readonly': [('sale_line_id', '!=', False)]}"/>
+                                <field name="vendor_total" force_save="1" attrs="{'readonly': [('purchase_line_id', '!=', False)]}"/>
+                                <field name="customer_total" force_save="1" attrs="{'readonly': [('sale_line_id', '!=', False)]}"/>
+                                <field name="difference"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="load_order_action" model="ir.actions.act_window">
+        <field name="name">Load Order</field>
+        <field name="res_model">load.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>
