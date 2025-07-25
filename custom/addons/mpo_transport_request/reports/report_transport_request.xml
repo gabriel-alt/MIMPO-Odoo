@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Transport Request Report -->
+    <template id="mimpo_transport_request_template">
+        <t t-call="web.basic_layout">
+            <style>
+                .table_mimpo {
+                    padding: 1px;
+                    margin-bottom: 12px;
+                    font-size: 9px;
+                    vertical-align: top;
+                }
+                .table_mimpo .td_normal {
+                    padding: 1px;
+                    vertical-align: top;
+                }
+                .table_mimpo .td_border {
+                    border: 1px solid black;
+                    padding: 1px;
+                    vertical-align: top;
+                }
+                .table_mimpo .td_borderc {
+                    border: 1px solid black;
+                    padding: 1px;
+                    vertical-align: top;
+                    text-align: center;
+                }
+            </style>
+            <div class="header" style="font-family:'Times New Roman'">
+                <div class="row col-12" style="font-size: 9px;padding-bottom: 3px">
+                    <div class="col-4 mb4">
+                        <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="max-width: 180px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4 mb4" style="font-size: 10px;vertical-align: middle; text-align: center;">
+                        <strong style="font-size: 14px;">SOLICITUD DE TRANSPORTE / TRANSPORTATION REQUEST</strong><br/>
+                        <span>USUARIO SOLICITANTE / USER REQUESTING:</span><br/>
+                        <strong t-field="doc.create_uid"/>
+                    </div>
+                    <div class="col-4 mb4" style="font-size: 10px;vertical-align: middle; text-align: right;">
+                        <span>ORDEN/ORDER#:</span><br/>
+                        <strong style="font-size: 12px;" t-field="doc.name"/><br/>
+                        <span>FECHA CREATION / CREATION DATE#:</span><br/>
+                        <strong t-field="doc.create_date"/>
+                    </div>
+                </div>
+            </div>
+            <div class="page" style="font-family:'Times New Roman'">
+                <div class="row">
+                <table class="table_mimpo table-borderless" name="bill_to" width="100%">
+                    <tr style="font-size: 2px;">
+                        <td width="15%"></td>
+                        <td width="20%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                        <td width="15%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_normal" style="text-align:center" colspan="4"><u>FACTURAR A / BILL TO:</u></td>
+                        <td class="td_border" colspan="3">REFERENCIA FACTURACTION/BILLING REFERENCE:</td>
+                        <td class="td_border"><strong t-field="doc.id"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">COMPANIA/COMPANY:</td>
+                        <td class="td_border" colspan="4"><strong t-field="doc.company_bill_id"/></td>
+                        <td class="td_border">RFC/TAX ID:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_bill_vat"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">DOMICILIO/ADDRESS:</td>
+                        <td class="td_border" colspan="7"><strong t-field="doc.company_bill_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">CONTACTO/CONTACT:</td>
+                        <td class="td_border"><strong t-field="doc.company_bill_contact_id"/></td>
+                        <td class="td_border">CORREO/EMAIl:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_bill_email"/></td>
+                        <td class="td_border">TELEPONO/PHONE:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_bill_phone"/></td>
+                    </tr>
+                </table>
+                </div>
+                <div class="row">
+                <table class="table_mimpo table-borderless" name="shipper" width="100%">
+                    <tr style="font-size: 2px;">
+                        <td width="15%"></td>
+                        <td width="5%"></td>
+                        <td width="15%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                        <td width="15%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_normal" style="text-align:center" colspan="5"><u>EMBARCADOR / SHIPPER:</u></td>
+                        <td class="td_normal" colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">COMPANIA/COMPANY:</td>
+                        <td class="td_border" colspan="5"><strong t-field="doc.company_shipper_id"/></td>
+                        <td class="td_border">RFC/TAX ID:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_shipper_vat"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">DOMICILIO/ADDRESS:</td>
+                        <td class="td_border" colspan="8"><strong t-field="doc.company_shipper_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">CONTACTO/CONTACT:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_shipper_contact_id"/></td>
+                        <td class="td_border">CORREO/EMAIl:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_shipper_email"/></td>
+                        <td class="td_border">TELEPONO/PHONE:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_shipper_phone"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border" colspan="2" style="text-align:center">FECHA|HORA RECOLECCION/DATE|HOUR OF PICKUP:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.pickup_date"/></td>
+                        <td class="td_border" colspan="2" style="text-align:center">REFERENCIA DE CARGA/LOAD REFERENCE:</td>
+                        <td class="td_border" colspan="3"></td>
+                    </tr>
+                </table>
+                </div>
+                <div class="row">
+                <table class="table_mimpo table-borderless" name="delivery" width="100%">
+                    <tr style="font-size: 2px;">
+                        <td width="15%"></td>
+                        <td width="20%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                        <td width="15%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                        <td width="10%"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_normal" style="text-align:center" colspan="4"><u>ENTREGA/DELIVERY</u></td>
+                        <td class="td_border" colspan="3">FECHA ENTREGA/DELIVER DATE:</td>
+                        <td class="td_border"><strong t-field="doc.deliver_date"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">COMPANIA/COMPANY:</td>
+                        <td class="td_border" colspan="4"><strong t-field="doc.company_deliver_id"/></td>
+                        <td class="td_border">RFC/TAX ID:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_deliver_vat"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">DOMICILIO/ADDRESS:</td>
+                        <td class="td_border" colspan="7"><strong t-field="doc.company_deliver_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">CONTACTO/CONTACT:</td>
+                        <td class="td_border"><strong t-field="doc.company_deliver_contact_id"/></td>
+                        <td class="td_border">CORREO/EMAIl:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_deliver_email"/></td>
+                        <td class="td_border">TELEPONO/PHONE:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_deliver_phone"/></td>
+                    </tr>
+                </table>
+                </div>
+                <div class="row">
+                <table class="table_mimpo table-borderless" name="special" width="100%">
+                    <tr style="font-size: 2px;">
+                        <td width="12%"></td>
+                        <td width="3%"></td>
+                        <td width="2%"></td>
+                        <td width="5%"></td>
+                        <td width="5%"></td>
+                        <td width="8%"></td>
+                        <td width="8%"></td>
+                        <td width="14%"></td>
+                        <td width="12%"></td>
+                        <td width="9%"></td>
+                        <td width="11%"></td>
+                        <td width="11%"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_normal" style="text-align:center" colspan="10"><u>INSTRUCCIONES ESPECIALES/SPECIAL INSTRUCTIONS</u></td>
+                        <td class="td_border">ORDEN/ORDER#:</td>
+                        <td class="td_border"><strong t-field="doc.name"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border" colspan="2">INSTRUCCIONES DE CARGA/LOAD INSTRUCTIONS:</td>
+                        <td class="td_border" colspan="10"><strong t-field="doc.load_instructions"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border" colspan="2">OBSERVACIONES CARGA/OBSERVATIONS LOAD:</td>
+                        <td class="td_border" colspan="10"><strong t-field="doc.observations_load"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border" colspan="3">EQUIPO ADICIONAL/ADDITIONAL EQUIPMENT:</td>
+                        <td class="td_border" colspan="9"><strong t-field="doc.add_equipment"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">TARIFA/RATE:</td>
+                        <td class="td_border" colspan="4"><strong t-field="doc.load_rate"/></td>
+                        <td class="td_border" colspan="2">MONEDA/CURRENCY:</td>
+                        <td class="td_border"><strong t-field="doc.currency_id"/></td>
+                        <td class="td_border" colspan="3">COSTOS ADICIONALES/ADDITIONAL COSTS:</td>
+                        <td class="td_border"><strong t-field="doc.add_costs"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">TOTAL/TOTAL:</td>
+                        <td class="td_border" colspan="4"><strong t-field="doc.load_total"/></td>
+                        <td class="td_border">IMO/IMO:</td>
+                        <td class="td_border" colspan="2"><t t-if="doc.load_imo">SEN IMO</t></td>
+                        <td class="td_border">CUSTODIA:</td>
+                        <td class="td_border" colspan="3"><strong t-field="doc.load_custody_id"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border" colspan="4">COMENTARIO/COMMENT:</td>
+                        <td class="td_border" colspan="8"><strong t-field="doc.load_comment"/></td>
+                    </tr>
+                </table>
+                </div>
+                <div class="row">
+                <table class="table_mimpo table-borderless" name="custom" width="100%">
+                    <tr style="font-size: 2px;">
+                        <td width="20%"></td>
+                        <td width="15%"></td>
+                        <td width="5%"></td>
+                        <td width="10%"></td>
+                        <td width="20%"></td>
+                        <td width="5%"></td>
+                        <td width="12%"></td>
+                        <td width="3%"></td>
+                        <td width="15%"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_normal" style="text-align:center" colspan="6"><u>AGENTE ADUANAL/CUSTOM BROKER</u></td>
+                        <td class="td_border">A.A./C.B:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.aa_cb"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border" colspan="2">COMPAÑIA/COMPANY:</td>
+                        <td class="td_border" colspan="4"><strong t-field="doc.company_broker_id"/></td>
+                        <td class="td_border">RFC/TAX ID:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_broker_vat"/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">DOMICILIO/ADDRESS:</td>
+                        <td class="td_border" colspan="8"><strong t-field="doc.company_broker_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/></td>
+                    </tr>
+                    <tr>
+                        <td class="td_border">CONTACTO/CONTACT:</td>
+                        <td class="td_border" colspan="2"><strong t-field="doc.company_broker_contact_id"/></td>
+                        <td class="td_border">CORREO/EMAIL:</td>
+                        <td class="td_border"><strong t-field="doc.company_broker_email"/></td>
+                        <td class="td_border" colspan="3">TELEFONO/PHONE:</td>
+                        <td class="td_border"><strong t-field="doc.company_broker_phone"/></td>
+                    </tr>
+                </table>
+                </div>
+                <div class="row">
+                <table class="table_mimpo table-borderless" name="load_goods" width="100%" style="font-size: 7px;">
+                    <tr>
+                        <td class="td_normal text-center" colspan="5" style="font-size: 9px;">
+                        DETALLE DE CARGA DE LA MERCANCÍA / LOAD DETAIL OF THE GOODS</td>
+                    </tr>
+                    <tr>
+                        <td class="td_normal text-center" colspan="5" style="font-size: 9px;">&#160;</td>
+                    </tr>
+                    <tr>
+                        <td class="td_borderc" width="16%">
+                            REFERENCIA/REFERENCE<br/>
+                            PEDIMENTO/PEDIMENT<br/>
+                            CANTIDAD/QUANTITY<br/>
+                            ESQUEMA/SCHEME<br/>
+                            CLAVE UNIDAD MEDIDA/K.U.M.
+                        </td>
+                        <td class="td_borderc" width="16%">
+                            CUBICAJE/CUBICATION<br/>
+                            LARGO/LONG<br/>
+                            ALTO/HIGH<br/>
+                            ANCHO/WIDTH<br/>
+                            CLAVE PRODUCTO/PRODUCT KEY
+                        </td>
+                        <td class="td_borderc" width="20%">
+                            PESO BRUTO/GROSS WEIGHT<br/>
+                            BULTOS/PACKAGES<br/>
+                            SELLOS/STAMPES<br/>
+                            FECHA DEMORAS/DATE OF DELAYS<br/>
+                            CLAVE MATERIAL PELIGROSO/C.H.M.
+                        </td>
+                        <td class="td_borderc" width="23%">
+                            DESCRIPCION SAT/SAT DESCRIPTION<br/>
+                            BOL|GUIA|BL<br/>
+                            CONTENEDOR/CONTAINER<br/>
+                            T-CONTENEDOR/ T.CONTAINER<br/>
+                            CLAVE TIPO EMBALAJE/KEY TYPE PACKING
+                        </td>
+                        <td class="td_borderc" width="25%">
+                            MERCANCIA/COMMODITY<br/>
+                            FRACCION/FRACTION<br/>
+                            MATERIAL PELIGROSO/HAZARDOUS MATERIAL<br/>
+                            CONTENEDOR
+                        </td>
+                    </tr>
+                    <tr t-foreach="doc.load_detail_goods_ids" t-as="load">
+                        <td class="td_border">
+                            <span t-field="load.sir_request_id"/><br/>
+                            <span t-field="load.pedimento"/><br/>
+                            <span t-field="load.qty_request"/><br/>
+                            <span t-field="load.scheme_request"/><br/>
+                            <span t-field="load.kum_request"/>
+                        </td>
+                        <td class="td_border">
+                            <span t-field="load.cubication_request"/><br/>
+                            <span t-field="load.long_request"/><br/>
+                            <span t-field="load.high_request"/><br/>
+                            <span t-field="load.width_request"/><br/>
+                            <span t-field="load.keyprod_request"/>
+                        </td>
+                        <td class="td_border">
+                            <span t-field="load.gross_request"/><br/>
+                            <span t-field="load.packages_request"/><br/>
+                            <span t-field="load.stamp_request"/><br/>
+                            <span t-field="load.date_delay_request"/><br/>
+                            <span t-field="load.chm_request"/>
+                        </td>
+                        <td class="td_border">
+                            <span t-field="load.sat_request"/><br/>
+                            <span t-field="load.bol_request"/><br/>
+                            <span t-field="load.container_request"/><br/>
+                            <span t-field="load.t_container_request"/><br/>
+                            <span t-field="load.packing_request"/>
+                        </td>
+                        <td class="td_border">
+                            <span t-field="load.commodity_request"/><br/>
+                            <span t-field="load.fraction_request"/><br/>
+                            <span t-field="load.hazardous_request"/><br/>
+                            <!-- <span t-field="load.container"/> -->
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <div class="footer" style="font-family:'Times New Roman';font-size: 10px;">
+                <div class="row" style="background-color:blue;color:#FFFFFF">
+                    <div class="col-3">
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%A, %d %B %Y')"/>
+                    </div>
+                    <div class="col-4 offset-1 text-center">
+                        F-SGI-60 REV.05
+                    </div>
+                    <div class="col-3 offset-1 text-center">
+                        Page:
+                        <span class="page"/>
+                        of
+                        <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_transport_request_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="lang" t-value="user.lang"/>
+                <t t-call="mpo_transport_request.mimpo_transport_request_template" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_transport_request_report" model="ir.actions.report">
+        <field name="name">Transport request</field>
+        <field name="model">transport.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mpo_transport_request.report_transport_request_template</field>
+        <field name="report_file">mpo_transport_request.report_transport_request_template</field>
+        <field name="print_report_name">(object._get_report_base_filename())</field>
+        <field name="binding_model_id" ref="mpo_transport_request.model_transport_request"/>
+        <field name="paperformat_id" ref="mpo_transport_request.paperformat_transport_request_report"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

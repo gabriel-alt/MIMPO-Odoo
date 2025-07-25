@@ -1,0 +1,37 @@
+<odoo>
+    <record id="account_move_form_view" model="ir.ui.view">
+        <field name="name">account.move.form.mpo_travel_fleet</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@id='header_right_group']" position="inside">
+                <field name="trip_number_invoice_id"
+                    context="{'show_trip_number': '1'}"
+                    attrs="{'invisible': [('move_type', '!=', 'in_invoice')], 'readonly': [('state', '!=', 'draft')]}"
+                    options="{'no_create_edit': True, 'no_open': True}"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_in_invoice_bill_tree" model="ir.ui.view">
+        <field name="name">account.out.invoice.tree.mpo_travel_fleet</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_in_invoice_bill_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="trip_number_invoice_id" optional="hide" context="{'show_trip_number': '1'}"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">account.invoice.select.mpo_travel_fleet</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']" position="after">
+                <field name="trip_number_invoice_id"
+                    invisible="context.get('default_move_type') != 'in_invoice'"
+                    context="{'show_trip_number': '1'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

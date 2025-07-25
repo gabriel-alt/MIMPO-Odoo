@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aged_receivable_report_sir" model="account.report.column">
+        <field name="name">REF SIR</field>
+        <field name="expression_label">sir_id</field>
+        <field name="figure_type">none</field>
+        <field name="sortable" eval="True"/>
+        <field name="report_id" ref="account_reports.aged_receivable_report"/>
+    </record>
+    <record id="aged_receivable_line_sir_id" model="account.report.expression">
+        <field name="label">sir_id</field>
+        <field name="engine">custom</field>
+        <field name="formula">_report_custom_engine_aged_receivable</field>
+        <field name="subformula">sir_id</field>
+        <field name="auditable" eval="False"/>
+        <field name="report_line_id" ref="account_reports.aged_receivable_line"/>
+    </record>
+    <record id="aged_payable_report_sir" model="account.report.column">
+        <field name="name">REF SIR</field>
+        <field name="expression_label">sir_id</field>
+        <field name="figure_type">none</field>
+        <field name="sortable" eval="True"/>
+        <field name="report_id" ref="account_reports.aged_payable_report"/>
+    </record>
+    <record id="aged_payable_line_sir_id" model="account.report.expression">
+        <field name="label">sir_id</field>
+        <field name="engine">custom</field>
+        <field name="formula">_report_custom_engine_aged_payable</field>
+        <field name="subformula">sir_id</field>
+        <field name="auditable" eval="False"/>
+        <field name="report_line_id" ref="account_reports.aged_payable_line"/>
+    </record>
+</odoo>

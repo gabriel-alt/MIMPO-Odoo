@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+	<record id="sale_order_form_view" model="ir.ui.view">
+		<field name="name">view_order_form.mpo_travel_fleet</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//group[@name='sale_shipping']" position="inside">
+                <field name="trip_needed" attrs="{'readonly': [('state', 'in', ('done','cancel'))]}"/>
+				<field name="trip_number" attrs="{'invisible': [('trip_needed', '=', False)]}"/>
+			</xpath>
+			<xpath expr="//notebook" position="inside">
+                <page string="DATOS DE VIAJE" name="trip_page" attrs="{'invisible': [('trip_needed', '=', False)]}">
+					<group>
+						<group>
+							<field name="trip_vehicle_id"
+								domain="[('state_category', '=', 'available'), ('category_id.name', 'ilike', 'ctocam'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+							<field name="trip_driver_id"/>
+							<field name="trip_tow_ids"
+								domain="[('state_category', '=', 'available'), ('category_id.name', '=ilike', 'Caja Seca'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+							<field name="trip_origin_id"/>
+							<field name="trip_destiny_id"/>
+							<field name="trip_tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+							<field name="trip_dolly_id"
+								domain="[('state_category', '=', 'available'), ('category_id.name', '=ilike', 'Dolly'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+							<field name="trip_chassis_id"
+								domain="[('state_category', '=', 'available'), ('category_id.name', '=ilike', 'Chasis'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+							<field name="trip_chassis2_id"
+								domain="[('state_category', '=', 'available'), ('category_id.name', '=ilike', 'Chasis'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+						</group>
+						<group>
+							<field name="departure_date"/>
+							<field name="arrive_date"/>
+						</group>
+					</group>
+				</page>
+			</xpath>
+		</field>
+	</record>
+</odoo>

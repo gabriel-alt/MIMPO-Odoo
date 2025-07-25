@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+	<record id="data_contact_type_custom" model="contact.type">
+		<field name="name">Aduana</field>
+	</record>
+	<record id="data_contact_type_custom_broker" model="contact.type">
+		<field name="name">Corresponsal</field>
+	</record>
+
+</odoo>

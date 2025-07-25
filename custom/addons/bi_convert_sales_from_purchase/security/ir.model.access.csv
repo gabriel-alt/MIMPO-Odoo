@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_getpurchase_orderdata,access_getpurchase_orderdata,model_getpurchase_orderdata,base.group_user,1,1,1,1
+access_create_saleorder,access_create_saleorder,model_create_saleorder,base.group_user,1,1,1,1

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="cfdiv40_extended_carta_porte" inherit_id="l10n_mx_edi_40.cfdiv40">
+            <xpath expr="//*[name()='cfdi:Comprobante']" position="replace">
+                <t t-if="record.carta_porte">
+            <cfdi:Comprobante 
+                xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/CartaPorte20 http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd"
+                xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:cartaporte20="http://www.sat.gob.mx/CartaPorte20"
+                Version="4.0"
+                t-att-Fecha="cfdi_date"
+                t-att-Folio="format_string(folio_number, 40)"
+                t-att-Serie="format_string(serie_number, 25)"
+                Sello=""
+                t-att-FormaPago="payment_method_code"
+                t-att-NoCertificado="certificate_number"
+                t-att-Certificado="certificate_key"
+                t-att-CondicionesDePago="format_string(record.invoice_payment_term_id.name, 1000)"
+                t-att-SubTotal="format_float(total_price_subtotal_before_discount if tax_objected == '02' else record.amount_total + total_price_discount, currency_precision)"
+                t-att-Descuento="format_float(total_price_discount, currency_precision) if not record.currency_id.is_zero(total_price_discount) else None"
+                t-att-Moneda="currency_name"
+                t-att-TipoCambio="format_float(currency_conversion_rate, 6)"
+                t-att-Total="format_float(record.amount_total, currency_precision)"
+                t-att-TipoDeComprobante="document_type"
+                t-att-Exportacion="l10n_mx_edi_external_trade_type"
+                t-att-MetodoPago="payment_policy"
+                t-att-LugarExpedicion="issued_address.zip or supplier.zip">
+                <t t-if="origin_uuids">
+                    <cfdi:CfdiRelacionados t-att-TipoRelacion="origin_type">
+                        <t t-foreach="origin_uuids" t-as="uuid">
+                            <cfdi:CfdiRelacionado t-att-UUID="uuid"/>
+                        </t>
+                    </cfdi:CfdiRelacionados>
+                </t>
+                <cfdi:Emisor
+                    t-att-Rfc="supplier.vat"
+                    t-att-Nombre="format_string(supplier_name, 254)"
+                    t-att-RegimenFiscal="record.company_id.l10n_mx_edi_fiscal_regime"/>
+                <cfdi:Receptor
+                    t-att-Rfc="customer_rfc"
+                    t-att-Nombre="format_string(customer_name, 254)"
+                    t-att-ResidenciaFiscal="customer_fiscal_residence"
+                    t-att-DomicilioFiscalReceptor="customer.zip if customer.country_id.code == 'MX' else issued_address.zip or supplier.zip"
+                    t-att-RegimenFiscalReceptor="fiscal_regime"
+                    t-att-UsoCFDI="record.l10n_mx_edi_usage if record.l10n_mx_edi_usage != 'P01' else 'S01'"/>
+                <cfdi:Conceptos>
+                    <t t-foreach="invoice_line_vals_list" t-as="line_values">
+                        <t t-set="line" t-value="line_values['line']"/>
+                        <cfdi:Concepto
+                            t-att-ClaveProdServ="line.product_id.unspsc_code_id.code"
+                            t-att-NoIdentificacion="format_string(line.product_id.default_code)"
+                            t-att-Cantidad="format_float(line.quantity, 6)"
+                            t-att-ClaveUnidad="line.product_uom_id.unspsc_code_id.code"
+                            t-att-Unidad="format_string(line.product_uom_id.name, 20).upper() if line.product_uom_id.name else None"
+                            t-att-Descripcion="format_string(line.name, 1000)"
+                            t-att-ValorUnitario="format_float(line_values['gross_price_total_unit'] if tax_objected == '02' else (line.price_total + line_values['price_discount']) / line.quantity, currency_precision)"
+                            t-att-Importe="format_float(line_values['price_subtotal_before_discount'] if tax_objected == '02' else line.price_total + line_values['price_discount'], currency_precision)"
+                            t-att-ObjetoImp="tax_objected"
+                            t-att-Descuento="format_float(line_values['price_discount'], currency_precision) if not record.currency_id.is_zero(line_values['price_discount']) else None">
+                            <t t-set="tax_detail_transferred" t-value="tax_details_transferred['tax_details_per_record'][line]"/>
+                            <t t-set="tax_detail_withholding" t-value="tax_details_withholding['tax_details_per_record'][line]"/>
+                            <t t-if="tax_detail_transferred['tax_details'] or tax_detail_withholding['tax_details']">
+
+                                <cfdi:Impuestos t-if="tax_objected == '02'">
+                                    <t t-if="tax_detail_transferred['tax_details']">
+                                        <cfdi:Traslados>
+                                            <t t-foreach="tax_detail_transferred['tax_details'].values()" t-as="tax_detail_vals">
+                                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                                <cfdi:Traslado
+                                                    t-att-Base="format_float(tax_detail_vals['base_amount_currency'], currency_precision)"
+                                                    t-att-Importe="format_float(tax_detail_vals['tax_amount_currency'], 2) if tax.l10n_mx_tax_type != 'Exento' else False"
+                                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"
+                                                    t-att-TipoFactor="tax.l10n_mx_tax_type"
+                                                    t-att-TasaOCuota="format_float(tax_detail_vals['tax_rate_transferred'], 6)"
+                                                    />
+                                            </t>
+                                        </cfdi:Traslados>
+                                    </t>
+                                    <t t-if="tax_detail_withholding['tax_details']">
+                                        <cfdi:Retenciones>
+                                            <t t-foreach="tax_detail_withholding['tax_details'].values()" t-as="tax_detail_vals">
+                                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                                <cfdi:Retencion
+                                                    t-att-Base="format_float(tax_detail_vals['base_amount_currency'], currency_precision)"
+                                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"
+                                                    t-att-TipoFactor="tax.l10n_mx_tax_type"
+                                                    t-att-TasaOCuota="format_float(tax_detail_vals['tax_rate_withholding'], 6)"
+                                                    t-att-Importe="format_float(-1 * tax_detail_vals['tax_amount_currency'], 2)"/>
+                                            </t>
+                                        </cfdi:Retenciones>
+                                    </t>
+                                </cfdi:Impuestos>
+                            </t>
+                        </cfdi:Concepto>
+                    </t>
+                </cfdi:Conceptos>
+                <t t-if="tax_details_transferred['tax_details'] or tax_details_withholding['tax_details']">
+                    <cfdi:Impuestos t-if="tax_objected == '02'"
+                        t-att-TotalImpuestosTrasladados="format_float(tax_details_transferred['tax_amount_currency'], currency_precision) if has_tax_details_transferred_no_exento else None"
+                        t-att-TotalImpuestosRetenidos="format_float(-1 * tax_details_withholding['tax_amount_currency'], currency_precision) if has_tax_details_withholding_no_exento else None">
+                        <cfdi:Retenciones t-if="tax_details_withholding['tax_details']">
+                            <t t-foreach="tax_details_withholding['tax_details'].values()" t-as="tax_detail_vals">
+                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                <cfdi:Retencion
+                                    t-att-Importe="format_float(-1 * tax_detail_vals['tax_amount_currency'], currency_precision)"
+                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"/>
+                            </t>
+                        </cfdi:Retenciones>
+                        <cfdi:Traslados t-if="tax_details_transferred['tax_details']">
+                            <t t-foreach="tax_details_transferred['tax_details'].values()" t-as="tax_detail_vals">
+                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                <cfdi:Traslado
+                                    t-att-Base="format_float(tax_detail_vals['base_amount_currency'], currency_precision)"
+                                    t-att-Importe="format_float(tax_detail_vals['tax_amount_currency'], currency_precision) if tax.l10n_mx_tax_type != 'Exento' else False"
+                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"
+                                    t-att-TipoFactor="tax.l10n_mx_tax_type"
+                                    t-att-TasaOCuota="format_float(tax_detail_vals['tax_rate_transferred'], 6)"/>
+                            </t>
+                        </cfdi:Traslados>
+                    </cfdi:Impuestos>
+                </t>
+            </cfdi:Comprobante>
+                </t>
+                <t t-if="not record.carta_porte">
+           <cfdi:Comprobante 
+                xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd"
+                xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11"
+                Version="4.0"
+                t-att-Fecha="cfdi_date"
+                t-att-Folio="format_string(folio_number, 40)"
+                t-att-Serie="format_string(serie_number, 25)"
+                Sello=""
+                t-att-FormaPago="payment_method_code"
+                t-att-NoCertificado="certificate_number"
+                t-att-Certificado="certificate_key"
+                t-att-CondicionesDePago="format_string(record.invoice_payment_term_id.name, 1000)"
+                t-att-SubTotal="format_float(total_price_subtotal_before_discount if tax_objected == '02' else record.amount_total + total_price_discount, currency_precision)"
+                t-att-Descuento="format_float(total_price_discount, currency_precision) if not record.currency_id.is_zero(total_price_discount) else None"
+                t-att-Moneda="currency_name"
+                t-att-TipoCambio="format_float(currency_conversion_rate, 6)"
+                t-att-Total="format_float(record.amount_total, currency_precision)"
+                t-att-TipoDeComprobante="document_type"
+                t-att-Exportacion="l10n_mx_edi_external_trade_type"
+                t-att-MetodoPago="payment_policy"
+                t-att-LugarExpedicion="issued_address.zip or supplier.zip">
+                <t t-if="origin_uuids">
+                    <cfdi:CfdiRelacionados t-att-TipoRelacion="origin_type">
+                        <t t-foreach="origin_uuids" t-as="uuid">
+                            <cfdi:CfdiRelacionado t-att-UUID="uuid"/>
+                        </t>
+                    </cfdi:CfdiRelacionados>
+                </t>
+                <cfdi:Emisor
+                    t-att-Rfc="supplier.vat"
+                    t-att-Nombre="format_string(supplier_name, 254)"
+                    t-att-RegimenFiscal="record.company_id.l10n_mx_edi_fiscal_regime"/>
+                <cfdi:Receptor
+                    t-att-Rfc="customer_rfc"
+                    t-att-Nombre="format_string(customer_name, 254)"
+                    t-att-ResidenciaFiscal="customer_fiscal_residence"
+                    t-att-DomicilioFiscalReceptor="customer.zip if customer.country_id.code == 'MX' else issued_address.zip or supplier.zip"
+                    t-att-RegimenFiscalReceptor="fiscal_regime"
+                    t-att-UsoCFDI="record.l10n_mx_edi_usage if record.l10n_mx_edi_usage != 'P01' else 'S01'"/>
+                <cfdi:Conceptos>
+                    <t t-foreach="invoice_line_vals_list" t-as="line_values">
+                        <t t-set="line" t-value="line_values['line']"/>
+                        <cfdi:Concepto
+                            t-att-ClaveProdServ="line.product_id.unspsc_code_id.code"
+                            t-att-NoIdentificacion="format_string(line.product_id.default_code)"
+                            t-att-Cantidad="format_float(line.quantity, 6)"
+                            t-att-ClaveUnidad="line.product_uom_id.unspsc_code_id.code"
+                            t-att-Unidad="format_string(line.product_uom_id.name, 20).upper() if line.product_uom_id.name else None"
+                            t-att-Descripcion="format_string(line.name, 1000)"
+                            t-att-ValorUnitario="format_float(line_values['gross_price_total_unit'] if tax_objected == '02' else (line.price_total + line_values['price_discount']) / line.quantity, currency_precision)"
+                            t-att-Importe="format_float(line_values['price_subtotal_before_discount'] if tax_objected == '02' else line.price_total + line_values['price_discount'], currency_precision)"
+                            t-att-ObjetoImp="tax_objected"
+                            t-att-Descuento="format_float(line_values['price_discount'], currency_precision) if not record.currency_id.is_zero(line_values['price_discount']) else None">
+                            <t t-set="tax_detail_transferred" t-value="tax_details_transferred['tax_details_per_record'][line]"/>
+                            <t t-set="tax_detail_withholding" t-value="tax_details_withholding['tax_details_per_record'][line]"/>
+                            <t t-if="tax_detail_transferred['tax_details'] or tax_detail_withholding['tax_details']">
+
+                                <cfdi:Impuestos t-if="tax_objected == '02'">
+                                    <t t-if="tax_detail_transferred['tax_details']">
+                                        <cfdi:Traslados>
+                                            <t t-foreach="tax_detail_transferred['tax_details'].values()" t-as="tax_detail_vals">
+                                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                                <cfdi:Traslado
+                                                    t-att-Base="format_float(tax_detail_vals['base_amount_currency'], currency_precision)"
+                                                    t-att-Importe="format_float(tax_detail_vals['tax_amount_currency'], 2) if tax.l10n_mx_tax_type != 'Exento' else False"
+                                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"
+                                                    t-att-TipoFactor="tax.l10n_mx_tax_type"
+                                                    t-att-TasaOCuota="format_float(tax_detail_vals['tax_rate_transferred'], 6)"
+                                                    />
+                                            </t>
+                                        </cfdi:Traslados>
+                                    </t>
+                                    <t t-if="tax_detail_withholding['tax_details']">
+                                        <cfdi:Retenciones>
+                                            <t t-foreach="tax_detail_withholding['tax_details'].values()" t-as="tax_detail_vals">
+                                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                                <cfdi:Retencion
+                                                    t-att-Base="format_float(tax_detail_vals['base_amount_currency'], currency_precision)"
+                                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"
+                                                    t-att-TipoFactor="tax.l10n_mx_tax_type"
+                                                    t-att-TasaOCuota="format_float(tax_detail_vals['tax_rate_withholding'], 6)"
+                                                    t-att-Importe="format_float(-1 * tax_detail_vals['tax_amount_currency'], 2)"/>
+                                            </t>
+                                        </cfdi:Retenciones>
+                                    </t>
+                                </cfdi:Impuestos>
+                            </t>
+                        </cfdi:Concepto>
+                    </t>
+                </cfdi:Conceptos>
+                <t t-if="tax_details_transferred['tax_details'] or tax_details_withholding['tax_details']">
+                    <cfdi:Impuestos t-if="tax_objected == '02'"
+                        t-att-TotalImpuestosTrasladados="format_float(tax_details_transferred['tax_amount_currency'], currency_precision) if has_tax_details_transferred_no_exento else None"
+                        t-att-TotalImpuestosRetenidos="format_float(-1 * tax_details_withholding['tax_amount_currency'], currency_precision) if has_tax_details_withholding_no_exento else None">
+                        <cfdi:Retenciones t-if="tax_details_withholding['tax_details']">
+                            <t t-foreach="tax_details_withholding['tax_details'].values()" t-as="tax_detail_vals">
+                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                <cfdi:Retencion
+                                    t-att-Importe="format_float(-1 * tax_detail_vals['tax_amount_currency'], currency_precision)"
+                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"/>
+                            </t>
+                        </cfdi:Retenciones>
+                        <cfdi:Traslados t-if="tax_details_transferred['tax_details']">
+                            <t t-foreach="tax_details_transferred['tax_details'].values()" t-as="tax_detail_vals">
+                                <t t-set="tax" t-value="tax_detail_vals['tax']"/>
+                                <cfdi:Traslado
+                                    t-att-Base="format_float(tax_detail_vals['base_amount_currency'], currency_precision)"
+                                    t-att-Importe="format_float(tax_detail_vals['tax_amount_currency'], currency_precision) if tax.l10n_mx_tax_type != 'Exento' else False"
+                                    t-att-Impuesto="get_tax_cfdi_name(tax_detail_vals)"
+                                    t-att-TipoFactor="tax.l10n_mx_tax_type"
+                                    t-att-TasaOCuota="format_float(tax_detail_vals['tax_rate_transferred'], 6)"/>
+                            </t>
+                        </cfdi:Traslados>
+                    </cfdi:Impuestos>
+                </t>
+            </cfdi:Comprobante>
+                </t>
+        </xpath>
+
+            <!-- empieza complemento -->
+
+            <xpath expr="//*[name()='cfdi:Comprobante']" position="inside">
+                <t t-if="record.carta_porte">
+                    <cfdi:Complemento
+                            xmlns:cfdi="http://www.sat.gob.mx/cfd/4">
+                        <cartaporte20:CartaPorte
+                            xmlns:cartaporte20="http://www.sat.gob.mx/CartaPorte20"
+                            Version="2.0" 
+                            t-att-TranspInternac= "cartaporte20['TranspInternac']" 
+                            t-att-EntradaSalidaMerc= "cartaporte20['EntradaSalidaMerc']"
+                            t-att-ViaEntradaSalida= "cartaporte20['ViaEntradaSalida']"
+                            t-att-TotalDistRec= "cartaporte20['TotalDistRec']"
+                            t-att-PaisOrigenDestino= "cartaporte20['PaisOrigenDestino']">
+                            <cartaporte20:Ubicaciones>
+                               <t t-foreach="cartaporte20['Ubicaciones']" t-as="ubicacion">
+                                  <cartaporte20:Ubicacion
+                                        t-att-TipoUbicacion="ubicacion['TipoUbicacion']"
+                                        t-att-RFCRemitenteDestinatario="ubicacion['RFCRemitenteDestinatario']"
+                                        t-att-NombreRemitenteDestinatario="ubicacion['NombreRemitenteDestinatario']"
+                                        t-att-NumRegIdTrib="ubicacion['NumRegIdTrib'] or None"
+                                        t-att-ResidenciaFiscal="ubicacion['ResidenciaFiscal'] or None"
+                                        t-att-NumEstacion="ubicacion['NumEstacion'] or None"
+                                        t-att-NombreEstacion="ubicacion['NombreEstacion'] or None"
+                                        t-att-FechaHoraSalidaLlegada="ubicacion['FechaHoraSalidaLlegada']"
+                                        t-att-TipoEstacion="ubicacion['TipoEstacion'] or None"
+                                        t-att-DistanciaRecorrida="ubicacion['DistanciaRecorrida'] or None">
+                                     <t t-set="domicilio" t-value="ubicacion['Domicilio']"/>
+                                     <cartaporte20:Domicilio
+                                        t-att-Calle="domicilio['Calle']"
+                                        t-att-NumeroExterior="domicilio['NumeroExterior']"
+                                        t-att-NumeroInterior="domicilio['NumeroInterior'] or None"
+                                        t-att-Colonia="domicilio['Colonia']"
+                                        t-att-Municipio="domicilio['Municipio']"
+                                        t-att-Localidad="domicilio['Localidad']"
+                                        t-att-Estado="domicilio['Estado']"
+                                        t-att-Pais="domicilio['Pais']"
+                                        t-att-CodigoPostal="domicilio['CodigoPostal']"/>
+                                  </cartaporte20:Ubicacion>
+                               </t>
+                            </cartaporte20:Ubicaciones>
+
+                           <t t-set="mercancias" t-value="cartaporte20['Mercancias']"/>
+                            <cartaporte20:Mercancias
+                                    t-att-NumTotalMercancias="mercancias['NumTotalMercancias']" 
+                                    t-att-PesoBrutoTotal="mercancias['PesoBrutoTotal']"
+                                    t-att-UnidadPeso="mercancias['UnidadPeso']"
+                                    t-att-PesoNetoTotal="mercancias['PesoNetoTotal']"
+                                    t-att-CargoPorTasacion="mercancias['CargoPorTasacion'] or None">
+                                <t t-foreach="mercancias['mercancia']" t-as="mercancia">
+                                    <t t-set="atributos" t-value="mercancia['atributos']"/>
+                                    <cartaporte20:Mercancia 
+                                        t-att-BienesTransp="atributos['BienesTransp']"
+                                        t-att-ClaveSTCC="atributos['ClaveSTCC']"
+                                        t-att-Descripcion="atributos['Descripcion']"
+                                        t-att-Cantidad="atributos['Cantidad']"
+                                        t-att-ClaveUnidad="atributos['ClaveUnidad']"
+                                        t-att-Unidad="atributos['Unidad']"
+                                        t-att-Dimensiones="atributos['Dimensiones'] or None"
+                                        t-att-MaterialPeligroso="atributos['MaterialPeligroso'] or None"
+                                        t-att-CveMaterialPeligroso="atributos['CveMaterialPeligroso'] or None"
+                                        t-att-Embalaje="atributos['Embalaje'] or None"
+                                        t-att-DescripEmbalaje="atributos['DescripEmbalaje'] or None"
+                                        t-att-PesoEnKg="atributos['PesoEnKg']"
+                                        t-att-ValorMercancia="atributos['ValorMercancia']"
+                                        t-att-Moneda="atributos['Moneda'] if atributos['ValorMercancia'] else None"/>
+                                </t>
+                                <t t-if="record.tipo_transporte == '01'">
+                                        <t t-set="transporte" t-value="mercancias['Autotransporte']"/>
+                                        <cartaporte20:Autotransporte
+                                            t-att-PermSCT="transporte['PermSCT']"
+                                            t-att-NumPermisoSCT= "transporte['NumPermisoSCT']">
+                                            <t t-set="idvehicular" t-value="transporte['IdentificacionVehicular']"/>
+                                            <cartaporte20:IdentificacionVehicular
+                                                t-att-ConfigVehicular="idvehicular['ConfigVehicular']"
+                                                t-att-PlacaVM="idvehicular['PlacaVM']"
+                                                t-att-AnioModeloVM="idvehicular['AnioModeloVM']"/>
+                                            <t t-set="seguro" t-value="transporte['Seguros']"/>
+                                            <cartaporte20:Seguros
+                                                t-att-AseguraRespCivil="seguro['AseguraRespCivil']"
+                                                t-att-PolizaRespCivil="seguro['PolizaRespCivil']"
+                                                t-att-AseguraCarga="seguro['AseguraCarga']"
+                                                t-att-PolizaCarga="seguro['PolizaCarga']"
+                                                t-att-PrimaSeguro="seguro['PrimaSeguro']"/>
+                                            <t t-if="record.remolque_line_ids">
+                                               <cartaporte20:Remolques>
+                                                  <t t-foreach="transporte['Remolques']" t-as="remolque">
+                                                      <cartaporte20:Remolque
+                                                         t-att-SubTipoRem="remolque['SubTipoRem']"
+                                                         t-att-Placa="remolque['Placa']"/>
+                                                  </t>
+                                               </cartaporte20:Remolques>
+                                            </t>
+                                        </cartaporte20:Autotransporte>
+                                </t>
+                            </cartaporte20:Mercancias>
+
+                            <t t-set="figuras" t-value="cartaporte20['FiguraTransporte']"/>
+                            <cartaporte20:FiguraTransporte>
+                                <t t-foreach="figuras" t-as="figura">
+                                     <t t-set="tipofigura" t-value="figura['TiposFigura']"/>
+                                     <cartaporte20:TiposFigura
+                                                 t-att-TipoFigura="tipofigura['TipoFigura']"
+                                                 t-att-RFCFigura="tipofigura['RFCFigura']"
+                                                 t-att-NumLicencia="tipofigura['NumLicencia']"
+                                                 t-att-NombreFigura="tipofigura['NombreFigura']"
+                                                 t-att-NumRegIdTribFigura="tipofigura['NumRegIdTribFigura'] or None"
+                                                 t-att-ResidenciaFiscalFigura="tipofigura['ResidenciaFiscalFigura'] or None">
+                                                 <t t-set="partestransporte" t-value="figura['PartesTransporte']"/>
+                                                 <t t-foreach="partestransporte" t-as="parte">
+                                                     <cartaporte20:PartesTransporte
+                                                          t-att-ParteTransporte="parte['ParteTransporte']">
+                                                     </cartaporte20:PartesTransporte>
+                                                 </t>
+                                                 <t t-set="domicilio_ft" t-value="tipofigura['Domicilio']"/>
+                                                 <cartaporte20:Domicilio
+                                                     t-att-Calle="domicilio_ft['Calle']"
+                                                     t-att-NumeroExterior="domicilio_ft['NumeroExterior']"
+                                                     t-att-Colonia="domicilio_ft['Colonia']"
+                                                     t-att-Localidad="domicilio_ft['Localidad']"
+                                                     t-att-Municipio="domicilio_ft['Municipio']"
+                                                     t-att-Estado="domicilio_ft['Estado']"
+                                                     t-att-Pais="domicilio_ft['Pais']"
+                                                     t-att-CodigoPostal="domicilio_ft['CodigoPostal']"/>
+                                     </cartaporte20:TiposFigura>
+                                </t>
+                            </cartaporte20:FiguraTransporte>
+
+                       </cartaporte20:CartaPorte>
+                    </cfdi:Complemento>
+                </t>
+            </xpath>
+
+        </template>
+
+</odoo>

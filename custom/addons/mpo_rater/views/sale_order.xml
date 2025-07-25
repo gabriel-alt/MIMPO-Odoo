@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">view.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Campos SIR" name="sir">
+                    <group name="sir" colspan="2">
+                        <group>
+                            <field name="order_number"/>
+                            <field name="pedimento"/>
+                            <field name="pedimento_date"/>
+                            <field name="custom_house"/>
+                            <field name="ship"/>
+                            <!-- <field name="pedimento"/> -->
+                        </group>
+                        <group>
+                            <field name="pedimento_invoice"/>
+                            <field name="supplier"/>
+                            <field name="number_mark"/>
+                            <field name="ware"/>
+                            <field name="total_package"/>
+                            <field name="reception"/>
+                            <field name="total_weight" string="Peso (Kg)"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <!-- <field name="custom_house_id"/> -->
+                <field name="house_id"/>
+                <field name="operation_type" readonly="1" force_save="1"/>
+                <field name="custom_house_ref" invisible="1"/>
+                <field name="rate_id" />
+            </xpath>
+            <xpath expr="//button[@name='action_draft']" position="after">
+                <field name="rater_button" invisible="1"/>
+                <button name="rate_compute" 
+                type="object" string="Calcular tarifa"
+                attrs="{'invisible': ['|','|',('rate_id','=',False),('state', 'not in', ('draft','sent','sale')),('rater_button','=',False)]}"
+                context="{'sale_id': active_id}"/>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="currency_id" />
+                <field name="exchange_rate" attrs="{'invisible': [('same_currency','=',True)]}"/>
+                <field name="rate_currency_id" invisible="1"/>
+                <field name="same_currency" invisible="1"/>
+            </xpath>
+            <xpath expr="//group[@name='sale_header']" position="inside">
+                <group name="sir_taxes" colspan="4" string="Ref. SIR impuestos">
+                    <group name="sir_taxes_1">
+                        <field name="total_taxes"/>
+                        <field name="amount_dta"/>
+                        <field name="amount_adv"/>
+                        <field name="amount_ieps"/>
+                        <field name="amount_other"/>
+                    </group>
+                    <group name="sir_taxes_2">
+                        <field name="amount_iva"/>
+                        <field name="amount_insurance"/>
+                        <field name="amount_expense"/>
+                        <field name="amount_ded_other"/>
+                        <field name="total_inc"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">view.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="mpo_sir.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sir_id']" position="after">
+                <field name="sir_number" invisible="1"/>
+                <field name="order_number"/>
+                <field name="ref_document"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

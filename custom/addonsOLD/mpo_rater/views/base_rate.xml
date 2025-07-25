@@ -1,0 +1,125 @@
+<odoo>
+    <record model="ir.ui.view" id="base_rate_tree">
+      <field name="name">base.rate.tree</field>
+      <field name="model">base.rate</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="start_date"/>
+          <field name="end_date"/>
+          <field name="partner_ids"/>
+          <!-- <field name="partner_customs_ids"/> -->
+          <field name="custom_house_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="base_rate_form">
+      <field name="name">base.rate.form</field>
+      <field name="model">base.rate</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group name="header">
+              <group name="left">
+                <h1 colspan="2">
+                  <field name="name" placeholder='Nombre tarifa'/>
+                </h1>
+                <label for="start_date"/>
+                <field name="start_date" nolabel="1"/>
+                <label for="end_date"/>
+                <field name="end_date" nolabel="1"/>
+              </group>
+              <group name="right">
+                <field name="partner_ids" widget="many2many_tags"/>
+                <!-- <field name="partner_customs_ids" widget="many2many_tags"/> -->
+                <field name="custom_house_ids" widget="many2many_tags"/>
+              </group>
+            </group>
+            <notebook>
+              <page name="honorario" string="Honorario">
+                <group name="main">
+                  <group name="left" string="HONORARIOS IMPORTACIÓN">
+                    <field name="in_product_id_1"/>
+                    <field name="in_apply_on_1"/>
+                    <field name="in_currency_id_1"/>
+                    <field name="in_is_expense_1" attrs="{'invisible': [('in_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="in_percentage_amount_1" attrs="{'invisible': [('in_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="in_fixed_amount_1" attrs="{'invisible': [('in_apply_on_1', '!=', 'fixed')]}"/>
+                    <field name="in_container_amount_1" attrs="{'invisible': [('in_apply_on_1', '!=', 'container')]}"/>
+                    <field name="in_field_ids_1" widget="many2many_tags" attrs="{'invisible': [('in_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="in_min_amount_1" attrs="{'invisible': [('in_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="in_max_amount_1" attrs="{'invisible': [('in_apply_on_1', '!=', 'percentage')]}"/>
+                  </group>
+                  <group name="right" string="HONORARIOS EXPORTACIÓN">
+                    <field name="out_product_id_1"/>
+                    <field name="out_apply_on_1"/>
+                    <field name="out_currency_id_1"/>
+                    <field name="out_is_expense_1" attrs="{'invisible': [('out_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="out_percentage_amount_1" attrs="{'invisible': [('out_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="out_fixed_amount_1" attrs="{'invisible': [('out_apply_on_1', '!=', 'fixed')]}"/>
+                    <field name="out_container_amount_1" attrs="{'invisible': [('out_apply_on_1', '!=', 'container')]}"/>
+                    <field name="out_field_ids_1" widget="many2many_tags" attrs="{'invisible': [('out_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="out_min_amount_1" attrs="{'invisible': [('out_apply_on_1', '!=', 'percentage')]}"/>
+                    <field name="out_max_amount_1" attrs="{'invisible': [('out_apply_on_1', '!=', 'percentage')]}"/>
+                  </group>
+                </group>
+              </page>
+              <page name="complementario" string="Complementario">
+                <group name="main">
+                  <group name="left" string="HONORARIOS IMPORTACIÓN">
+                    <field name="in_product_id_2"/>
+                    <field name="in_apply_on_2"/>
+                    <field name="in_currency_id_2"/>
+                    <field name="in_is_expense_2" attrs="{'invisible': [('in_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="in_percentage_amount_2" attrs="{'invisible': [('in_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="in_fixed_amount_2" attrs="{'invisible': [('in_apply_on_2', '!=', 'fixed')]}"/>
+                    <field name="in_container_amount_2" attrs="{'invisible': [('in_apply_on_2', '!=', 'container')]}"/>
+                    <field name="in_field_ids_2" widget="many2many_tags" attrs="{'invisible': [('in_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="in_min_amount_2" attrs="{'invisible': [('in_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="in_max_amount_2" attrs="{'invisible': [('in_apply_on_2', '!=', 'percentage')]}"/>
+                  </group>
+                  <group name="right" string="HONORARIOS EXPORTACIÓN">
+                    <field name="out_product_id_2"/>
+                    <field name="out_apply_on_2"/>
+                    <field name="out_currency_id_2"/>
+                    <field name="out_is_expense_2" attrs="{'invisible': [('out_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="out_percentage_amount_2" attrs="{'invisible': [('out_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="out_fixed_amount_2" attrs="{'invisible': [('out_apply_on_2', '!=', 'fixed')]}"/>
+                    <field name="out_container_amount_2" attrs="{'invisible': [('out_apply_on_2', '!=', 'container')]}"/>
+                    <field name="out_field_ids_2" widget="many2many_tags" attrs="{'invisible': [('out_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="out_min_amount_2" attrs="{'invisible': [('out_apply_on_2', '!=', 'percentage')]}"/>
+                    <field name="out_max_amount_2" attrs="{'invisible': [('out_apply_on_2', '!=', 'percentage')]}"/>
+                  </group>
+                </group>
+              </page>
+              <page name="otro" string="Otros conceptos">
+                <group name="main" string="OTROS CONCEPTOS">
+                  <field name="other_rate_ids" context="{'default_base_rate_id': active_id}" nolabel="1" colspan="2">
+                    <tree editable="bottom">
+                      <field name="name"/>
+                      <field name="product_id"/>
+                      <field name="amount"/>
+                      <field name="currency_id"/>
+                      <field name="notes"/>
+                      <field name="base_rate_id" invisible="1"/>
+                    </tree>
+                  </field>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+      
+    <record id="action_base_rate" model="ir.actions.act_window">
+      <field name="name">Tarificador</field>
+      <field name="res_model">base.rate</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_base_rate" name="Tarificador"
+      sequence="115"
+      parent="account.menu_finance_receivables" action="action_base_rate"/>
+</odoo>

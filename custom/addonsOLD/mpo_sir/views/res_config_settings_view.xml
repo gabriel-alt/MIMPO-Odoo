@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="account_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">account_res_config_settings_view_form.mpo_sir</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='analytic']" position="after">
+             	<h2>SIR Reference</h2>
+                <div class="row mt16 o_settings_container" id="account_sir_reference">
+                    <div class="col-12 col-lg-6 o_setting_box" id="sir_analytic_plan">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <!-- <span class="o_form_label">Analytic Plan</span>
+                            <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." role="img"/>
+                            <div class="text-muted">
+                                Default Analytic Plan
+                            </div> -->
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="sir_analytic_plan_id" class="col-lg-3 o_light_label" string="Analytic Plan"/>
+                                    <field name="sir_analytic_plan_id" options="{'no_create_edit': True, 'no_open': True}" context="{'active_test': False}" domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

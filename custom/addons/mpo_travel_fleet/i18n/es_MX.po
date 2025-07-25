@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mpo_travel_fleet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-11 05:59+0000\n"
+"PO-Revision-Date: 2023-12-11 05:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields.selection,name:mpo_travel_fleet.selection__fleet_vehicle_state__state_category__assigned
+msgid "Assigned"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields.selection,name:mpo_travel_fleet.selection__fleet_vehicle_state__state_category__available
+msgid "Available"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_chassis_id
+msgid "Chassis 1"
+msgstr "Chasis 1"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_chassis2_id
+msgid "Chassis 2"
+msgstr "Chasis 2"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,help:mpo_travel_fleet.field_fleet_vehicle__state_id
+msgid "Current state of the vehicle"
+msgstr "Estado actual del vehículo"
+
+#. module: mpo_travel_fleet
+#: model_terms:ir.ui.view,arch_db:mpo_travel_fleet.sale_order_form_view
+msgid "DATOS DE VIAJE"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__arrive_date
+msgid "Date and time of Arrival"
+msgstr "Fecha y hora de Llegada"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__departure_date
+msgid "Date and time of Departure"
+msgstr "Fecha y hora de Salida"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_destiny_id
+msgid "Destination"
+msgstr "Destino"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_dolly_id
+msgid "Dolly"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,help:mpo_travel_fleet.field_sale_order__trip_driver_id
+msgid "Driver address of the vehicle"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_vehicle_id
+msgid "Economic"
+msgstr "Económico"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields.selection,name:mpo_travel_fleet.selection__fleet_vehicle_state__state_category__service
+msgid "In service"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model,name:mpo_travel_fleet.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_driver_id
+msgid "Operator"
+msgstr "Operador"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_origin_id
+msgid "Origen"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model,name:mpo_travel_fleet.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_fleet_vehicle__state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_fleet_vehicle__state_category
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_fleet_vehicle_state__state_category
+msgid "State Category"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_tow_ids
+msgid "Trailer"
+msgstr "Remolques"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields.selection,name:mpo_travel_fleet.selection__fleet_vehicle_state__state_category__traveling
+msgid "Traveling"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_needed
+msgid "Trip Needed"
+msgstr ""
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_account_bank_statement_line__trip_number_invoice_id
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_account_move__trip_number_invoice_id
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_account_payment__trip_number_invoice_id
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_number
+msgid "Trip Number"
+msgstr "Número de Viaje"
+
+#. module: mpo_travel_fleet
+#: model:ir.model,name:mpo_travel_fleet.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: mpo_travel_fleet
+#: model:ir.model,name:mpo_travel_fleet.model_fleet_vehicle_state
+msgid "Vehicle Status"
+msgstr "Estado del vehículo"
+
+#. module: mpo_travel_fleet
+#: model:ir.model.fields,field_description:mpo_travel_fleet.field_sale_order__trip_tag_ids
+msgid "Vehicle Tag"
+msgstr "Etiqueta de Vehículo"

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">view.move.form.mpo_down_payment_credit_note</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="mpo_sir.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='downpayment_invoice']" position="after">
+                <field name="down_payment_invoice_id"
+                    options="{'no_create': True, 'no_quick_create': True}"
+                    attrs="{'invisible': ['|', '|', ('partner_id', '=', False), ('downpayment_invoice', '=', True), ('move_type', 'not in', ['out_invoice'])]}"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="show_related_dp_invoice" invisible="1"/>
+                <button name="open_related_dp_invoices" class="oe_stat_button"
+                    icon="fa-pencil-square-o" type="object" string="Related Invoices"
+                    attrs="{'invisible': ['|', '|', ('move_type', 'not in', ['out_invoice', 'out_refund']), ('id', '=', False), ('show_related_dp_invoice', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

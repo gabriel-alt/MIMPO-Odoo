@@ -1,0 +1,11 @@
+Se debe copiar el archivo CartaPorte20.xslt a la carpeta /carpeta donde esta odoo/enterprise/addons/l10n_mx_edi/data/3.3/
+Se debe reemplazar el archivo cadenaoriginal.xslt en la carpeta /carpeta donde esta odoo/enterprise/addons/l10n_mx_edi/data/3.3/
+Se debe reemplazar el archivo cfdi.xml en la carpeta /carpeta donde esta odoo/enterprise/addons/l10n_mx_edi/data/3.3/
+
+*Opcional.
+Dependiendo del PAC se puede requerir editar la vista del XML para agregar la configuración de "Carta porte" (revisar imágenes de la ubicación). 
+Reemplazar la línea de la vista por la que se encuentra aquí:
+
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cce11="http://www.sat.gob.mx/ComercioExterior11" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd http://www.sat.gob.mx/CartaPorte20 http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd" Version="4.0" t-att-Fecha="cfdi_date" t-att-Folio="format_string(folio_number, 40)" t-att-Serie="format_string(serie_number, 25)" Sello="" t-att-FormaPago="payment_method_code" t-att-NoCertificado="certificate_number" t-att-Certificado="certificate_key" t-att-CondicionesDePago="format_string(record.invoice_payment_term_id.name, 1000)" t-att-SubTotal="format_float(total_amount_untaxed_wo_discount, currency_precision)" t-att-Descuento="format_float(total_amount_untaxed_discount, currency_precision) if total_amount_untaxed_discount else None" t-att-Moneda="currency_name" t-att-TipoCambio="format_float(currency_conversion_rate, 6)" t-att-Total="format_float(record.amount_total, currency_precision)" t-att-TipoDeComprobante="document_type" t-att-MetodoPago="payment_policy" t-att-LugarExpedicion="issued_address.zip or supplier.zip">
+
+Si requieren apoyo para su instalación o configuración lo podemos hacer mediante consultoría.
