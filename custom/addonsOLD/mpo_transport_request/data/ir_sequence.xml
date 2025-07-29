@@ -1,9 +1,0 @@
-<odoo noupdate="1">
-    <record id="seq_transport_request" model="ir.sequence">
-        <field name="name">Transport Request</field>
-        <field name="code">transport.request</field>
-        <field name="prefix">TP/</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
-</odoo>

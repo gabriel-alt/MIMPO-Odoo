@@ -1,0 +1,366 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_sale_timesheet
+# 
+# Translators:
+# Martin Trigaux, 2022
+# Daye Jeong, 2023
+# Wil Odoo, 2025
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-06 20:43+0000\n"
+"PO-Revision-Date: 2022-09-22 05:46+0000\n"
+"Last-Translator: Wil Odoo, 2025\n"
+"Language-Team: Korean (https://app.transifex.com/odoo/teams/41243/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: helpdesk_sale_timesheet
+#: model:helpdesk.sla,name:helpdesk_sale_timesheet.helpdesk_sla_4
+msgid "4 hours to finish"
+msgstr "완료까지 4시간"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "About us"
+msgstr "회사 소개"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "분석 라인"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"As a leading professional services firm,\n"
+"                                we know that success is all about the\n"
+"                                commitment we put on strong services."
+msgstr ""
+"최고의 전문 서비스 회사로서, \n"
+"                                성공이란 강력한 서비스를 약속하는 것임을 \n"
+"                                알고 있습니다."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_ticket_convert_wizard
+msgid "Convert Helpdesk Tickets to Tasks"
+msgstr "헬프데스크 티켓을 작업으로 전환"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_project_task_convert_wizard
+msgid "Convert Project Tasks to Tickets"
+msgstr "프로젝트 작업을 티켓으로 전환"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Date"
+msgstr "일자"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet
+msgid "Days"
+msgstr "일"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Days Spent"
+msgstr "소요 일자"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Days:"
+msgstr "일:"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Description"
+msgstr "설명"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_account_analytic_line__display_sol
+msgid "Display Sol"
+msgstr "Sol 표시"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Employee"
+msgstr "임직원"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"Great quotation templates will significantly\n"
+"                                <strong>boost your success rate</strong>. The\n"
+"                                first section is usually about your company,\n"
+"                                your references, your methodology or\n"
+"                                guarantees, your team, SLA, terms and conditions, etc."
+msgstr ""
+"훌륭한 견적 서식은 <strong>성공률을 크게 높여줍니다</strong>. \n"
+"                                 첫 번째 영역은 일반적으로 \n"
+"                                 회사, 참조, 방법론 또는 보증, \n"
+"                                 팀, SLA, 이용 약관 등에 관한 것입니다."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.product_template_form_view_invoice_policy_inherit_helpdesk
+msgid "Helpdesk"
+msgstr "고객센터"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_sla
+msgid "Helpdesk SLA Policies"
+msgstr "고객센터 SLA 정책"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_team
+msgid "Helpdesk Team"
+msgstr "고객센터 팀"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_ticket
+msgid "Helpdesk Ticket"
+msgstr "고객센터 티켓"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet
+msgid "Hours"
+msgstr "시간"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Hours Spent"
+msgstr "소요 시간"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Hours:"
+msgstr "시간:"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"If you edit a quotation from the 'Preview' of a quotation, you will\n"
+"                        update that quotation only. If you edit the quotation\n"
+"                        template (from the Configuration menu), all future quotations will\n"
+"                        use this modified template."
+msgstr ""
+"견적의 '미리보기'에서 견적을 편집하면 \n"
+"                        해당 견적만 갱신됩니다. \n"
+"                        환경 설정 메뉴에서 견적 서식을 편집하면 \n"
+"                        이후의 모든 견적에서 이 수정된 서식을 사용합니다."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Our Offer"
+msgstr "제안"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Our Quality"
+msgstr "품질"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Our Service"
+msgstr "서비스"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Price"
+msgstr "가격"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_product_template
+msgid "Product"
+msgstr "품목"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"Product quality is the foundation we\n"
+"                                stand on; we build it with a relentless\n"
+"                                focus on fabric, performance and craftsmanship."
+msgstr ""
+"제품 품질은 우리의 기반입니다. \n"
+"                                우리는 구조, 성능 및 장인 정신에 \n"
+"                                끊임없이 중점을 두고 그것을 구축합니다."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_team__project_id
+msgid "Project"
+msgstr "프로젝트"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_helpdesk_team__project_id
+msgid ""
+"Project to which the timesheets of this helpdesk team's tickets will be "
+"linked."
+msgstr "이 헬프데스크 팀 티켓의 작업 기록이 연결될 프로젝트입니다."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__project_sale_order_id
+msgid "Project's sale order"
+msgstr "프로젝트 판매 주문서"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__sale_order_id
+msgid "Ref. Sales Order"
+msgstr "판매 주문서 참조"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__use_helpdesk_sale_timesheet
+msgid "Reinvoicing Timesheet activated on Team"
+msgstr "팀에서 활성화된 작업 기록 재청구"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_sale_timesheet
+msgid "Remaining Days on SO"
+msgstr "판매 주문서의 잔여 일수"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Remaining Days on SO:"
+msgstr "판매 주문서의 잔여 일수:"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__remaining_hours_available
+msgid "Remaining Hours Available"
+msgstr "사용 가능한 잔여 시간"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__remaining_hours_so
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_sale_timesheet
+msgid "Remaining Hours on SO"
+msgstr "판매 주문서의 잔여 시간:"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Remaining Hours on SO:"
+msgstr "판매 주문서의 잔여 시간:"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_product_product__sla_id
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_product_template__sla_id
+msgid "SLA Policy"
+msgstr "SLA 정책"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_product_product__sla_id
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_product_template__sla_id
+msgid ""
+"SLA Policy that will automatically apply to the tickets linked to a sales "
+"order item containing this service."
+msgstr "이 서비스를 포함하는 판매 주문 항목과 연결된 티켓에 자동으로 적용되는 SLA 정책입니다."
+
+#. module: helpdesk_sale_timesheet
+#. odoo-python
+#: code:addons/helpdesk_sale_timesheet/controllers/portal.py:0
+#: code:addons/helpdesk_sale_timesheet/models/helpdesk.py:0
+#: model:ir.model,name:helpdesk_sale_timesheet.model_sale_order
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_sale_timesheet
+#, python-format
+msgid "Sales Order"
+msgstr "판매 주문"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__sale_line_id
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_search_inherit_helpdesk_sale_timesheet
+msgid "Sales Order Item"
+msgstr "판매 주문 항목"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_helpdesk_ticket__sale_line_id
+msgid ""
+"Sales Order Item to which the time spent on this ticket will be added in order to be invoiced to your customer.\n"
+"By default the last prepaid sales order item that has time remaining will be selected.\n"
+"Remove the sales order item in order to make this ticket non-billable.\n"
+"You can also change or remove the sales order item of each timesheet entry individually."
+msgstr ""
+"이 티켓에 소요된 시간을 추가하여 고객에게 청구서를 발행하기 위한 판매 주문 항목입니다.\n"
+"잔여 시간이 남아있는 가장 최근의 가장 최근의 선불 판매 주문 항목이 기본값으로 선택됩니다.\n"
+"이 티켓을 청구할 수 없도록 하려면 판매 주문 항목을 제거하십시오. \n"
+"각 작업 기록의 판매 주문 항목을 개별적으로 변경하거나 제거할 수도 있습니다."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_sla__sale_line_ids
+msgid "Sales Order Items"
+msgstr "판매 주문 항목"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_helpdesk_ticket__project_sale_order_id
+msgid "Sales order to which the project is linked."
+msgstr "프로젝트가 연결된 판매 주문."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet
+msgid "Spent"
+msgstr "소요"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"This is a <strong>sample quotation template</strong>. You should\n"
+"                                customize it to fit your own needs from the <i>Sales</i>\n"
+"                                application, using the menu: Configuration /\n"
+"                                Quotation Templates."
+msgstr ""
+"이것은 <strong>샘플 견적 서식</strong>입니다. \n"
+"                                 환경 설정 / 견적 서식 메뉴를 사용하여\n"
+"                         <i>판매</i> 응용 프로그램의 필요에 맞게 \n"
+"                                 사용자 정의해야 합니다."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_sale_order__ticket_count
+msgid "Ticket Count"
+msgstr "티켓 수"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.sale_order_form_inherit_helpdesk_sale
+msgid "Tickets"
+msgstr "티켓"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_search_inherit_helpdesk_sale_timesheet
+msgid "Tickets in Overtime"
+msgstr "연장된 티켓"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Timesheets"
+msgstr "작업 기록"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Total"
+msgstr "합계"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"We always ensure that our products are\n"
+"                                set at a fair price so that you will be\n"
+"                                happy to buy them."
+msgstr ""
+"당사는 항상 귀사가 기꺼이 구매할 수 있도록 \n"
+"                                당사 제품이 공정한 가격으로 책정되도록 \n"
+"                                보장합니다."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"You can <strong>set a description per product</strong>. Odoo will\n"
+"                        automatically create a quotation using the descriptions\n"
+"                        of all products in the proposal. The table of content\n"
+"                        on the left is generated automatically using the styles you\n"
+"                        used in your description (heading 1, heading 2, ...)"
+msgstr ""
+"<strong>제품별로 설명을 설정</strong>할 수 있습니다. \n"
+"                           Odoo는 제안서의 모든 제품에 대한 설명을 사용하여 \n"
+"                           견적을 자동으로 작성합니다. \n"
+"                           왼쪽의 목차는 설명에 사용한 스타일(heading 1, heading 2, ...)을 \n"
+"                           사용하여  자동으로 생성됩니다."

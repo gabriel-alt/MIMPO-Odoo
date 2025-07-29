@@ -1,0 +1,2926 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_es_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-13 13:25+0000\n"
+"PO-Revision-Date: 2025-02-13 13:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21110
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21110
+msgid "1. Capital escriturado"
+msgstr "1. Capital escriturado"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12310
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12310
+msgid "1. Clientes por ventas y prestaciones de servicios"
+msgstr "1. Clientes por ventas y prestaciones de servicios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12210
+msgid "1. Comerciales"
+msgstr "1. Comerciales"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11110
+msgid "1. Desarrollo"
+msgstr "1. Desarrollo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31210
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32310
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31220
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32320
+msgid "1. Deudas con entidades de crédito"
+msgstr "1. Deudas con entidades de crédito"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21110
+msgid "1. Dotacón fundacional/Fondo social"
+msgstr "1. Dotacón fundacional/Fondo social"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_1
+msgid "1. Importe neto de la cifra de negocios"
+msgstr "1. Importe neto de la cifra de negocios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11410
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11510
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12410
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12510
+msgid "1. Instrumentos de patrimonio"
+msgstr "1. Instrumentos de patrimonio"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21310
+msgid "1. Legal y estatutarias"
+msgstr "1.  Reservas legales y estatutarias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31110
+msgid "1. Obligaciones por prestaciones a largo plazo al personal"
+msgstr "1. Obligaciones por prestaciones a largo plazo al personal"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31210
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32310
+msgid "1. Obligaciones y otros valores negociables"
+msgstr "1. Obligaciones y otros valores negociables"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32510
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32510
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32510
+msgid "1. Proveedores"
+msgstr "1. Proveedores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11310
+msgid "1. Terrenos"
+msgstr "1. Terrenos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11210
+msgid "1. Terrenos y construcciones"
+msgstr "1. Terrenos y construcciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12710
+msgid "1. Tesorería"
+msgstr "1. Tesorería"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_10
+msgid "10. Excesos de provisiones"
+msgstr "10. Excesos de provisiones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_11
+msgid "11. Deterioro y resultado por enajenaciones del inmovilizado"
+msgstr "11. Deterioro y resultado por enajenaciones del inmovilizado"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_12
+msgid "12. Otros resultados"
+msgstr "12. Otros resultados"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_13
+msgid "13. Ingresos financieros"
+msgstr "13. Ingresos financieros"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_14
+msgid "14. Gastos financieros"
+msgstr "14. Gastos financieros"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_15
+msgid "15. Variación de valor razonable en instrumentos financieros"
+msgstr "15. Variación de valor razonable en instrumentos financieros"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_16
+msgid "16. Diferencias de cambio"
+msgstr "16. Diferencias de cambio"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_17
+msgid ""
+"17. Deterioro y resultado por enajenaciones de instrumentos financieros."
+msgstr ""
+"17. Deterioro y resultado por enajenaciones de instrumentos financieros."
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_18
+msgid "18. Impuestos sobre beneficios."
+msgstr "18. Impuestos sobre beneficios."
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21120
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21120
+msgid "2. (Capital no exigido)"
+msgstr "2. (Capital no exigido)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21120
+msgid "2. (Dotación fundacional no exigida/Fondo social no exigido)"
+msgstr "2. (Dotación fundacional no exigida/Fondo social no exigido)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12370
+msgid "2. Accionistas (socios) por desembolsos exigidos"
+msgstr "2. Accionistas (socios) por desembolsos exigidos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31220
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32220
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31230
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32330
+msgid "2. Acreedores por arrendamiento financiero"
+msgstr "2. Acreedores por arrendamiento financiero"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31120
+msgid "2. Actuaciones medioambientales"
+msgstr "2. Actuaciones medioambientales"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12320
+msgid "2. Clientes empresas del grupo y asociadas"
+msgstr "2. Clientes, empresas y entidades del grupo y asociadas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11120
+msgid "2. Concesiones"
+msgstr "2. Concesiones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11320
+msgid "2. Construcciones"
+msgstr "2. Construcciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11420
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12420
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12520
+msgid "2. Créditos a empresas"
+msgstr "2. Créditos a empresas y entidades"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11520
+msgid "2. Créditos a terceros"
+msgstr "2. Créditos a terceros"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31220
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32320
+msgid "2. Deudas con entidades de crédito"
+msgstr "2. Deudas con entidades de crédito"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11220
+msgid "2. Instalaciones técnicas y otro inmovilizado material"
+msgstr "2. Instalaciones técnicas y otro inmovilizado material"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12220
+msgid "2. Materias primas y otros aprovisionamientos"
+msgstr "2. Materias primas y otros aprovisionamientos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21320
+msgid "2. Otras reservas"
+msgstr "2. Otras reservas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32580
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32580
+msgid "2. Otros acreedores"
+msgstr "2. Otros acreedores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12720
+msgid "2. Otros activos líquidos equivalentes"
+msgstr "2. Otros activos líquidos equivalentes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32520
+msgid "2. Proveedores, empresas del grupo y asociadas"
+msgstr "2. Proveedores, empresas y entidades del grupo y asociadas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_2
+msgid ""
+"2. Variación de existencias de productos terminados y en curso de "
+"fabricación"
+msgstr ""
+"2. Variación de existencias de productos terminados y en curso de "
+"fabricación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31230
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32330
+msgid "3. Acreedores por arrendamiento financiero"
+msgstr "3. Acreedores por arrendamiento financiero"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32530
+msgid "3. Acreedores varios"
+msgstr "3. Acreedores varios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12330
+msgid "3. Deudores varios"
+msgstr "3. Deudores varios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11230
+msgid "3. Inmovilizado en curso y anticipos"
+msgstr "3. Inmovilizado en curso y anticipos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32230
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32390
+msgid "3. Otras deudas a corto plazo"
+msgstr "3. Otras deudas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31230
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31290
+msgid "3. Otras deudas a largo plazo"
+msgstr "3. Otras deudas a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12390
+msgid "3. Otros deudores"
+msgstr "3. Otros deudores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11130
+msgid "3. Patentes, licencias, marcas y similares"
+msgstr "3. Patentes, licencias, marcas y similares"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12230
+msgid "3. Productos en curso"
+msgstr "3. Productos en curso"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31130
+msgid "3. Provisiones por reestructuración"
+msgstr "3. Provisiones por reestructuración"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_3
+msgid "3. Trabajos realizados por la empresa para su activo."
+msgstr "3. Trabajos realizados por la empresa para su activo."
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11430
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11530
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12430
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12530
+msgid "3. Valores representativos de deuda"
+msgstr "3. Valores representativos de deuda"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_4
+msgid "4. Aprovisionamientos"
+msgstr "4. Aprovisionamientos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11440
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11540
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12440
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12540
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31240
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32340
+msgid "4. Derivados"
+msgstr "4. Derivados"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11140
+msgid "4. Fondo de comercio"
+msgstr "4. Fondo de comercio"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31140
+msgid "4. Otras provisiones"
+msgstr "4. Otras provisiones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12340
+msgid "4. Personal"
+msgstr "4. Personal"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32540
+msgid "4. Personal (remuneraciones pendientes de pago)"
+msgstr "4. Personal (remuneraciones pendientes de pago)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12240
+msgid "4. Productos terminados"
+msgstr "4. Productos terminados"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12350
+msgid "5. Activos por impuesto corriente"
+msgstr "5. Activos por impuesto corriente"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11150
+msgid "5. Aplicaciones informáticas"
+msgstr "5. Aplicaciones informáticas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11450
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11550
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12450
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12550
+msgid "5. Otros activos financieros"
+msgstr "5. Otros activos financieros"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_5
+msgid "5. Otros ingresos de explotación"
+msgstr "5. Otros ingresos de explotación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31250
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32350
+msgid "5. Otros pasivos financieros"
+msgstr "5. Otros pasivos financieros"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32550
+msgid "5. Pasivos por impuesto corriente"
+msgstr "5. Pasivos por impuesto corriente"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12250
+msgid "5. Subproductos, residuos y materiales recuperados"
+msgstr "5. Subproductos, residuos y materiales recuperados"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12260
+msgid "6. Anticipos a proveedores"
+msgstr "6. Anticipos a proveedores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_6
+msgid "6. Gastos de personal"
+msgstr "6. Gastos de personal"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11160
+msgid "6. Investigación"
+msgstr "6. Investigación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32560
+msgid "6. Otras deudas con las Administraciones Públicas"
+msgstr "6. Otras deudas con las Administraciones Públicas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11460
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11560
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12460
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12560
+msgid "6. Otras inversiones"
+msgstr "6. Otras inversiones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12360
+msgid "6. Otros créditos con las Administraciones Públicas"
+msgstr "6. Otros créditos con las Administraciones Públicas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12370
+msgid "7. Accionistas (socios) por desembolsos exigidos"
+msgstr "7. Accionistas (socios) por desembolsos exigidos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32570
+msgid "7. Anticipos de clientes"
+msgstr "7. Anticipos de clientes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11170
+msgid "7. Otro inmovilizado intangible"
+msgstr "7. Otro inmovilizado intangible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_7
+msgid "7. Otros gastos de explotación"
+msgstr "7. Otros gastos de explotación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_8
+msgid "8. Amortización del inmovilizado"
+msgstr "8. Amortización del inmovilizado"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_9
+msgid "9. Imputación de subvenciones de inmovilizado no financiero y otras"
+msgstr "9. Imputación de subvenciones de inmovilizado no financiero y otras"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "A - Acquisition"
+msgstr "A - Adquisición"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_347_operations_regular_bought
+msgid "A - Adquisiciones de bienes y servicios superiores a 3.005,06 €"
+msgstr "A - Adquisiciones de bienes y servicios superiores a 3005,06 €"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11000
+msgid "A) ACTIVO NO CORRIENTE"
+msgstr "A) ACTIVO NO CORRIENTE"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_20000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_20000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_20000
+msgid "A) PATRIMONIO NETO"
+msgstr "A) PATRIMONIO NETO"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_sum_a
+msgid ""
+"A) RESULTADO DE EXPLOTACIÓN (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + "
+"12)"
+msgstr ""
+"A) RESULTADO DE EXPLOTACIÓN (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + "
+"12)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21000
+msgid "A-1) Fondos propios"
+msgstr "A-1) Fondos propios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21500
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_22000
+msgid "A-2) Ajustes en patrimonio neto"
+msgstr "A-2) Ajustes en patrimonio neto"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_22000
+msgid "A-2) Ajustes por cambios de valor"
+msgstr "A-2) Ajustes por cambios de valor"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_22000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_23000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_23000
+msgid "A-3) Subvenciones, donaciones y legados recibidos"
+msgstr "A-3) Subvenciones, donaciones y legados recibidos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_acquisitions
+#: model:account.report.line,name:l10n_es_reports.mod_349_acquisitions_refunds
+msgid "A. Adquisiciones intracomunitarias sujetas"
+msgstr "A. Adquisiciones intracomunitarias sujetas"
+
+#. module: l10n_es_reports
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.invoice_form_inherit
+msgid "AEAT data"
+msgstr "Datos de la AEAT"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.financial_report_balance_sheet_assoc
+msgid "Abbreviated Balance Sheet for Associations"
+msgstr "Balance de situación abreviado para asociaciones"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_account_report
+msgid "Accounting Report"
+msgstr "Informe contable"
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_31600_account
+msgid "Acreedores comerciales no corrientes"
+msgstr "Acreedores comerciales no corrientes"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_manual_partner_data__operation_key__a
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_real_estates_vat__operation_key__a
+msgid "Adquisiciones de bienes y servicios"
+msgstr "Adquisiciones de bienes y servicios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_3
+msgid "Adquisiciones intracomunitarias de bienes y servicios"
+msgstr "Adquisiciones intracomunitarias de bienes y servicios"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_manual_partner_data__operation_class__local_negocio
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_real_estates_vat__operation_class__local_negocio
+msgid "Arrendamiento Local Negocio"
+msgstr "Arrendamiento Local Negocio"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod347_available
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_move__l10n_es_reports_mod347_available
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_payment__l10n_es_reports_mod347_available
+msgid "Available for Mod347"
+msgstr "Disponible para Mod347"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod349_available
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_move__l10n_es_reports_mod349_available
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_payment__l10n_es_reports_mod349_available
+msgid "Available for Mod349"
+msgstr "Disponible para Mod349"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_347_operations_insurance_bought
+#: model:account.report.line,name:l10n_es_reports.mod_347_operations_regular_sold
+msgid ""
+"B - Entregas de bienes y prestaciones de servicios superiores a 3.005,06 €"
+msgstr ""
+"B - Entregas de bienes y prestaciones de servicios superiores a 3005,06 €"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12000
+msgid "B) ACTIVO CORRIENTE"
+msgstr "B) ACTIVO CORRIENTE"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31000
+msgid "B) PASIVO NO CORRIENTE"
+msgstr "B) PASIVO NO CORRIENTE"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_sum_b
+msgid "B) RESULTADO FINANCIERO (13 + 14 + 15 + 16 + 17)"
+msgstr "B) RESULTADO FINANCIERO (13 + 14 + 15 + 16 + 17)"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid "BOE"
+msgstr "BOE"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_export_wizard
+msgid "BOE Export Wizard"
+msgstr "Asistente de exportación BOE"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_mod111_export_wizard
+msgid "BOE Export Wizard for (mod111)"
+msgstr "Asistente de exportación BOE para (mod111)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard
+msgid "BOE Export Wizard for (mod111, mod115 & 303)"
+msgstr "Asistente de exportación BOE para (mod111, mod115 y 303)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_mod115_export_wizard
+msgid "BOE Export Wizard for (mod115)"
+msgstr "Asistente de exportación BOE para (mod115)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_mod303_export_wizard
+msgid "BOE Export Wizard for (mod303)"
+msgstr "Asistente de exportación BOE para (mod303)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_mod347and349_export_wizard
+msgid "BOE Export Wizard for (mod347 & mod349)"
+msgstr "Asistente de exportación BOE para (mod349)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_mod347_export_wizard
+msgid "BOE Export Wizard for (mod347)"
+msgstr "Asistente de exportación BOE para (mod347)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_boe_mod349_export_wizard
+msgid "BOE Export Wizard for (mod349)"
+msgstr "Asistente de exportación BOE para (mod349)"
+
+#. module: l10n_es_reports
+#: model:account.report.column,name:l10n_es_reports.financial_report_balance_sheet_assoc_column
+#: model:account.report.column,name:l10n_es_reports.financial_report_balance_sheet_full_column
+#: model:account.report.column,name:l10n_es_reports.financial_report_balance_sheet_pymes_column
+#: model:account.report.column,name:l10n_es_reports.financial_report_es_profit_and_loss_column
+#: model:account.report.column,name:l10n_es_reports.mod_111_column
+#: model:account.report.column,name:l10n_es_reports.mod_115_column
+#: model:account.report.column,name:l10n_es_reports.mod_303_column
+#: model:account.report.column,name:l10n_es_reports.mod_347_column
+#: model:account.report.column,name:l10n_es_reports.mod_349_column
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__c
+msgid "C - Compensation Request"
+msgstr "C - Solicitud de indemnización"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "C - Replacements of goods"
+msgstr "C - Sustitución de bienes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32000
+msgid "C) PASIVO CORRIENTE"
+msgstr "C) PASIVO CORRIENTE"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_sum_c
+msgid "C) RESULTADO ANTES DE IMPUESTOS (A + B)"
+msgstr "C) RESULTADO ANTES DE IMPUESTOS (A + B)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_substitutions_refunds
+msgid "C. Rectificaciones por sustitución de bienes"
+msgstr "C. Rectificaciones por sustitución de bienes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_substitutions
+msgid "C. Sustitución de bienes"
+msgstr "C. Sustitución de bienes"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__calling_export_wizard_id
+msgid "Calling Export Wizard"
+msgstr "Llamada al asistente de exportación"
+
+#. module: l10n_es_reports
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod111_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod115_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod303_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod347_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod349_boe_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid "Cannot generate a BOE file for two different years"
+msgstr "No se puede generar un archivo BOE para dos años diferentes"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__cash_basis_mod347_data
+msgid "Cash Basis Data"
+msgstr "Datos de criterio de caja"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__company_partner_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__company_partner_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__company_partner_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__company_partner_id
+msgid "Company Partner"
+msgstr "Contacto de la compañía"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__complementary_declaration
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__complementary_declaration
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__complementary_declaration
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__complementary_declaration
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__complementary_declaration
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__complementary_declaration
+msgid "Complementary Declaration"
+msgstr "Declaración complementaria"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.financial_report_balance_sheet_full
+msgid "Complete Balance Sheet"
+msgstr "Balance de situación completo"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__contact_person_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__contact_person_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__contact_person_name
+msgid "Contact person"
+msgstr "Persona de contacto"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__contact_person_phone
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__contact_person_phone
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__contact_person_phone
+msgid "Contact phone number"
+msgstr "Número de teléfono de contacto"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_13
+msgid ""
+"Contraprestaciones por la cesión de derechos de imagen: ingresos a cuenta "
+"previstos en el artículo 92.8 de la Ley del Impuesto"
+msgstr ""
+"Contraprestaciones por la cesión de derechos de imagen: ingresos a cuenta "
+"previstos en el artículo 92.8 de la Ley del Impuesto"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__complementary_declaration
+msgid "Corrective Self-Assessment"
+msgstr "Autoliquidación rectificativa"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid ""
+"Currency %s, used for a threshold in this report, is either nonexistent or "
+"inactive. Please create or activate it."
+msgstr ""
+"La moneda %s, utilizada para un umbral en este informe, no existe o está "
+"inactiva. Créela o actívela."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__company_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__company_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__company_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__company_id
+msgid "Current Company"
+msgstr "Compañía actual"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__d
+msgid "D - Return"
+msgstr "D - Devolución"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "D - Returns of goods previously sent from the TAI"
+msgstr "D - Devoluciones de bienes previamente enviados desde el TAI"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_sum_d
+msgid "D) RESULTADO DEL EJERCICIO (C + 18)"
+msgstr "D) RESULTADO DEL EJERCICIO (C + 18)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_returns_goods_consignment
+msgid "D. Devoluciones de mercancías previamente enviadas desde el TAI"
+msgstr "D. Devoluciones de bienes previamente enviados desde el TAI"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_returns_goods_consignment_refunds
+msgid ""
+"D. Rectificaciones de devoluciones de mercancías previamente enviadas desde "
+"el TAI"
+msgstr ""
+"D. Rectificaciones de devoluciones de bienes previamente enviados desdeel "
+"TAI"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__declaration_type
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__declaration_type
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__declaration_type
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type
+msgid "Declaration Type"
+msgstr "Tipo de declaración"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod347_invoice_type
+#: model:ir.model.fields,help:l10n_es_reports.field_account_move__l10n_es_reports_mod347_invoice_type
+#: model:ir.model.fields,help:l10n_es_reports.field_account_payment__l10n_es_reports_mod347_invoice_type
+msgid "Defines the category into which this invoice falls for mod 347 report."
+msgstr ""
+"Define la categoría en la que se incluye esta factura para el informe mod "
+"347."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod349_invoice_type
+#: model:ir.model.fields,help:l10n_es_reports.field_account_move__l10n_es_reports_mod349_invoice_type
+#: model:ir.model.fields,help:l10n_es_reports.field_account_payment__l10n_es_reports_mod349_invoice_type
+msgid "Defines the category into which this invoice falls for mod 349 report"
+msgstr ""
+"Define la categoría en la que se incluye esta factura para el informe mod "
+"349."
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_11700_account
+msgid "Deudores comerciales no corrientes"
+msgstr "Deudores comerciales no corrientes"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__partner_bank_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__partner_bank_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__partner_bank_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__partner_bank_id
+msgid "Direct Debit Account"
+msgstr "Cuenta de domiciliación bancaria"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "E - Supply"
+msgstr "E - Suministro"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_supplies
+msgid "E. Entregas intracomunitarias"
+msgstr "E. Entregas intracomunitarias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_supplies_refunds
+msgid "E. Entregas intracomunitarias exentas"
+msgstr "E. Entregas intracomunitarias exentas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_14
+msgid "En adquisiciones intracomunitarias de bienes de inversión"
+msgstr "En adquisiciones intracomunitarias de bienes de inversión"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_13
+msgid "En adquisiciones intracomunitarias de bienes y servicios corrientes"
+msgstr "En adquisiciones intracomunitarias de bienes y servicios corrientes"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_manual_partner_data__operation_key__b
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_real_estates_vat__operation_key__b
+msgid "Entregas de bienes y prestaciones de servicios"
+msgstr "Entregas de bienes y prestaciones de servicios"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__exempted_from_mod_390_available
+msgid "Exempted From Mod 390 Available"
+msgstr "Exento del Mod 390 disponible"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__exempted_from_mod_390
+msgid "Exempted From Modelo 390"
+msgstr "Exento del Mod 390"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_account_reports_export_wizard_format
+msgid "Export format for accounting's reports"
+msgstr "Formato de exportación para informes contables"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_account_reports_export_wizard
+msgid "Export wizard for accounting's reports"
+msgstr "Asistente de exportación para informes contables"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_invoices_title
+msgid "Facturas"
+msgstr "Facturas"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111_export_wizard__declaration_type__g
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__declaration_type__g
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod115_export_wizard__declaration_type__g
+msgid "G - Income to enter on CCT"
+msgstr "G - Ingresos a ingresar en el sistema CCT"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__g
+msgid "G - Tributaria Current Account - Income"
+msgstr "G - Cuenta corriente tributaria - Ingresos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_10
+msgid ""
+"Ganancias patrimoniales derivadas de los aprovechamientos forestales de los "
+"vecinos en montes públicos"
+msgstr ""
+"Ganancias patrimoniales derivadas de los aprovechamientos forestales de los "
+"vecinos en montes públicos"
+
+#. module: l10n_es_reports
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod111_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod115_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod303_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod347_boe_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_es_reports.mod349_boe_wizard
+msgid "Generate BOE"
+msgstr "Generar BOE"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "H - Supply without taxes delivered by a legal representative"
+msgstr "H - Suministro sin impuestos entregado por un representante legal"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_supplies_without_taxes_legal_representative
+#: model:account.report.line,name:l10n_es_reports.mod_349_supplies_without_taxes_legal_representative_refunds
+msgid ""
+"H. Entregas intracomunitarias de bienes posteriores a una importación exenta"
+" efectuadas por el representante fiscal"
+msgstr ""
+"H. Entregas intracomunitarias de bienes posteriores a una importación exenta"
+" efectuadas por el representante fiscal"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111_export_wizard__declaration_type__i
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__declaration_type__i
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod115_export_wizard__declaration_type__i
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__i
+msgid "I - Income"
+msgstr "I - Ingreso"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "I - Services acquisition"
+msgstr "I - Adquisición de servicios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_22100
+msgid "I. Activos financieros disponibles para la venta"
+msgstr "I. Activos financieros disponibles para la venta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12100
+msgid "I. Activos no corrientes mantenidos para la venta"
+msgstr "I. Activos no corrientes mantenidos para la venta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_services_acquired
+#: model:account.report.line,name:l10n_es_reports.mod_349_services_acquired_refunds
+msgid "I. Adquisiciones intracomunitarias de servicios"
+msgstr "I. Adquisiciones intracomunitarias de servicios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21100
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21100
+msgid "I. Capital"
+msgstr "I. Capital"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21100
+msgid "I. Dotación fundacional/Fondo social"
+msgstr "I. Dotación fundacional/Fondo social"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12100
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12200
+msgid "I. Existencias"
+msgstr "I. Existencias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11100
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11100
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11100
+msgid "I. Inmovilizado intangible"
+msgstr "I. Inmovilizado intangible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32100
+msgid ""
+"I. Pasivos vinculados con activos no corrientes mantenidos para la venta"
+msgstr ""
+"I. Pasivos vinculados con activos no corrientes mantenidos para la venta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32100
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32200
+msgid "I. Provisiones a corto plazo"
+msgstr "I. Provisiones a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31100
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31100
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31100
+msgid "I. Provisiones a largo plazo"
+msgstr "I. Provisiones a largo plazo"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11200
+msgid "II. Bienes del Patrimonio Histórico"
+msgstr "II. Bienes del Patrimonio Histórico"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32200
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32300
+msgid "II. Deudas a corto plazo"
+msgstr "II. Deudas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31200
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31200
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31200
+msgid "II. Deudas a largo plazo"
+msgstr "II. Deudas a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12300
+msgid "II. Deudores comerciales y otras cuentas a cobrar"
+msgstr "II. Deudores comerciales y otras cuentas a cobrar"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12200
+msgid "II. Existencias"
+msgstr "II. Existencias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11200
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11200
+msgid "II. Inmovilizado material"
+msgstr "II. Inmovilizado material"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_22200
+msgid "II. Operaciones de cobertura"
+msgstr "II. Operaciones de cobertura"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21200
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21200
+msgid "II. Prima de emisión"
+msgstr "II. Prima de emisión"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32200
+msgid "II. Provisiones a corto plazo"
+msgstr "II. Provisiones a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21200
+msgid "II. Reservas"
+msgstr "II. Reservas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12200
+msgid "II. Usuarios y otros deudores de la actividad propia"
+msgstr "II. Usuarios y otros deudores de la actividad propia"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21250
+msgid "III. (Acciones y participaciones en patrimonio propias)"
+msgstr "III. (Acciones y participaciones en patrimonio propias)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_22300
+msgid ""
+"III. Activos no corrientes y pasivos vinculados, mantenidos para la venta"
+msgstr ""
+"III. Pasivos vinculados con activos no corrientes mantenidos para la venta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32300
+msgid "III. Deudas a corto plazo"
+msgstr "III. Deudas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32400
+msgid "III. Deudas con empresas del grupo y asociadas a corto plazo"
+msgstr ""
+"III. Deudas con empresas y entidades del grupo y asociadas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31300
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31300
+msgid "III. Deudas con empresas del grupo y asociadas a largo plazo"
+msgstr ""
+"III. Deudas con empresas y entidades del grupo y asociadas a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32300
+msgid "III. Deudas con entidades del grupo y asociadas a corto plazo"
+msgstr ""
+"III. Deudas con empresas y entidades del grupo y asociadas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31300
+msgid "III. Deudas con entidades del grupo y asociadas a largo plazo"
+msgstr ""
+"III. Deudas con empresas y entidades del grupo y asociadas a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12300
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12300
+msgid "III. Deudores comerciales y otras cuentas a cobrar"
+msgstr "III. Deudores comerciales y otras cuentas a cobrar"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11300
+msgid "III. Inmovilizado material"
+msgstr "III. Inmovilizado material"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12400
+msgid "III. Inversiones en empresas del grupo y asociadas a corto plazo"
+msgstr ""
+"III. Inversiones en empresas y entidades del grupo y asociadas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11300
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11300
+msgid "III. Inversiones inmobiliarias"
+msgstr "III. Inversiones inmobiliarias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21300
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21300
+msgid "III. Reservas"
+msgstr "III. Reservas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21400
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21400
+msgid "IV. (Acciones y participaciones en patrimonio propias)"
+msgstr "IV. (Acciones y participaciones en patrimonio propias)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32500
+msgid "IV. Acreedores comerciales y otras cuentas a pagar"
+msgstr "IV. Acreedores comerciales y otras cuentas a pagar"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32400
+msgid "IV. Beneficiarios-Acreedores"
+msgstr "IV. Beneficiarios-Acreedores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32400
+msgid "IV. Deudas con empresas del grupo y asociadas a corto plazo"
+msgstr ""
+"IV. Deudas con empresas y entidades del grupo y asociadas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_22400
+msgid "IV. Diferencia de conversión"
+msgstr "IV. Diferencia de conversión"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21300
+msgid "IV. Excedentes de ejercicios anteriores"
+msgstr "IV. Excedentes de ejercicios anteriores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12400
+msgid "IV. Inversiones en empresas del grupo y asociadas a corto plazo"
+msgstr ""
+"IV. Inversiones en empresas y entidades del grupo y asociadas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11400
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11400
+msgid "IV. Inversiones en empresas del grupo y asociadas a largo plazo"
+msgstr ""
+"IV. Inversiones en empresas y entidades del grupo y asociadas a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12400
+msgid "IV. Inversiones en entidades del grupo y asociadas a corto plazo"
+msgstr ""
+"IV. Inversiones en empresas y entidades del grupo y asociadas a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12500
+msgid "IV. Inversiones financieras a corto plazo"
+msgstr "IV. Inversiones financieras a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11400
+msgid "IV. Inversiones inmobiliarias"
+msgstr "IV. Inversiones inmobiliarias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31400
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31400
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31400
+msgid "IV. Pasivos por impuesto diferido"
+msgstr "IV. Pasivos por impuesto diferido"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_2
+msgid "IVA Devengado"
+msgstr "IVA devengado"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_8
+msgid "IVA deducible"
+msgstr "IVA deducible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21900
+msgid "IX. Otros instrumentos de patrimonio neto"
+msgstr "IX. Otros instrumentos de patrimonio neto"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_statistics_invoices_total_amount
+msgid "Importe de las operaciones intracomunitarias"
+msgstr "Importe de las operaciones intracomunitarias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_statistics_refunds_total_amount
+msgid "Importe de las operaciones intracomunitarias con rectificaciones"
+msgstr "Importe de las operaciones intracomunitarias con rectificaciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_3
+msgid "Importe de las retenciones"
+msgstr "Importe de las retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_19
+msgid ""
+"Importes de las adquisiciones de bienes y servicios a las que sea de "
+"aplicación o afecte el régimen especial del criterio de caja"
+msgstr ""
+"Importes de las adquisiciones de bienes y servicios a las que sea de "
+"aplicación o afecte el régimen especial del criterio de caja"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_17
+msgid ""
+"Importes de las entregas de bienes y prestaciones de servicios a las que "
+"habiéndoles sido aplicado el régimen especial del criterio de caja hubieran "
+"resultado devengadas conforme a la regla general de devengo contenida en el "
+"art. 75 LIVA"
+msgstr ""
+"Importes de las entregas de bienes y prestaciones de servicios a las que "
+"habiéndoles sido aplicado el régimen especial del criterio de caja hubieran "
+"resultado devengadas conforme a la regla general de devengo contenida en el "
+"art. 75 LIVA"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__monthly_return
+msgid "In Monthly Return Register"
+msgstr "En el registro de devolución mensual"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_16
+msgid "Información adicional"
+msgstr "Información adicional"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__account_move__l10n_es_reports_mod347_invoice_type__insurance
+msgid "Insurance operation"
+msgstr "Operación de seguro"
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_12440_account
+msgid ""
+"Inversiones en empresas del grupo y asociadas a corto plazo - Derivados"
+msgstr ""
+"Inversiones en empresas y entidades del grupo y asociadas a corto plazo - "
+"Derivados"
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_12460_account
+msgid ""
+"Inversiones en empresas del grupo y asociadas a corto plazo - Otras "
+"inversiones"
+msgstr ""
+"Inversiones en empresas y entidades del grupo y asociadas a corto plazo - "
+"Otras"
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_11440_account
+msgid ""
+"Inversiones en empresas del grupo y asociadas a largo plazo - Derivados"
+msgstr ""
+"Inversiones en empresas y entidades del grupo y asociadas a largo plazo - "
+"Derivados"
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_11460_account
+msgid ""
+"Inversiones en empresas del grupo y asociadas a largo plazo - Otras "
+"inversiones"
+msgstr ""
+"Inversiones en empresas y entidades del grupo y asociadas a largo plazo - "
+"Otras"
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_11450_account
+msgid ""
+"Inversiones en empresas del grupo y asociadas a largo plazo - Otros activos "
+"financieros"
+msgstr ""
+"Inversiones en empresas y entidades del grupo y asociadas a largo plazo - "
+"Otros activos"
+
+#. module: l10n_es_reports
+#: model:account.account.tag,name:l10n_es_reports.balance_sheet_12560_account
+msgid "Inversiones financieras a corto plazo - Otras inversiones"
+msgstr "Inversiones financieras a corto plazo - Otras inversiones"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_reports_export_wizard__l10n_es_reports_boe_wizard_id
+msgid "L10N Es Reports Boe Wizard"
+msgstr "L10N Es Asistente de informes BOE"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_reports_export_wizard__l10n_es_reports_boe_wizard_model
+msgid "L10N Es Reports Boe Wizard Model"
+msgstr "L10N Es Modelo de asistente de informes BOE"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard____last_update
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "M - Supply without taxes"
+msgstr "M - Suministro sin impuestos"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_supplies_without_taxes
+#: model:account.report.line,name:l10n_es_reports.mod_349_supplies_without_taxes_refunds
+msgid ""
+"M. Entregas intracomunitarias de bienes posteriores a una importación exenta"
+msgstr ""
+"M. Entregas intracomunitarias de bienes posteriores a una importación exenta"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__cash_basis_mod347_data
+msgid ""
+"Manual entries containing the amounts perceived for the partners with cash "
+"basis criterion during this year. Leave empty for partners for which this "
+"criterion does not apply."
+msgstr ""
+"Entradas manuales que contienen los importes percibidos por los contactos "
+"con criterio de caja durante este año. Déjelo vacío para los contactos a los"
+" que no se aplica este criterio."
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_reports_aeat_mod347_manual_partner_data
+msgid "Manually Entered Data for Mod 347 Report"
+msgstr "Datos introducidos manualmente para el informe Mod 347"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_5
+msgid "Modificación bases y cuotas"
+msgstr "Modificación bases y cuotas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_7
+msgid "Modificación bases y cuotas del recargo de equivalencia"
+msgstr "Modificación bases y cuotas del recargo de equivalencia"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__n
+msgid "N - No Activity / Zero Result"
+msgstr "N - Sin actividad / Resultado cero"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111_export_wizard__declaration_type__n
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__declaration_type__n
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod115_export_wizard__declaration_type__n
+msgid "N - To return"
+msgstr "N - A devolver"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__contact_person_name
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__contact_person_name
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__contact_person_name
+msgid "Name of the contact person fot this BOE file's submission"
+msgstr ""
+"Nombre de la persona de contacto para la presentación de este archivo BOE"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid "No TIN set for partner %s (id %d). Please define one."
+msgstr ""
+"No se ha definido un NIF para el partner %(name)s (id %(id)d). Defina uno."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__previous_report_number
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__previous_report_number
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__previous_report_number
+msgid ""
+"Number of the previous report, corrected or replaced by this one, if any"
+msgstr ""
+"Número del informe anterior, corregido o sustituido por éste, en su caso"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__previous_report_number
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__previous_report_number
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__previous_report_number
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__previous_report_number
+msgid "Number of the report previously submitted"
+msgstr "Número del informe presentado anteriormente"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_statistics_invoices_partners_count
+msgid "Número total de operadores intracomunitarios"
+msgstr "Número total de operadores intracomunitarios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_statistics_refunds_partners_count
+msgid "Número total de operadores intracomunitarios con rectificaciones"
+msgstr "Número total de operadores intracomunitarios con rectificaciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_347_statistics_operations_count
+msgid "Número total de personas y entitades"
+msgstr "Número total de personas y entidades"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_347_operations_insurance_title
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_manual_partner_data__operation_class__seguros
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_real_estates_vat__operation_class__seguros
+msgid "Operaciones de Seguros"
+msgstr "Operaciones de seguros"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__operation_class
+msgid "Operation Class"
+msgstr "Clase de operación"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__operation_key
+msgid "Operation Key"
+msgstr "Clave de operación"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__calling_export_wizard_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__calling_export_wizard_id
+msgid ""
+"Optional field containing the report export wizard calling this BOE wizard, "
+"if there is one."
+msgstr ""
+"Campo opcional que contiene el asistente de exportación de informes que "
+"llama a este asistente BOE, si existe"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_347_operations_regular_title
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_manual_partner_data__operation_class__otras
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_mod347_real_estates_vat__operation_class__otras
+msgid "Otras operaciones"
+msgstr "Otras operaciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_4
+msgid ""
+"Otras operaciones con inversión del sujeto pasivo (excepto adq. intracom.)"
+msgstr ""
+"Otras operaciones con inversión del sujeto pasivo (excepto adq. intracom.)"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.financial_report_balance_sheet_pymes
+msgid "PYMES Balance Sheet"
+msgstr "Balance de situación- PYME"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__parent_wizard_id
+msgid "Parent Wizard"
+msgstr "Asistente principal"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid ""
+"Partner %s (id %s) is located in Spain but does not have any province. "
+"Please set one."
+msgstr ""
+"El contacto %s (id %s) se encuentra en España, pero no tiene ninguna "
+"provincia. Establezca una."
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid ""
+"Partner with %s (id %d) is not associated to any Spanish province, and "
+"should hence have a country code. For this, fill in its 'country' field."
+msgstr ""
+"El contacto %s (id %d) no está asociado a ninguna provincia española y "
+"debería tener un código de país. Para ello, rellene el campo 'país'."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_mod347_manual_partner_data__perceived_amount
+msgid "Perceived Amount"
+msgstr "Importe percibido"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_11
+msgid "Percepciones dinerarias"
+msgstr "Percepciones dinerarias"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_12
+msgid "Percepciones en especie"
+msgstr "Percepciones en especie"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__contact_person_phone
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__contact_person_phone
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__contact_person_phone
+msgid "Phone number where to join the contact person"
+msgstr "Número de teléfono de la persona de contacto"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/wizard/aeat_boe_export_wizards.py:0
+#, python-format
+msgid "Please first assign a BIC number to the bank related to this account."
+msgstr "Asigne primero un número BIC al banco relacionado con esta cuenta."
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/wizard/aeat_boe_export_wizards.py:0
+#, python-format
+msgid "Please first set the TIN of your company."
+msgstr "Introduzca primero el NIF de su compañía"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "Please select a Spanish invoice type for this invoice."
+msgstr "Seleccione un tipo de factura española para esta factura."
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/wizard/aeat_boe_export_wizards.py:0
+#, python-format
+msgid "Please select an IBAN account."
+msgstr "Seleccione una cuenta IBAN."
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_11
+msgid "Por cuotas soportadas en las importaciones de bienes corrientes"
+msgstr "Por cuotas soportadas en las importaciones de bienes corrientes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_12
+msgid "Por cuotas soportadas en las importaciones de bienes de inversión"
+msgstr "Por cuotas soportadas en las importaciones de bienes de inversión"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_10
+msgid ""
+"Por cuotas soportadas en operaciones interiores con bienes de inversión"
+msgstr ""
+"Por cuotas soportadas en operaciones interiores con bienes de inversión"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_9
+msgid "Por cuotas soportadas en operaciones interiores corrientes"
+msgstr "Por cuotas soportadas en operaciones interiores corrientes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_8
+msgid "Premios dinerarios"
+msgstr "Premios dinerarios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_9
+msgid "Premios en especie"
+msgstr "Premios en especie"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_7
+msgid "Premios por la participación en juegos"
+msgstr "Premios por la participación en juegos"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__previous_report_number
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__previous_report_number
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__previous_report_number
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__previous_report_number
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__previous_report_number
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__previous_report_number
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__previous_report_number
+msgid "Previous Report Number"
+msgstr "Número del informe anterior"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid "Print BOE"
+msgstr "Imprimir BOE"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.financial_report_es_profit_and_loss
+msgid "Pérdidas y Ganancias"
+msgstr "Pérdidas y Ganancias"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "R - Transfers of goods made under consignment sales agreements"
+msgstr ""
+"R - Transferencias de bienes efectuadas en el marco de acuerdos de bienes en"
+" consigna"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_consignment_sales_agreements_refunds
+msgid ""
+"R. Rectificaciones de las transferencias de bienes realizadas en virtud de "
+"contratos de venta en consignación"
+msgstr ""
+"R. Rectificaciones de transferencias de bienes efectuadas en el marco de "
+"acuerdos de bienes en consigna"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_consignment_sales_agreements
+msgid ""
+"R. Transferencias de bienes realizadas en virtud de contratos de venta en "
+"consignación"
+msgstr ""
+"R. Transferencias de bienes efectuadas en el marco de acuerdos de bienes en "
+"consigna"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid "Reading a non-Spanish TIN as a Spanish TIN."
+msgstr "Lectura de un NIF no español como un NIF español"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_6
+msgid "Recargo equivalencia"
+msgstr "Recargo equivalencia"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_refunds_title
+msgid "Rectificaciones"
+msgstr "Rectificaciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_20
+msgid "Rectificación"
+msgstr "Rectificación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_15
+msgid "Rectificación de deducciones"
+msgstr "Rectificación de deducciones"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid ""
+"Refund Invoice %s was created without a link to the original invoice that "
+"was credited, while we need that information for this report. "
+msgstr ""
+"La factura de reembolso %s se creó sin un enlace a la factura original que "
+"se abonó, mientras que necesitamos esa información para este informe."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__account_move__l10n_es_reports_mod347_invoice_type__regular
+msgid "Regular operation"
+msgstr "Operación regular"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_347_operations_title
+msgid "Relación de declarados"
+msgstr "Relación de declarados"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_4
+msgid "Rendimientos actividades económicas"
+msgstr "Rendimientos actividades económicas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_1
+msgid "Rendimientos del trabajo"
+msgstr "Rendimientos del trabajo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_2
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_5
+msgid "Rendimientos dinerarios"
+msgstr "Rendimientos dinerarios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_6
+msgid "Rendimientos en especie"
+msgstr "Rendimientos en especie"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_export_wizard__report_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__report_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__report_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__report_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__report_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__report_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__report_id
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__report_id
+msgid "Report"
+msgstr "Informe"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_18
+msgid "Resultado"
+msgstr "Resultado"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_347_summary_title
+#: model:account.report.line,name:l10n_es_reports.mod_349_summary_title
+msgid "Resumen"
+msgstr "Resumen"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_115_title_1
+msgid "Retenciones e ingresos a cuenta"
+msgstr "Retenciones e ingresos a cuenta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_title_1
+msgid "Régimen General"
+msgstr "Régimen General"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "S - Services sale"
+msgstr "S - Venta de servicios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_services_sold
+#: model:account.report.line,name:l10n_es_reports.mod_349_services_sold_refunds
+msgid ""
+"S. Prestaciones intracomunitarias de servicios realizadas por el declarante"
+msgstr ""
+"S. Prestaciones intracomunitarias de servicios realizadas por el declarante"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_tax_report_handler
+msgid "Spanish Tax Report Custom Handler"
+msgstr "Gestor personalizado de los informes de impuestos españoles"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_mod111_tax_report_handler
+msgid "Spanish Tax Report Custom Handler (Mod111)"
+msgstr "Gestor personalizado de los informes de impuestos españoles (Mod111)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_mod115_tax_report_handler
+msgid "Spanish Tax Report Custom Handler (Mod115)"
+msgstr "Gestor personalizado de los informes de impuestos españoles (Mod115)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_mod303_tax_report_handler
+msgid "Spanish Tax Report Custom Handler (Mod303)"
+msgstr "Gestor personalizado de los informes de impuestos españoles (Mod303)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_mod347_tax_report_handler
+msgid "Spanish Tax Report Custom Handler (Mod347)"
+msgstr "Gestor personalizado de los informes de impuestos españoles (Mod347)"
+
+#. module: l10n_es_reports
+#: model:ir.model,name:l10n_es_reports.model_l10n_es_mod349_tax_report_handler
+msgid "Spanish Tax Report Custom Handler (Mod349)"
+msgstr "Gestor personalizado de los informes de impuestos españoles (Mod349)"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__substitutive_declaration
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__substitutive_declaration
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__substitutive_declaration
+msgid "Substitutive Declaration"
+msgstr "Declaración sustitutiva"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#: code:addons/l10n_es_reports/models/account_move.py:0
+#, python-format
+msgid "T - Triangular Operation"
+msgstr "T - Operación triangular"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_349_triangular
+#: model:account.report.line,name:l10n_es_reports.mod_349_triangular_refunds
+msgid ""
+"T. Entregas en otros Estados miembros subsiguientes a adquisiciones "
+"intracomunitarias exentas en el marco de operaciones triangulares"
+msgstr ""
+"T. Ventas a clientes de otro Estado miembro subsiguientes a adquisiciones "
+"intracomunitarias exentas, efectuadas en el marco de una operación "
+"triangular"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_10000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_10000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_10000
+msgid "TOTAL ACTIVO (A + B)"
+msgstr "TOTAL ACTIVO (A + B)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_30000
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_30000
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_30000
+msgid "TOTAL PATRIMONIO NETO Y PASIVO (A + B + C)"
+msgstr "TOTAL PATRIMONIO NETO Y PASIVO (A + B + C)"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.mod_303
+msgid "Tax Report (Mod 303)"
+msgstr "Informe de impuestos (Mod 303)"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.mod_347
+msgid "Tax Report (Mod 347)"
+msgstr "Informe de impuestos (Mod 347)"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.mod_349
+msgid "Tax Report (Mod 349)"
+msgstr "Informe de impuestos (Mod 349)"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.mod_111
+msgid "Tax Report(Mod 111)"
+msgstr "Informe de impuestos (Mod 111)"
+
+#. module: l10n_es_reports
+#: model:account.report,name:l10n_es_reports.mod_115
+msgid "Tax Report(Mod 115)"
+msgstr "Informe de impuestos (Mod 115)"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__exempted_from_mod_390_available
+msgid ""
+"Technical field used to only make exempted_from_mod_390 avilable in the last"
+" period (12 or 4T)"
+msgstr ""
+"Campo técnico utilizado para que exempted_from_mod_390 sólo esté disponible "
+"en el último periodo (12 o 4T)"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__partner_bank_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__partner_bank_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__partner_bank_id
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__partner_bank_id
+msgid ""
+"The IBAN account number to use for direct debit. Leave blank if you don't "
+"use direct debit."
+msgstr ""
+"El número de cuenta IBAN a utilizar para la domiciliación bancaria. Déjelo "
+"vacío si no utiliza la domiciliación bancaria."
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_title_14
+#: model:account.report.line,name:l10n_es_reports.mod_115_title_2
+msgid "Total liquidación"
+msgstr "Total liquidación"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__trimester_2months_report
+msgid "Trimester monthly report"
+msgstr "Informe mensual del trimestre"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod347_available
+#: model:ir.model.fields,help:l10n_es_reports.field_account_move__l10n_es_reports_mod347_available
+#: model:ir.model.fields,help:l10n_es_reports.field_account_payment__l10n_es_reports_mod347_available
+msgid ""
+"True if and only if the invoice MIGHT need to be reported on mod 347, i.e. "
+"it concerns an operation from a Spanish headquarter."
+msgstr ""
+"True si y sólo si la factura PODRÍA tener que ser declarada en el mod 347, "
+"es decir, si se refiere a una operación desde una sede española."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod349_available
+#: model:ir.model.fields,help:l10n_es_reports.field_account_move__l10n_es_reports_mod349_available
+#: model:ir.model.fields,help:l10n_es_reports.field_account_payment__l10n_es_reports_mod349_available
+msgid ""
+"True if and only if the invoice must be reported on mod 349 report, i.e. it "
+"concerns an intracommunitary operation."
+msgstr ""
+"True si y sólo si la factura tiene que ser declarada en el mod 349, es "
+"decir, si se trata de una operación intracomunitaria."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod347_invoice_type
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_move__l10n_es_reports_mod347_invoice_type
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_payment__l10n_es_reports_mod347_invoice_type
+msgid "Type for mod 347"
+msgstr "Tipo para mod 347"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_bank_statement_line__l10n_es_reports_mod349_invoice_type
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_move__l10n_es_reports_mod349_invoice_type
+#: model:ir.model.fields,field_description:l10n_es_reports.field_account_payment__l10n_es_reports_mod349_invoice_type
+msgid "Type for mod 349"
+msgstr "Tipo para mod 349"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__u
+msgid "U - Direct Debit of the Income in CCC"
+msgstr "U - Domiciliación de los ingresos en CCC"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111_export_wizard__declaration_type__u
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__declaration_type__u
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod115_export_wizard__declaration_type__u
+msgid "U - Direct debit"
+msgstr "U - Domiciliación bancaria"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,field_description:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__using_sii
+msgid "Using SII Voluntarily"
+msgstr "Uso voluntario del SII"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__v
+msgid "V - Tributaria Current Account - Return"
+msgstr "V - Cuenta corriente tributaria - Devolución"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32500
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32500
+msgid "V. Acreedores comerciales y otras cuentas a pagar"
+msgstr "V. Acreedores comerciales y otras cuentas a pagar"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_21400
+msgid "V. Excedente del ejercicio"
+msgstr "V. Excedente del ejercicio"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11500
+msgid "V. Inversiones en entidades del grupo y asociadas a largo plazo"
+msgstr ""
+"V. Inversiones en empresas y entidades del grupo y asociadas a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12500
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12500
+msgid "V. Inversiones financieras a corto plazo"
+msgstr "V. Inversiones financieras a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11500
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11500
+msgid "V. Inversiones financieras a largo plazo"
+msgstr "V. Inversiones financieras a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_22500
+msgid "V. Otros"
+msgstr "V. Otros"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12600
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32600
+msgid "V. Periodificaciones a corto plazo"
+msgstr "V. Periodificaciones a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_31500
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31500
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31500
+msgid "V. Periodificaciones a largo plazo"
+msgstr "V. Periodificaciones a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21500
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21500
+msgid "V. Resultados de ejercicios anteriores"
+msgstr "V. Resultados de ejercicios anteriores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31600
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31600
+msgid "VI. Acreedores comerciales no corrientes"
+msgstr "VI. Acreedores comerciales no corrientes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11600
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11600
+msgid "VI. Activos por impuesto diferido"
+msgstr "VI. Activos por impuesto diferido"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_32700
+msgid "VI. Deuda con características especiales a corto plazo"
+msgstr "VI. Deuda con características especiales a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_12700
+msgid "VI. Efectivo y otros activos líquidos equivalentes"
+msgstr "VI. Efectivo y otros activos líquidos equivalentes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11600
+msgid "VI. Inversiones financieras a largo plazo"
+msgstr "VI. Inversiones financieras a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21600
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21600
+msgid "VI. Otras aportaciones de socios"
+msgstr "VI. Otras aportaciones de socios"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12600
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32600
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12600
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32600
+msgid "VI. Periodificaciones a corto plazo"
+msgstr "VI. Periodificaciones a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_11700
+msgid "VII. Activos por impuesto diferido"
+msgstr "VII. Activos por impuesto diferido"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_32700
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_32700
+msgid "VII. Deuda con características especiales a corto plazo"
+msgstr "VII. Deuda con características especiales a corto plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_31700
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_31700
+#: model:account.report.line,name:l10n_es_reports.l10n_es_assoc_line_31600
+msgid "VII. Deuda con características especiales a largo plazo"
+msgstr "VII. Deuda con características especiales a largo plazo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_11700
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_11700
+msgid "VII. Deudores comerciales no corrientes"
+msgstr "VII. Deudores comerciales no corrientes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_assoc_line_12700
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_12700
+msgid "VII. Efectivo y otros activos líquidos equivalentes"
+msgstr "VII. Efectivo y otros activos líquidos equivalentes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21700
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21700
+msgid "VII. Resultado del ejercicio"
+msgstr "VII. Resultado del ejercicio"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.balance_full_line_21800
+#: model:account.report.line,name:l10n_es_reports.balance_pymes_line_21800
+msgid "VIII. (Dividendo a cuenta)"
+msgstr "VIII. (Dividendo a cuenta)"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__complementary_declaration
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__complementary_declaration
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__complementary_declaration
+msgid ""
+"Whether or not this BOE file corresponds to a complementary declaration"
+msgstr "Si este archivo BOE corresponde o no a una declaración complementaria"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347_export_wizard__substitutive_declaration
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod347and349_export_wizard__substitutive_declaration
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__substitutive_declaration
+msgid "Whether or not this BOE file corresponds to a substitutive declaration"
+msgstr "Si este archivo BOE corresponde o no a una declaración sustitutiva"
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111_export_wizard__complementary_declaration
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod111and115and303_export_wizard__complementary_declaration
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod115_export_wizard__complementary_declaration
+msgid "Whether or not this BOE file is a complementary declaration."
+msgstr "Si este archivo BOE es o no una declaración complementaria."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod303_export_wizard__complementary_declaration
+msgid "Whether or not this BOE file is a corrective self-assessment."
+msgstr "Si este archivo BOE es o no una autoliquidación rectificativa."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields,help:l10n_es_reports.field_l10n_es_reports_aeat_boe_mod349_export_wizard__trimester_2months_report
+msgid ""
+"Whether or not this BOE file must be generated with the data of the first "
+"two months of the trimester (in case its total amount of operation is above "
+"the threshold fixed by the law)"
+msgstr ""
+"Si este archivo BOE debe o no generarse con los datos de los dos primeros "
+"meses del trimestre (en caso de que su importe total de operación supere el "
+"umbral fijado por la ley)."
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid ""
+"Wrong report dates for BOE generation : please select a range of one month "
+"or a trimester."
+msgstr ""
+"Fechas de informe erróneas para la generación del BOE: seleccione un periodo"
+" de un mes o un trimestre."
+
+#. module: l10n_es_reports
+#: model:ir.model.fields.selection,name:l10n_es_reports.selection__l10n_es_reports_aeat_boe_mod303_export_wizard__declaration_type__x
+msgid "X - Return by Transfer Abroad (Only for Periods 3T, 4T and 07 to 12)"
+msgstr ""
+"X - Devolución por traslado al extranjero (sólo para los periodos 3T, 4T y "
+"07 a 12)"
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid ""
+"You cannot generate a BOE file for the first two months of a trimester if "
+"only one month is selected!"
+msgstr ""
+"No se puede generar un archivo BOE para los dos primeros meses de un "
+"trimestre si sólo ha seleccionado un mes."
+
+#. module: l10n_es_reports
+#. odoo-python
+#: code:addons/l10n_es_reports/models/aeat_tax_reports.py:0
+#, python-format
+msgid ""
+"Your date range does not cover entire months, please use a start and end "
+"date matching respectively the first and last day of a month."
+msgstr ""
+"Su intervalo de fechas no cubre meses enteros. Utilice una fecha de inicio y"
+" finalización que coincidan respectivamente con el primer y último día de un"
+" mes."
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_01
+msgid "[01] Base imponible 4%"
+msgstr "[01] Base imponible 4 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_01
+#: model:account.report.line,name:l10n_es_reports.mod_115_casilla_01
+msgid "[01] Nº de perceptores"
+msgstr "[01] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_115_casilla_02
+msgid "[02] Base retenciones"
+msgstr "[02] Base retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_02
+msgid "[02] Importe de las percepciones"
+msgstr "[02] Importe de las percepciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_03
+msgid "[03] Cuota 4%"
+msgstr "[03] Cuota 4 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_03
+msgid "[03] Importe de las retenciones"
+msgstr "[03] Importe de las retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_115_casilla_03
+msgid "[03] Retenciones"
+msgstr "[03] Retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_04
+msgid "[04] Base imponible 10%"
+msgstr "[04] Base imponible 10 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_04
+msgid "[04] Nº de perceptores"
+msgstr "[04] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_115_casilla_04
+msgid "[04] Resultados a ingresar anteriores"
+msgstr "[04] Resultados a ingresar anteriores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_115_casilla_05
+msgid "[05] Resultado a ingresar"
+msgstr "[05] Resultado a ingresar"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_05
+msgid "[05] Valor percepciones en especie"
+msgstr "[05] Valor percepciones en especie"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_06
+msgid "[06] Cuota 10%"
+msgstr "[06] Cuota 10 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_06
+msgid "[06] Importe de los ingresos a cuenta"
+msgstr "[06] Importe de los ingresos a cuenta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_07
+msgid "[07] Base imponible 21%"
+msgstr "[07] Base imponible 21 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_07
+msgid "[07] Nº de perceptores"
+msgstr "[07] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_08
+msgid "[08] Importe de las percepciones"
+msgstr "[08] Importe de las percepciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_09
+msgid "[09] Cuota 21%"
+msgstr "[09] Cuota 21 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_09
+msgid "[09] Importe de las retenciones"
+msgstr "[09] Importe de las retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_108
+msgid ""
+"[108] Exclusivamente para determinados supuestos de autoliquidación "
+"rectificativa por discrepancia de criterio administrativo que no deban "
+"incluirse en otras casillas. Otros ajustes"
+msgstr ""
+"[108] Exclusivamente para determinados supuestos de autoliquidación "
+"rectificativa por discrepancia de criterio administrativo que no deban "
+"incluirse en otras casillas. Otros ajustes"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_109
+msgid ""
+"[109] Devoluciones acordadas por la Agencia Tributaria como consecuencia de "
+"la tramitación de anteriores autoliquidaciones correspondientes al ejercicio"
+" y período objeto de la autoliquidación"
+msgstr ""
+"[109] Devoluciones acordadas por la Agencia Tributaria como consecuencia de "
+"la tramitación de anteriores autoliquidaciones correspondientes al ejercicio"
+" y período objeto de la autoliquidación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_10
+msgid "[10] Base imponible"
+msgstr "[10] Base imponible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_10
+msgid "[10] Nº de perceptores"
+msgstr "[10] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_110
+msgid "[110] Cuotas a compensar pendientes de periodos anteriores"
+msgstr "[110] Cuotas a compensar pendientes de periodos anteriores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_111
+msgid "[111] Rectificación - Importe"
+msgstr "[111] Rectificación - Importe"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_11
+msgid "[11] Cuota"
+msgstr "[11] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_11
+msgid "[11] Valor percepciones en especie"
+msgstr "[11] Valor percepciones en especie"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_120
+msgid ""
+"[120] Operaciones no sujetas por reglas de localización (excepto las "
+"incluidas en la casilla 123)"
+msgstr ""
+"[120] Operaciones no sujetas por reglas de localización (excepto las "
+"incluidas en la casilla 123)"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_122
+msgid "[122] Operaciones sujetas con inversión del sujeto pasivo"
+msgstr "[122] Operaciones sujetas con inversión del sujeto pasivo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_123
+msgid ""
+"[123] Operaciones no sujetas por reglas de localización acogidas a los "
+"regímenes especiales de ventanilla única"
+msgstr ""
+"[123] Operaciones no sujetas por reglas de localización acogidas a los "
+"regímenes especiales de ventanilla única"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_124
+msgid ""
+"[124] Operaciones sujetas y acogidas a los regímenes especiales de "
+"ventanilla única"
+msgstr ""
+"[124] Operaciones sujetas y acogidas a los regímenes especiales de "
+"ventanilla única"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_12
+msgid "[12] Base imponible"
+msgstr "[12] Base imponible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_12
+msgid "[12] Importe de los ingresos a cuenta"
+msgstr "[12] Importe de los ingresos a cuenta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_13
+msgid "[13] Cuota"
+msgstr "[13] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_13
+msgid "[13] Nº de perceptores"
+msgstr "[13] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_14
+msgid "[14] Base imponible"
+msgstr "[14] Base imponible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_14
+msgid "[14] Importe de las percepciones"
+msgstr "[14] Importe de las percepciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_150
+msgid "[150] Base imponible 0%"
+msgstr "[150] Base imponible 0 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_152
+msgid "[152] Cuota 0%"
+msgstr "[152] Cuota 0 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_153
+msgid "[153] Base imponible 5%"
+msgstr "[153] Base imponible 5 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_155
+msgid "[155] Cuota 5%"
+msgstr "[155] Cuota 5 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_156
+msgid "[156] Base imponible 1.75%"
+msgstr "[156] Base imponible 1,75 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_158
+msgid "[158] Cuota 1.75%"
+msgstr "[158] Cuota 1,75 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_15
+msgid "[15] Cuota"
+msgstr "[15] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_15
+msgid "[15] Importe de las retenciones"
+msgstr "[15] Importe de las retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_165
+msgid "[165] Base imponible 2%"
+msgstr "[165] Base imponible 2 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_167
+msgid "[167] Cuota 2%"
+msgstr "[167] Cuota 2 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_168
+msgid "[168] Base imponible 0.26%"
+msgstr "[168] Base imponible 0,26 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_16
+msgid "[16] Base imponible 1%"
+msgstr "[16] Base imponible 1 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_16
+msgid "[16] Nº de perceptores"
+msgstr "[16] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_170
+msgid "[170] Cuota 0.26%"
+msgstr "[170] Cuota 0,26 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_17
+msgid "[17] Valor percepciones en especie"
+msgstr "[17] Valor percepciones en especie"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_18
+msgid "[18] Cuota 1%"
+msgstr "[18] Cuota 1 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_18
+msgid "[18] Importe de los ingresos a cuenta"
+msgstr "[18] Importe de los ingresos a cuenta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_19
+msgid "[19] Base imponible 1.4%"
+msgstr "[19] Base imponible 1,4 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_19
+msgid "[19] Nº de perceptores"
+msgstr "[19] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_20
+msgid "[20] Importe de las percepciones"
+msgstr "[20] Importe de las percepciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_21
+msgid "[21] Cuota 1.4%"
+msgstr "[21] Cuota 1,4 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_21
+msgid "[21] Importe de las retenciones"
+msgstr "[21] Importe de las retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_22
+msgid "[22] Base imponible 5.2%"
+msgstr "[22] Base imponible 5,2 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_22
+msgid "[22] Nº de perceptores"
+msgstr "[22] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_23
+msgid "[23] Valor percepciones en especie"
+msgstr "[23] Valor percepciones en especie"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_24
+msgid "[24] Cuota 5.2%"
+msgstr "[24] Cuota 5,2 %"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_24
+msgid "[24] Importe de los ingresos a cuenta"
+msgstr "[24] Importe de los ingresos a cuenta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_25
+msgid "[25] Base imponible"
+msgstr "[25] Base imponible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_25
+msgid "[25] Nº de perceptores"
+msgstr "[25] Nº de perceptores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_26
+msgid "[26] Contraprestaciones satisfechas"
+msgstr "[26] Contraprestaciones satisfechas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_26
+msgid "[26] Cuota"
+msgstr "[26] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_27
+msgid "[27] Importe de los ingresos a cuenta"
+msgstr "[27] Importe de los ingresos a cuenta"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_27
+msgid "[27] Total cuota devengada"
+msgstr "[27] Total cuota devengada"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_28
+msgid "[28] Base"
+msgstr "[28] Base"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_28
+msgid "[28] Suma de retenciones"
+msgstr "[28] Suma de retenciones"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_29
+msgid "[29] Cuota"
+msgstr "[29] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_29
+msgid "[29] Resultados a ingresar anteriores"
+msgstr "[29] Resultados a ingresar anteriores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_30
+msgid "[30] Base"
+msgstr "[30] Base"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_111_casilla_30
+msgid "[30] Resultado a ingresar"
+msgstr "[30] Resultado a ingresar"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_31
+msgid "[31] Cuota"
+msgstr "[31] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_32
+msgid "[32] Base"
+msgstr "[32] Base"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_33
+msgid "[33] Cuota"
+msgstr "[33] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_34
+msgid "[34] Base"
+msgstr "[34] Base"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_35
+msgid "[35] Cuota"
+msgstr "[35] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_36
+msgid "[36] Base"
+msgstr "[36] Base"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_37
+msgid "[37] Cuota"
+msgstr "[37] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_38
+msgid "[38] Base"
+msgstr "[38] Base"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_39
+msgid "[39] Cuota"
+msgstr "[39] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_40
+msgid "[40] Base"
+msgstr "[40] Base"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_41
+msgid "[41] Cuota"
+msgstr "[41] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_42
+msgid "[42] Compensaciones Régimen especial A. G. y P. - Cuota compras"
+msgstr "[42] Compensaciones Régimen especial A. G. y P. - Cuota compras"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_43
+msgid "[43] Regularización bienes de inversión"
+msgstr "[43] Regularización bienes de inversión"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_44
+msgid ""
+"[44] Regularización por aplicación del porcentaje definitivo de prorrata"
+msgstr ""
+"[44] Regularización por aplicación del porcentaje definitivo de prorrata"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_45
+msgid "[45] Total a deducir"
+msgstr "[45] Total a deducir"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_46
+msgid "[46] Resultado régimen general"
+msgstr "[46] Resultado régimen general"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_59
+msgid "[59] Entregas intracomunitarias de bienes y servicios - Base ventas"
+msgstr "[59] Entregas intracomunitarias de bienes y servicios - Base ventas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_60
+msgid "[60] Exportaciones y operaciones asimiladas - Base ventas"
+msgstr "[60] Exportaciones y operaciones asimiladas - Base ventas"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_62
+msgid "[62] Base imponible"
+msgstr "[62] Base imponible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_63
+msgid "[63] Cuota"
+msgstr "[63] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_65
+msgid "[65] % Atribuible a la Administración del Estado"
+msgstr "[65] % Atribuible a la Administración del Estado"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_66
+msgid "[66] Atribuible a la Administración del Estado"
+msgstr "[66] Atribuible a la Administración del Estado"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_67
+msgid "[67] Cuotas a compensar de periodos anteriores"
+msgstr "[67] Cuotas a compensar de periodos anteriores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_68
+msgid "[68] Resultado de la regularización anual"
+msgstr "[68] Resultado de la regularización anual"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_69
+msgid "[69] Resultado de la autoliquidación"
+msgstr "[69] Resultado de la autoliquidación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_70
+msgid ""
+"[70] Resultados a ingresar de anteriores autoliquidaciones o liquidaciones "
+"administrativas correspondientes al ejercicio y período objeto de la "
+"autoliquidación"
+msgstr ""
+"[70] Resultados a ingresar de anteriores autoliquidaciones o liquidaciones "
+"administrativas correspondientes al ejercicio y período objeto de la "
+"autoliquidación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_71
+msgid "[71] Resultado de la liquidación"
+msgstr "[71] Resultado de la liquidación"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_74
+msgid "[74] Base imponible"
+msgstr "[74] Base imponible"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_75
+msgid "[75] Cuota"
+msgstr "[75] Cuota"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_77
+msgid "[77] IVA a la importación liquidado por la Aduana pendiente de ingreso"
+msgstr ""
+"[77] IVA a la importación liquidado por la Aduana pendiente de ingreso"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_78
+msgid ""
+"[78] Cuotas a compensar de periodos anteriores aplicadas en este periodo"
+msgstr ""
+"[78] Cuotas a compensar de periodos anteriores aplicadas en este periodo"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.mod_303_casilla_87
+msgid ""
+"[87] Cuotas a compensar de periodos previos pendientes para periodos "
+"posteriores"
+msgstr ""
+"[87] Cuotas a compensar de periodos previos pendientes para periodos "
+"posteriores"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_13a
+msgid ""
+"a) Imputación de subvenciones, donaciones y legados de carácter financiero"
+msgstr ""
+"a) Imputación de subvenciones, donaciones y legados de carácter financiero"
+
+#. module: l10n_es_reports
+#: model:account.report.line,name:l10n_es_reports.es_profit_and_loss_line_13b
+msgid "b) Otros ingresos financieros"
+msgstr "b) Otros ingresos financieros"

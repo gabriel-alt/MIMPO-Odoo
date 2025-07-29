@@ -1,0 +1,225 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* documents_project_sale
+# 
+# Translators:
+# Martin Trigaux, 2022
+# Kevilyn Rosa, 2023
+# a75f12d3d37ea5bf159c4b3e85eb30e7_0fa6927, 2025
+# Wil Odoo, 2025
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-06 20:42+0000\n"
+"PO-Revision-Date: 2022-09-23 08:33+0000\n"
+"Last-Translator: Wil Odoo, 2025\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/odoo/teams/41243/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "About us"
+msgstr "Sobre nós"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"As a leading professional services firm,\n"
+"                                we know that success is all about the\n"
+"                                commitment we put on strong services."
+msgstr ""
+"Como empresa líder em serviços profissionais,\n"
+"                                sabemos que o sucesso tem tudo a ver com o\n"
+"                                comprometimento que colocamos em oferecer excelentes serviços."
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__project_template_use_documents
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__project_template_use_documents
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__documents_allowed_company_id
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__documents_allowed_company_id
+msgid "Documents Allowed Company"
+msgstr "Documentos permitidos pela empresa"
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_3
+msgid "Done/Archived"
+msgstr "Feito/Arquivado"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"Great quotation templates will significantly\n"
+"                                <strong>boost your success rate</strong>. The\n"
+"                                first section is usually about your company,\n"
+"                                your references, your methodology or\n"
+"                                guarantees, your team, SLA, terms and conditions, etc."
+msgstr ""
+"Bons modelos de cotação aumentarão significativamente\n"
+"                                <strong>a sua taxa de sucesso</strong>. A\n"
+"                                primeira seção geralmente é sobre sua empresa,\n"
+"                                suas referências, sua metodologia ou\n"
+"                                garantias, sua equipe, SLA, termos e condições etc."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"If you edit a quotation from the 'Preview' of a quotation, you will\n"
+"                        update that quotation only. If you edit the quotation\n"
+"                        template (from the Configuration menu), all future quotations will\n"
+"                        use this modified template."
+msgstr ""
+"Se editar uma cotação a partir da 'pré-visualização' de uma cotação, \n"
+"você atualizará somente essa cotação. Se você editar o modelo de cotação\n"
+" (no menu Configuração), todas as cotações futuras usarão\n"
+" esse modelo modificado."
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_2
+msgid "In Use"
+msgstr "Em uso"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_3
+msgid "Miscellaneous"
+msgstr "Diversos"
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_1
+msgid "New/Unsorted"
+msgstr "Novo/Não classificado"
+
+#. module: documents_project_sale
+#: model:ir.model.fields,help:documents_project_sale.field_product_product__template_folder_id
+#: model:ir.model.fields,help:documents_project_sale.field_product_template__template_folder_id
+msgid ""
+"On sales order confirmation, a workspace will be automatically generated for"
+" the project based on this template."
+msgstr ""
+"Na confirmação do pedido de vendas, um espaço de trabalho será gerado "
+"automaticamente para o projeto com base nesse modelo."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Offer"
+msgstr "Nossa oferta"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Quality"
+msgstr "Nossa qualidade"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Service"
+msgstr "Nosso serviço"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_2
+msgid "Photos"
+msgstr "Fotos"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_1
+msgid "Plans"
+msgstr "Planos"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Price"
+msgstr "Preço"
+
+#. module: documents_project_sale
+#: model:ir.model,name:documents_project_sale.model_product_template
+msgid "Product"
+msgstr "Produto"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"Product quality is the foundation we\n"
+"                                stand on; we build it with a relentless\n"
+"                                focus on fabric, performance and craftsmanship."
+msgstr ""
+"A qualidade do produto é a base em que nos \n"
+"apoiamos; nós o construímos com um foco implacável\n"
+" no tecido, desempenho e habilidade."
+
+#. module: documents_project_sale
+#: model:product.template,name:documents_project_sale.product_1
+msgid "Renovation Architect (Workspace Template)"
+msgstr "Arquiteto de reformas (modelo de espaço de trabalho)"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder
+msgid "Renovation Projects"
+msgstr "Projetos de reforma"
+
+#. module: documents_project_sale
+#: model:ir.model,name:documents_project_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venda"
+
+#. module: documents_project_sale
+#: model:documents.facet,name:documents_project_sale.documents_folder_facet_1
+msgid "Status"
+msgstr "Situação"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template
+msgid "Template"
+msgstr "Modelo"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"This is a <strong>sample quotation template</strong>. You should\n"
+"                                customize it to fit your own needs from the <i>Sales</i>\n"
+"                                application, using the menu: Configuration /\n"
+"                                Quotation Templates."
+msgstr ""
+"Este é um <strong>modelo de cotação de amostra</strong>. Você deve\n"
+" personalizá-lo para atender às suas próprias necessidades a partir do aplicativo <i>'Vendas'</i>, \n"
+"usando o menu: Configuração/\n"
+"Modelos de cotação."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"We always ensure that our products are\n"
+"                                set at a fair price so that you will be\n"
+"                                happy to buy them."
+msgstr ""
+"Sempre garantimos que nossos produtos sejam \n"
+"definidos a um preço justo para que você fique \n"
+"satisfeito em comprá-los."
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__template_folder_id
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__template_folder_id
+msgid "Workspace Template"
+msgstr "Modelo de espaço de trabalho"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"You can <strong>set a description per product</strong>. Odoo will\n"
+"                        automatically create a quotation using the descriptions\n"
+"                        of all products in the proposal. The table of content\n"
+"                        on the left is generated automatically using the styles you\n"
+"                        used in your description (heading 1, heading 2, ...)"
+msgstr ""
+"Você pode <strong>definir uma descrição por produto</strong>. O Odoo criará \n"
+"automaticamente uma cotação usando as descrições \n"
+"de todos os produtos da proposta. A tabela de conteúdo \n"
+"à esquerda é gerada automaticamente usando os estilos que você \n"
+"usou em sua descrição (título 1, título 2...)"

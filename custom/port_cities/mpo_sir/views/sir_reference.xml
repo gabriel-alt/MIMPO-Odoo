@@ -1,0 +1,201 @@
+<odoo>
+    <record model="ir.ui.view" id="sir_ref_tree">
+        <field name="name">sir.ref.tree</field>
+        <field name="model">sir.ref</field>
+        <field name="arch" type="xml">
+            <tree create="1" import="1">
+                <field name="ref_id" />
+                <field name="number" />
+                <field name="create_date" widget="date" string="Fecha de creación" />
+                <field name="pedimento" />
+                <field name="patent_code" optional="show" />
+                <field name="customer" optional="show" />
+                <field name="partner_id" optional="show" />
+                <field name="operation_type" optional="show" />
+                <field name="ref_document" optional="show" />
+                <field name="total_weight" optional="show" />
+                <field name="total_custom_house" optional="show" />
+                <field name="invoice_value" optional="show" />
+                <field name="total_sale" optional="show" />
+                <field name="type_rate" optional="show" />
+                <field name="container_qty" optional="show" />
+                <field name="sliced_group" optional="show" />
+                <field name="non_sliced_group" optional="show" />
+                <field name="non_paid_tax" optional="show" />
+                <field name="paid_tax" optional="show" />
+                <field name="guide_qty" optional="show" />
+                <field name="total_package" optional="show" />
+                <field name="total_padlock" optional="show" />
+                <field name="total_remittance" optional="show" />
+                <field name="total_invoice" optional="show" />
+                <field name="total_cove" optional="show" />
+                <field name="total_part" optional="show" />
+                <field name="total_eDocument" optional="show" />
+                <field name="total_taxes" invisible="1" />
+                <field name="amount_dta" invisible="1" />
+                <field name="amount_adv" invisible="1" />
+                <field name="amount_ieps" invisible="1" />
+                <field name="amount_other" invisible="1" />
+                <field name="amount_iva" invisible="1" />
+                <field name="amount_insurance" invisible="1" />
+                <field name="amount_expense" invisible="1" />
+                <field name="amount_ded_other" invisible="1" />
+                <field name="total_inc" invisible="1" />
+                <field name="amount_ph" invisible="1" />
+                <field name="date_ph" invisible="1" />
+                <field name="pece_account" invisible="1" />
+                <field name="pedimento_date" invisible="1" />
+                <field name="custom_house" invisible="1" />
+                <field name="pedimento_invoice" invisible="1" />
+                <field name="number_mark" invisible="1" />
+                <field name="ware" invisible="1" />
+                <field name="reception" invisible="1" />
+                <field name="order_number" invisible="1" />
+                <field name="ship" invisible="1" />
+                <field name="supplier" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_sir_ref_form">
+        <field name="name">view_sir_ref_form.mpo_sir</field>
+        <field name="model">sir.ref</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <header>
+                    <button name="change_status" string="Change Status" class="oe_highlight"
+                        type="object" groups="account.group_account_invoice"
+                        attrs="{'invisible': [('state', '=', 'open')]}" />
+                    <button name="action_close_status" string="Change Status" class="oe_highlight"
+                        type="object" groups="account.group_account_invoice"
+                        attrs="{'invisible': [('state', '=', 'close')]}" />
+                    <field name="state" widget="statusbar" statusbar_visible="open,close" />
+                </header>
+
+                <sheet string="sir.ref">
+                    <div name="button_box" class="oe_button_box">
+                        <button class="oe_stat_button" icon="fa-area-chart" type="object"
+                            name="action_view_analytic"
+                            attrs="{'invisible': [('account_analytic_id', '=', False)]}"
+                            string="Cuenta Analítica">
+                            <!-- <field widget="statinfo" name="account_move_count" string="Cuenta
+                            analítica"/> -->
+                        </button>
+                        <button class="oe_stat_button" icon="fa-random" type="object"
+                            name="action_view_sales">
+                            <field widget="statinfo" name="sale_order_count" string="Corresponsales" />
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="account_analytic_id" invisible="1" />
+                            <field name="created_by_api" string="Creado por API" />
+                            <field name="number" />
+                            <field name="ref_id" />
+                            <field name="pedimento" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="client" string="Cliente">
+                            <group>
+                                <group>
+                                    <field name="partner_id" />
+                                    <field name="customer" />
+                                    <field name="paid_tax" />
+                                </group>
+                                <group>
+                                    <field name="non_paid_tax" />
+                                </group>
+                            </group>
+                        </page>
+                        <page name="custom" string="Aduana">
+                            <group>
+                                <group>
+                                    <field name="custom_house" />
+                                    <field name="house_id" />
+                                    <field name="patent_code" />
+                                    <field name="ref_document" />
+                                </group>
+                                <group>
+                                    <field name="container_qty" />
+                                    <field name="non_sliced_group" />
+                                    <field name="sliced_group" />
+                                </group>
+                            </group>
+                        </page>
+                        <page name="request" string="Pedimento">
+                            <group>
+                                <group>
+                                    <field name="total_custom_house" />
+                                    <field name="total_sale" />
+                                    <field name="total_package" />
+                                    <field name="amount_adv" />
+                                    <field name="amount_other" />
+                                    <field name="amount_insurance" />
+                                    <field name="amount_ded_other" />
+                                    <field name="operation_type" />
+                                    <field name="invoice_value" />
+                                    <field name="type_rate" />
+                                </group>
+                                <group>
+                                    <field name="guide_qty" />
+                                    <field name="amount_dta" />
+                                    <field name="amount_ieps" />
+                                    <field name="amount_ph" />
+                                    <field name="amount_iva" />
+                                    <field name="amount_expense" />
+                                    <field name="total_inc" />
+                                    <field name="date_ph" />
+                                    <field name="total_weight" />
+                                    <field name="pece_account" />
+                                </group>
+                            </group>
+                        </page>
+                        <page name="other" string="Otros">
+                            <group>
+                                <group>
+                                    <field name="total_remittance" />
+                                    <field name="total_cove" />
+                                    <field name="total_eDocument" />
+                                    <field name="date_ph" />
+                                </group>
+                                <group>
+                                    <field name="total_padlock" />
+                                    <field name="total_invoice" />
+                                    <field name="total_part" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="search_sir_ref_view" model="ir.ui.view">
+        <field name="name">sir_ref.search.view</field>
+        <field name="model">sir.ref</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="number" />
+                <field name="ref_id" />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sir_ref" model="ir.actions.act_window">
+        <field name="name">Referencia SIR</field>
+        <field name="res_model">sir.ref</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="sir_ref_tree" />
+        <field name="search_view_id" ref="mpo_sir.search_sir_ref_view" />
+    </record>
+
+    <menuitem id="menu_sir_ref" name="Referencia SIR"
+        parent="base.menu_administration" action="action_sir_ref" />
+</odoo>

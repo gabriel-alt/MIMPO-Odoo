@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sir_ref_admin,access_sir_ref_admin,model_sir_ref,base.group_system,1,1,0,0
-access_sir_ref_user,access_sir_ref_user,model_sir_ref,account.group_account_invoice,1,1,0,0
-access_sir_ref_public,access_sir_ref_public,model_sir_ref,,1,0,0,0

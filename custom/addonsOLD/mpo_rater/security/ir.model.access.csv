@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_base_rate_admin,access_base_rate_admin,model_base_rate,base.group_system,1,1,1,1
-access_base_rate_user,access_base_rate_user,model_base_rate,base.group_user,1,1,1,0
-access_base_rate_other_admin,access_base_rate_other_admin,model_base_rate_other,base.group_system,1,1,1,1
-access_base_rate_other_user,access_base_rate_other_user,model_base_rate_other,base.group_user,1,1,1,0

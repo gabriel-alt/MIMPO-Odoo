@@ -1,0 +1,228 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* documents_project_sale
+# 
+# Translators:
+# Martin Trigaux, 2022
+# Dariusz Żbikowski <darek@krokus.com.pl>, 2022
+# Dawid Prus, 2022
+# Natalia Gros <nag@odoo.com>, 2022
+# Judyta Kaźmierczak <judyta.kazmierczak@openglobe.pl>, 2022
+# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2023
+# Wil Odoo, 2025
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-06 20:42+0000\n"
+"PO-Revision-Date: 2022-09-23 08:33+0000\n"
+"Last-Translator: Wil Odoo, 2025\n"
+"Language-Team: Polish (https://app.transifex.com/odoo/teams/41243/pl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "About us"
+msgstr "O nas"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"As a leading professional services firm,\n"
+"                                we know that success is all about the\n"
+"                                commitment we put on strong services."
+msgstr ""
+"Jako wiodąca firma świadcząca usługi profesjonalne,\n"
+"wiemy, że sukces zależy od\n"
+"zaangażowania, jakie wkładamy w solidne usługi."
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__project_template_use_documents
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__project_template_use_documents
+msgid "Documents"
+msgstr "Dokumenty"
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__documents_allowed_company_id
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__documents_allowed_company_id
+msgid "Documents Allowed Company"
+msgstr "Firma dokumentów dozwolonych"
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_3
+msgid "Done/Archived"
+msgstr "Zrobione/zarchiwizowane"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"Great quotation templates will significantly\n"
+"                                <strong>boost your success rate</strong>. The\n"
+"                                first section is usually about your company,\n"
+"                                your references, your methodology or\n"
+"                                guarantees, your team, SLA, terms and conditions, etc."
+msgstr ""
+"Świetne szablony ofert znacząco\n"
+"                                <strong>poprawią Twój wskaźnik sukcesu</strong>. The\n"
+"                                Pierwsza sekcja dotyczy zazwyczaj Twojej firmy,\n"
+"                                twoich referencji, twojej metodologii lub\n"
+"                                gwarancji, twojego zespołu, umowy SLA, regulaminu itd."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"If you edit a quotation from the 'Preview' of a quotation, you will\n"
+"                        update that quotation only. If you edit the quotation\n"
+"                        template (from the Configuration menu), all future quotations will\n"
+"                        use this modified template."
+msgstr ""
+"Jeśli edytujesz ofertę z poziomu 'Podglądu' oferty, to\n"
+"aktualizujesz tylko tę ofertę. Jeśli edytujesz ofertę\n"
+"(z menu Konfiguracja), wszystkie przyszłe wyceny będą korzystały z tak zmodyfikowanego szablonu.\n"
+"będą korzystać z tego zmodyfikowanego szablonu."
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_2
+msgid "In Use"
+msgstr "W użyciu"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_3
+msgid "Miscellaneous"
+msgstr "Różne"
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_1
+msgid "New/Unsorted"
+msgstr "Nowe/Niesortowane"
+
+#. module: documents_project_sale
+#: model:ir.model.fields,help:documents_project_sale.field_product_product__template_folder_id
+#: model:ir.model.fields,help:documents_project_sale.field_product_template__template_folder_id
+msgid ""
+"On sales order confirmation, a workspace will be automatically generated for"
+" the project based on this template."
+msgstr ""
+"W momencie potwierdzenia zamówienia sprzedaży, dla projektu zostanie "
+"automatycznie wygenerowany obszar roboczy na podstawie tego szablonu."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Offer"
+msgstr "Nasza oferta"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Quality"
+msgstr "Nasza Jakość"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Service"
+msgstr "Nasze Usługi"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_2
+msgid "Photos"
+msgstr "Zdjęcia"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_1
+msgid "Plans"
+msgstr "Plany"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Price"
+msgstr "Cena"
+
+#. module: documents_project_sale
+#: model:ir.model,name:documents_project_sale.model_product_template
+msgid "Product"
+msgstr "Produkt"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"Product quality is the foundation we\n"
+"                                stand on; we build it with a relentless\n"
+"                                focus on fabric, performance and craftsmanship."
+msgstr ""
+"Jakość produktu jest fundamentem, na którym stoimy.\n"
+"Jakość produktu to fundament, na którym stoimy; budujemy ją dzięki nieustannemu\n"
+"koncentrując się na tkaninie, wydajności i rzemiośle."
+
+#. module: documents_project_sale
+#: model:product.template,name:documents_project_sale.product_1
+msgid "Renovation Architect (Workspace Template)"
+msgstr "Architekt remontowy (Szablon miejsca pracy)"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder
+msgid "Renovation Projects"
+msgstr "Projekty remontowe"
+
+#. module: documents_project_sale
+#: model:ir.model,name:documents_project_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Zamówienie sprzedaży"
+
+#. module: documents_project_sale
+#: model:documents.facet,name:documents_project_sale.documents_folder_facet_1
+msgid "Status"
+msgstr "Status"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template
+msgid "Template"
+msgstr "Szablon"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"This is a <strong>sample quotation template</strong>. You should\n"
+"                                customize it to fit your own needs from the <i>Sales</i>\n"
+"                                application, using the menu: Configuration /\n"
+"                                Quotation Templates."
+msgstr ""
+"To jest <strong>przykładowy szablon oferty</strong>. Należy.\n"
+"dostosować go do własnych potrzeb z poziomu aplikacji <i>Sprzedaż</i>\n"
+"z poziomu aplikacji Sprzedaż, korzystając z menu: Konfiguracja /.\n"
+"Szablony ofert."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"We always ensure that our products are\n"
+"                                set at a fair price so that you will be\n"
+"                                happy to buy them."
+msgstr ""
+"Zawsze zapewniamy, że nasze produkty są\n"
+"ustawione w uczciwej cenie, abyś był\n"
+"zadowolony z ich zakupu."
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__template_folder_id
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__template_folder_id
+msgid "Workspace Template"
+msgstr "Szablon miejsca pracy"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"You can <strong>set a description per product</strong>. Odoo will\n"
+"                        automatically create a quotation using the descriptions\n"
+"                        of all products in the proposal. The table of content\n"
+"                        on the left is generated automatically using the styles you\n"
+"                        used in your description (heading 1, heading 2, ...)"
+msgstr ""
+"Możesz <strong>ustawić opis dla każdego produktu</strong>. Odoo\n"
+"                        automatycznie utworzy ofertę cenową, korzystając z opisów\n"
+"                        wszystkich produktów w ofercie. Tabela treści\n"
+"                        po lewej stronie jest generowana automatycznie za pomocą stylów\n"
+"                        użytych w opisie (nagłówek 1, nagłówek 2, ...)"

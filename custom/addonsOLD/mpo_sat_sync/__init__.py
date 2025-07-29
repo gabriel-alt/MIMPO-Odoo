@@ -1,2 +1,0 @@
-'''init'''
-from . import wizard

@@ -1,0 +1,223 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* documents_project_sale
+# 
+# Translators:
+# Martin Trigaux, 2022
+# yael terner, 2023
+# Yihya Hugirat <hugirat@gmail.com>, 2025
+# ZVI BLONDER <ZVIBLONDER@gmail.com>, 2025
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-06 20:42+0000\n"
+"PO-Revision-Date: 2022-09-23 08:33+0000\n"
+"Last-Translator: ZVI BLONDER <ZVIBLONDER@gmail.com>, 2025\n"
+"Language-Team: Hebrew (https://app.transifex.com/odoo/teams/41243/he/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: he\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "About us"
+msgstr "עלינו"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"As a leading professional services firm,\n"
+"                                we know that success is all about the\n"
+"                                commitment we put on strong services."
+msgstr ""
+"כחברת שירותים מקצועיים מובילה,\n"
+"                                אנו יודעים שכל העניין בהצלחה קשור\n"
+"                                למחויבות שלנו לתת שירות טוב."
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__project_template_use_documents
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__project_template_use_documents
+msgid "Documents"
+msgstr "מסמכים"
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__documents_allowed_company_id
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__documents_allowed_company_id
+msgid "Documents Allowed Company"
+msgstr "מסמכים מותרים חברה"
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_3
+msgid "Done/Archived"
+msgstr ""
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"Great quotation templates will significantly\n"
+"                                <strong>boost your success rate</strong>. The\n"
+"                                first section is usually about your company,\n"
+"                                your references, your methodology or\n"
+"                                guarantees, your team, SLA, terms and conditions, etc."
+msgstr ""
+"תבניות הצעת מחיר נהדרות יעזרו באופן משמעותי\n"
+"                                <strong>להגדיל את אחוזי ההצלחה שלך</strong>. \n"
+"                                החלק הראשון עוסק בדרך כלל בחברה שלך,\n"
+"                                הפניות שלך, המתודולוגיה שלך או\n"
+"                                ערבויות, הצוות שלך, SLA, תנאים והגבלות וכו '."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"If you edit a quotation from the 'Preview' of a quotation, you will\n"
+"                        update that quotation only. If you edit the quotation\n"
+"                        template (from the Configuration menu), all future quotations will\n"
+"                        use this modified template."
+msgstr ""
+"אם תערוך הצעת מחיר מתוך 'תצוגה מקדימה' של הצעת מחיר, \n"
+"                        הצעת מחיר זו בלבד תתעדכן. אם תערוך את תבנית\n"
+"                        הצעת המחיר (מתפריט התצורה), כל הצעות המחיר העתידיות\n"
+"                        ישתמשו בתבנית זו."
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_2
+msgid "In Use"
+msgstr ""
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_3
+msgid "Miscellaneous"
+msgstr "שונות"
+
+#. module: documents_project_sale
+#: model:documents.tag,name:documents_project_sale.documents_folder_facet_1_tag_1
+msgid "New/Unsorted"
+msgstr ""
+
+#. module: documents_project_sale
+#: model:ir.model.fields,help:documents_project_sale.field_product_product__template_folder_id
+#: model:ir.model.fields,help:documents_project_sale.field_product_template__template_folder_id
+msgid ""
+"On sales order confirmation, a workspace will be automatically generated for"
+" the project based on this template."
+msgstr ""
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Offer"
+msgstr "ההצעה שלנו"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Quality"
+msgstr "האיכות שלנו"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Our Service"
+msgstr "השירות שלנו"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_2
+msgid "Photos"
+msgstr "תמונות"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template_child_1
+msgid "Plans"
+msgstr "תוכניות"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid "Price"
+msgstr "מחיר"
+
+#. module: documents_project_sale
+#: model:ir.model,name:documents_project_sale.model_product_template
+msgid "Product"
+msgstr "מוצר"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"Product quality is the foundation we\n"
+"                                stand on; we build it with a relentless\n"
+"                                focus on fabric, performance and craftsmanship."
+msgstr ""
+"איכות המוצר היא הבסיס עליו אנו מסתמכים\n"
+"                                אנו בונים זאת עם מיקוד בלתי נלאה\n"
+"                                בבד, בביצועים ובאומנות."
+
+#. module: documents_project_sale
+#: model:product.template,name:documents_project_sale.product_1
+msgid "Renovation Architect (Workspace Template)"
+msgstr ""
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder
+msgid "Renovation Projects"
+msgstr ""
+
+#. module: documents_project_sale
+#: model:ir.model,name:documents_project_sale.model_sale_order
+msgid "Sales Order"
+msgstr "הזמנת לקוח"
+
+#. module: documents_project_sale
+#: model:documents.facet,name:documents_project_sale.documents_folder_facet_1
+msgid "Status"
+msgstr "סטטוס"
+
+#. module: documents_project_sale
+#: model:documents.folder,name:documents_project_sale.documents_folder_template
+msgid "Template"
+msgstr "תבנית"
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"This is a <strong>sample quotation template</strong>. You should\n"
+"                                customize it to fit your own needs from the <i>Sales</i>\n"
+"                                application, using the menu: Configuration /\n"
+"                                Quotation Templates."
+msgstr ""
+"זו <strong>תבנית הצעת מחיר לדוגמא</strong>. אתה צריך\n"
+"                                להתאים אותה כך שתתאים לצרכים שלך  מיישום ה<i>מכירות</i>\n"
+"                                , באמצעות התפריט: תצורה /\n"
+"                                ,תבניות הצעת מחיר."
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"We always ensure that our products are\n"
+"                                set at a fair price so that you will be\n"
+"                                happy to buy them."
+msgstr ""
+"אנו תמיד מוודאים שהמוצרים שלנו \n"
+"                                במחיר הוגן \n"
+"                                כדי שתשמח לקנות אותם."
+
+#. module: documents_project_sale
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_product__template_folder_id
+#: model:ir.model.fields,field_description:documents_project_sale.field_product_template__template_folder_id
+msgid "Workspace Template"
+msgstr ""
+
+#. module: documents_project_sale
+#: model_terms:sale.order,website_description:documents_project_sale.sale_order_1
+msgid ""
+"You can <strong>set a description per product</strong>. Odoo will\n"
+"                        automatically create a quotation using the descriptions\n"
+"                        of all products in the proposal. The table of content\n"
+"                        on the left is generated automatically using the styles you\n"
+"                        used in your description (heading 1, heading 2, ...)"
+msgstr ""
+"אתה יכול <strong>להגדיר תיאור לכל מוצר</strong>. Odoo ייצור \n"
+"                        אוטומטית הצעת מחיר עם התיאורים של כל המוצרים.\n"
+"                        תוכן העניינים\n"
+"                        נוצר אוטומטית בעזרת הסגנונות שבהם השתמשת בתיאור שלך (כותרת 1, כותרת 2, ...)\n"
+"                        "

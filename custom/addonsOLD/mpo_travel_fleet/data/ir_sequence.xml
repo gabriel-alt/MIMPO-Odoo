@@ -1,9 +1,0 @@
-<odoo noupdate="1">
-    <record id="seq_sale_trip_number" model="ir.sequence">
-        <field name="name">Trip Number</field>
-        <field name="code">sale.trip.number</field>
-        <field name="prefix">V</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
-</odoo>

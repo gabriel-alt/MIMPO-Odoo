@@ -1,0 +1,370 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_sale_timesheet
+# 
+# Translators:
+# Martin Trigaux, 2022
+# Thi Huong Nguyen, 2025
+# Wil Odoo, 2025
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-06 20:43+0000\n"
+"PO-Revision-Date: 2022-09-22 05:46+0000\n"
+"Last-Translator: Wil Odoo, 2025\n"
+"Language-Team: Vietnamese (https://app.transifex.com/odoo/teams/41243/vi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: helpdesk_sale_timesheet
+#: model:helpdesk.sla,name:helpdesk_sale_timesheet.helpdesk_sla_4
+msgid "4 hours to finish"
+msgstr "4 giờ để hoàn thành"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "About us"
+msgstr "Về chúng tôi"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Dòng phân tích"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"As a leading professional services firm,\n"
+"                                we know that success is all about the\n"
+"                                commitment we put on strong services."
+msgstr ""
+"Là công ty cung cấp dịch vụ chuyên nghiệp hàng đầu,\n"
+"                                chúng tôi biết rằng thành công bắt nguồn từ\n"
+"                                cam kết mang lại dịch vụ hiệu quả của mình."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_ticket_convert_wizard
+msgid "Convert Helpdesk Tickets to Tasks"
+msgstr "Chuyển đổi phiếu hỗ trợ thành nhiệm vụ"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_project_task_convert_wizard
+msgid "Convert Project Tasks to Tickets"
+msgstr "Chuyển đổi nhiệm vụ dự án thành phiếu hỗ trợ"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Date"
+msgstr "Ngày"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet
+msgid "Days"
+msgstr "Ngày"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Days Spent"
+msgstr "Ngày đã dùng"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Days:"
+msgstr "Ngày:"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_account_analytic_line__display_sol
+msgid "Display Sol"
+msgstr "Hiển thị Sol"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"Great quotation templates will significantly\n"
+"                                <strong>boost your success rate</strong>. The\n"
+"                                first section is usually about your company,\n"
+"                                your references, your methodology or\n"
+"                                guarantees, your team, SLA, terms and conditions, etc."
+msgstr ""
+"Mẫu báo giá đẹp sẽ\n"
+"                                <strong>thúc đẩy tỉ lệ thành công</strong>. Phần\n"
+"                                đầu tiên thường là giới thiệu công ty,\n"
+"                                tham khảo về khách hàng, phương pháp hoặc\n"
+"                                người bảo đảm, đội ngũ, SLA, điều khoản và điều kiện,..."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.product_template_form_view_invoice_policy_inherit_helpdesk
+msgid "Helpdesk"
+msgstr "Hỗ trợ"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_sla
+msgid "Helpdesk SLA Policies"
+msgstr "Chính sách SLA hỗ trợ"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_team
+msgid "Helpdesk Team"
+msgstr "Đội ngũ hỗ trợ "
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_helpdesk_ticket
+msgid "Helpdesk Ticket"
+msgstr "Phiếu hỗ trợ"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet
+msgid "Hours"
+msgstr "Giờ"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Hours Spent"
+msgstr "Giờ đã dùng"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Hours:"
+msgstr "Giờ:"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"If you edit a quotation from the 'Preview' of a quotation, you will\n"
+"                        update that quotation only. If you edit the quotation\n"
+"                        template (from the Configuration menu), all future quotations will\n"
+"                        use this modified template."
+msgstr ""
+"Nếu bạn chỉnh sửa báo giá từ bản 'Xem trước' của báo giá, bạn sẽ\n"
+"                        chỉ cập nhật báo giá đó. Nếu bạn chỉnh sửa mẫu\n"
+"                        báo giá (từ menu Cấu hình), tất cả báo giá trong tương lai sẽ\n"
+"                        sử dụng mẫu đã được sửa đổi này."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Our Offer"
+msgstr "Ưu đãi của chúng tôi"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Our Quality"
+msgstr "Chất lượng của chúng tôi"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Our Service"
+msgstr "Dịch vụ của chúng tôi"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid "Price"
+msgstr "Giá"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model,name:helpdesk_sale_timesheet.model_product_template
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"Product quality is the foundation we\n"
+"                                stand on; we build it with a relentless\n"
+"                                focus on fabric, performance and craftsmanship."
+msgstr ""
+"Chất lượng sản phẩm là nền tảng để\n"
+"                                chúng tôi đi lên; chúng tôi xây dựng nền móng\n"
+"                                với sự tập trung bền bỉ vào chất liệu vải, hiệu suất và sự khéo léo. "
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_team__project_id
+msgid "Project"
+msgstr "Dự án"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_helpdesk_team__project_id
+msgid ""
+"Project to which the timesheets of this helpdesk team's tickets will be "
+"linked."
+msgstr ""
+"Dự án mà các bảng chấm công phiếu hỗ trợ của đội ngũ hỗ trợ này sẽ được liên"
+" kết."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__project_sale_order_id
+msgid "Project's sale order"
+msgstr "Đơn bán hàng của dự án"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__sale_order_id
+msgid "Ref. Sales Order"
+msgstr "Mã đơn bán hàng"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__use_helpdesk_sale_timesheet
+msgid "Reinvoicing Timesheet activated on Team"
+msgstr "Xuất lại hóa đơn Bảng chấm công đã kích hoạt cho Đội ngũ"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_sale_timesheet
+msgid "Remaining Days on SO"
+msgstr "Số ngày còn lại cho đơn bán hàng"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Remaining Days on SO:"
+msgstr "Số ngày còn lại cho đơn bán hàng:"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__remaining_hours_available
+msgid "Remaining Hours Available"
+msgstr "Số giờ trống còn lại "
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__remaining_hours_so
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_sale_timesheet
+msgid "Remaining Hours on SO"
+msgstr "Số giờ còn lại cho đơn bán hàng"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Remaining Hours on SO:"
+msgstr "Số giờ còn lại cho đơn bán hàng:"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_product_product__sla_id
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_product_template__sla_id
+msgid "SLA Policy"
+msgstr "Chính sách SLA"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_product_product__sla_id
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_product_template__sla_id
+msgid ""
+"SLA Policy that will automatically apply to the tickets linked to a sales "
+"order item containing this service."
+msgstr ""
+"Chính sách SLA sẽ tự động áp dụng cho các phiếu hỗ trợ được liên kết với một"
+" hạng mục đơn bán hàng có chứa dịch vụ này."
+
+#. module: helpdesk_sale_timesheet
+#. odoo-python
+#: code:addons/helpdesk_sale_timesheet/controllers/portal.py:0
+#: code:addons/helpdesk_sale_timesheet/models/helpdesk.py:0
+#: model:ir.model,name:helpdesk_sale_timesheet.model_sale_order
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_sale_timesheet
+#, python-format
+msgid "Sales Order"
+msgstr "Đơn bán hàng"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_ticket__sale_line_id
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_search_inherit_helpdesk_sale_timesheet
+msgid "Sales Order Item"
+msgstr "Hạng mục đơn bán hàng"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_helpdesk_ticket__sale_line_id
+msgid ""
+"Sales Order Item to which the time spent on this ticket will be added in order to be invoiced to your customer.\n"
+"By default the last prepaid sales order item that has time remaining will be selected.\n"
+"Remove the sales order item in order to make this ticket non-billable.\n"
+"You can also change or remove the sales order item of each timesheet entry individually."
+msgstr ""
+"Hạng mục đơn bán hàng mà thời gian dành cho phiếu hỗ trợ này sẽ được cộng vào để lập hóa đơn cho khách hàng của bạn.\n"
+"Theo mặc định, hạng mục đơn bán hàng trả trước cuối cùng còn thời gian sẽ được chọn.\n"
+"Xóa hạng mục đơn bán hàng để ngăn việc tính phí thanh toán cho phiếu hỗ trợ này.\n"
+"Bạn cũng có thể thay đổi hoặc xóa hạng mục đơn bán hàng của từng mục nhập bảng chấm công riêng lẻ."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_helpdesk_sla__sale_line_ids
+msgid "Sales Order Items"
+msgstr "Hạng mục đơn bán hàng"
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,help:helpdesk_sale_timesheet.field_helpdesk_ticket__project_sale_order_id
+msgid "Sales order to which the project is linked."
+msgstr "Đơn bán hàng liên kết với với dự án này."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet
+msgid "Spent"
+msgstr "Đã dùng"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"This is a <strong>sample quotation template</strong>. You should\n"
+"                                customize it to fit your own needs from the <i>Sales</i>\n"
+"                                application, using the menu: Configuration /\n"
+"                                Quotation Templates."
+msgstr ""
+"Đây là <strong>mẫu báo giá ví dụ</strong>. Bạn nên\n"
+"                                tuỳ chỉnh cho phù hợp với nhu cầu của riêng bạn trong ứng dụng <i>Bán hàng</i>, \n"
+"                                vào menu: Cấu hình/\n"
+"                                Mẫu báo giá."
+
+#. module: helpdesk_sale_timesheet
+#: model:ir.model.fields,field_description:helpdesk_sale_timesheet.field_sale_order__ticket_count
+msgid "Ticket Count"
+msgstr "Số phiếu hỗ trợ"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.sale_order_form_inherit_helpdesk_sale
+msgid "Tickets"
+msgstr "Phiếu hỗ trợ"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.helpdesk_ticket_view_search_inherit_helpdesk_sale_timesheet
+msgid "Tickets in Overtime"
+msgstr "Phiếu hỗ trợ trong giờ làm thêm"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Timesheets"
+msgstr "Bảng chấm công"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:ir.ui.view,arch_db:helpdesk_sale_timesheet.tickets_followup_timesheet
+msgid "Total"
+msgstr "Tổng"
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"We always ensure that our products are\n"
+"                                set at a fair price so that you will be\n"
+"                                happy to buy them."
+msgstr ""
+"Chúng tôi luôn bảo đảm sản phẩm\n"
+"                                được định giá hợp lý để bạn\n"
+"                                luôn vui vẻ khi mua hàng."
+
+#. module: helpdesk_sale_timesheet
+#: model_terms:sale.order,website_description:helpdesk_sale_timesheet.sale_order_helpdesk_sale_timesheet_1
+msgid ""
+"You can <strong>set a description per product</strong>. Odoo will\n"
+"                        automatically create a quotation using the descriptions\n"
+"                        of all products in the proposal. The table of content\n"
+"                        on the left is generated automatically using the styles you\n"
+"                        used in your description (heading 1, heading 2, ...)"
+msgstr ""
+"Bạn có thể <strong>thiết lập mô tả cho từng sản phẩm</strong>. Odoo sẽ tự động\n"
+"                        tạo một báo giá sử dụng mô tả của tất cả sản phẩm trong báo\n"
+"                        giá. Mục lục ở bên trái được tạo tự động sử dụng các kiểu\n"
+"                        mà bạn đã dùng trong phần mô tả (thẻ tiêu đề 1, thẻ tiêu đề 2,...)"
