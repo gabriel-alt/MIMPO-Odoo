@@ -2,6 +2,9 @@
 """ Account Move """
 from odoo import models, fields, api
 
+import logging
+_logger = logging.getLogger(__name__)
+
 class AccountMove(models.Model):
     """ Inherit Account Move """
 

@@ -1,1 +1,3 @@
-xmltodict==0.13.0
+xmltodict
+schema
+pypeg2
