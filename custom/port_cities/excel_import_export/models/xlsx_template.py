@@ -138,7 +138,7 @@ class XLSXTemplate(models.Model):
                 and rec.res_model != rec.redirect_action.res_model
             ):
                 raise ValidationError(
-                    _("The selected redirect action is " "not for model %s")
+                    _("The selected redirect action is not for model %s")
                     % rec.res_model
                 )
 

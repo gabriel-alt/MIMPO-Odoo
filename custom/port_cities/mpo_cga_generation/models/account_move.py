@@ -422,7 +422,7 @@ class AccountMove(models.Model):
             items.append(ni)
         if items:
             vals = {"line_ids": items}
-            if type_sign < 0:
+            if type_sign < 0 and not self.trusted_fund_statement_line_ids:
                 vals["move_type"] = "out_refund"
             switch_type = True if "move_type" in vals else False
             self.with_context(switch_type_cga=switch_type).write(vals)
