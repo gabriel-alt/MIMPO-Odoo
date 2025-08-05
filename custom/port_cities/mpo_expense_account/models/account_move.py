@@ -15,6 +15,7 @@ class AccountMove(models.Model):
     to_agency = fields.Boolean('A Agencia', tracking=True, states=READONLY_STATE)
     rfc_client = fields.Char('RFC', readonly=True)
     client_id = fields.Many2one('res.partner', string='Customer', readonly=True)
+    
 
     @api.onchange('to_agency')
     def _onchange_to_agency(self):

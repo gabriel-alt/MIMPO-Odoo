@@ -1,7 +1,7 @@
 """Account Move"""
 
 from odoo import models, fields, api, _
-from odoo.tools import float_compare, float_is_zero
+from odoo.tools import float_compare, float_is_zero, float_round
 from odoo.exceptions import ValidationError
 from odoo.addons.account_edi.models.account_move import AccountMove as OriginAccountMove
 import logging
@@ -100,6 +100,18 @@ class AccountMove(models.Model):
         selection=[("PPD", "PPD"), ("PUE", "PUE")],
         readonly=True,
     )
+
+    exclude_from_xml = fields.Boolean(
+        string="Exclude from XML",
+        compute="_compute_exclude_from_xml",
+        help="Exclude this move from XML generation.",
+        store=True,
+    )
+
+    @api.depends("to_agency")
+    def _compute_exclude_from_xml(self):
+        for record in self:
+            record.exclude_from_xml = not bool(record.to_agency)
 
     @api.depends(
         "partner_id",
@@ -414,6 +426,7 @@ class AccountMove(models.Model):
                 "expense_bill_currency_id": move.currency_id.id,
                 "expense_amount_currency": type_sign * -1 * exp_amount,
                 "cga_line": True,
+                # "exclude_in_xml": True,  # Exclude from XML
                 #    'display_type': 'product'
             }
             items.append((0, 0, tf_line))
@@ -542,7 +555,26 @@ class AccountMove(models.Model):
                 self.sir_id.number,
             )
             raise ValidationError(msg)
-        bill_lines.write({"expense_move_id": self.id})
+        for line in bill_lines:
+            move = line.move_id
+            exclude = not move.to_agency or (
+                move.move_type == "entry" and move.journal_id.type == "bank"
+            )
+            line.write(
+                {
+                    "expense_move_id": self.id,
+                    "exclude_from_xml": exclude,
+                }
+            )
+            _logger.info(
+                "Factura proveedor %s tiene to_agency=%s, journal_type=%s, move_type=%s, exclude=%s",
+                move.name,
+                move.to_agency,
+                move.journal_id.type,
+                move.move_type,
+                exclude,
+            )
+            
         if self.move_type == "out_invoice" and bill_lines:
             self.generate_cga_expense_entries()
             self._compute_tax_totals()
@@ -606,6 +638,35 @@ class AccountMove(models.Model):
             filter_tax_values_to_apply=filter_tax_values_to_apply,
             grouping_key_generator=grouping_key_generator,
         )
+
+    def _get_lines_for_xml_and_totals(self):
+        self.ensure_one()
+        currency = self.currency_id
+        lines = self.invoice_line_ids.filtered(lambda l: not l.exclude_from_xml)
+
+        total = 0.0
+        total_tax = 0.0
+
+        for line in lines:
+            total += line.price_subtotal
+            tax_data = line.tax_ids.compute_all(
+                line.price_unit,
+                currency,
+                line.quantity,
+                product=line.product_id,
+                partner=self.partner_id,
+            )
+            for tax in tax_data["taxes"]:
+                total_tax += tax["amount"]
+
+        return {
+            "lines": lines,
+            "amount_untaxed": float_round(total, precision_rounding=currency.rounding),
+            "amount_tax": float_round(total_tax, precision_rounding=currency.rounding),
+            "amount_total": float_round(
+                total + total_tax, precision_rounding=currency.rounding
+            ),
+        }
 
 
 class AccountMoveLine(models.Model):
@@ -710,6 +771,8 @@ class AccountMoveLine(models.Model):
         readonly=False,
         precompute=True,
     )
+
+    exclude_from_xml = fields.Boolean(default=False, string="Excluir del XML")
 
     @api.depends("origin_expense_line_ids", "currency_id")
     def _compute_expense_bill_currency_id(self):

@@ -95,6 +95,7 @@ class CveTransporte(models.Model):
 
     patent_code = fields.Char("Patente")
 
+
     # @api.depends('customer')
     # def _compute_sir_customer_id(self):
     #     """ Compute Partner """

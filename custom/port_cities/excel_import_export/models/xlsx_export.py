@@ -226,7 +226,7 @@ class XLSXExport(models.AbstractModel):
                     rows_inserted = True
                     st.insert_rows(row + 1, row_count - 1)
                 # --
-                for row_val, style in vals[field]:
+                for (row_val, style) in vals[field]:
                     new_row = row + i
                     new_rc = "{}{}".format(col, new_row)
                     row_val = co.adjust_cell_formula(row_val, i)
