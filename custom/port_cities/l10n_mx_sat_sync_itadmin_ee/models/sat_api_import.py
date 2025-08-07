@@ -179,12 +179,18 @@ class SAT:
             for key in arguments:
                 if key == "RfcReceptores" and arguments[key]:
                     # Crear el elemento RfcReceptores
-                    rfc_receptores_element = etree.SubElement(solicitud, "{http://DescargaMasivaTerceros.sat.gob.mx}RfcReceptores")
-                    
+                    rfc_receptores_element = etree.SubElement(
+                        solicitud,
+                        "{http://DescargaMasivaTerceros.sat.gob.mx}RfcReceptores",
+                    )
+
                     # Agregar cada RfcReceptor
                     for rfc_receptor in arguments[key]:
                         if rfc_receptor:  # Verificar que no esté vacío
-                            rfc_receptor_element = etree.SubElement(rfc_receptores_element, "{http://DescargaMasivaTerceros.sat.gob.mx}RfcReceptor")
+                            rfc_receptor_element = etree.SubElement(
+                                rfc_receptores_element,
+                                "{http://DescargaMasivaTerceros.sat.gob.mx}RfcReceptor",
+                            )
                             rfc_receptor_element.text = rfc_receptor
                     continue
                 if arguments[key] != None:
@@ -289,7 +295,6 @@ class SAT:
             timeout=15,
         )
 
-        _logger.info("SOAP request to generate token: %s", communication.text)
         _logger.debug(f"Respuesta SOAP: {communication.text}")
         token = self.check_response(communication, result_xpath, external_nsmap)
         self.token = token.text
@@ -304,13 +309,14 @@ class SAT:
         tipo_solicitud="CFDI",
         tipo_comprobante=None,
         rfc_receptor=None,
-        estado_comprobante=None,
+        estado_comprobante="Vigente",  # Por defecto solo vigentes
         rfc_a_cuenta_terceros=None,
         complemento=None,
         uuid=None,
     ):
         soap_url = "https://cfdidescargamasivasolicitud.clouda.sat.gob.mx/SolicitaDescargaService.svc"
         soap_action = "http://DescargaMasivaTerceros.sat.gob.mx/ISolicitaDescargaService/SolicitaDescargaRecibidos"
+
         result_xpath = "s:Body/des:SolicitaDescargaRecibidosResponse/des:SolicitaDescargaRecibidosResult"
         external_nsmap = {
             "": "http://DescargaMasivaTerceros.sat.gob.mx",
@@ -323,7 +329,15 @@ class SAT:
             "xsd": "http://www.w3.org/2001/XMLSchema",
         }
 
-        # Atributos requeridos
+        # Atributos obligatorios y opcionales para el nodo <des:solicitud>
+        _logger.info(
+            "➡️ Iniciando solicitud de descarga CFDI. Filtros: fecha %s a %s, rfc_emisor=%s, estado_comprobante=%s",
+            date_from,
+            date_to,
+            rfc_emisor,
+            estado_comprobante,
+        )
+
         attrs = {
             "RfcSolicitante": self.holder_vat,
             "FechaInicial": date_from.isoformat(),
@@ -334,12 +348,13 @@ class SAT:
         if rfc_emisor:
             attrs["RfcEmisor"] = rfc_emisor
 
-        # Siempre usar el mismo RFC receptor si no se pasa
+        # RFC receptor: si no se pasa, usar el RFC del solicitante
         attrs["RfcReceptor"] = rfc_receptor or self.holder_vat
 
         if tipo_comprobante:
             attrs["TipoComprobante"] = tipo_comprobante
 
+        # Estado del comprobante por defecto "Vigente"
         if estado_comprobante:
             attrs["EstadoComprobante"] = estado_comprobante
 
@@ -352,7 +367,7 @@ class SAT:
         if uuid:
             attrs["UUID"] = uuid
 
-        # Convertimos dict en string de atributos
+        # Convertimos dict en string con formato key="value"
         attr_str = " ".join([f'{key}="{value}"' for key, value in attrs.items()])
 
         body = (
@@ -362,13 +377,14 @@ class SAT:
             "<s:Body>"
             "<des:SolicitaDescargaRecibidos>"
             f"<des:solicitud {attr_str}>"
-            # Aquí luego se inyecta la firma digital
+            # Aquí se inyecta la firma digital más adelante
             "</des:solicitud>"
             "</des:SolicitaDescargaRecibidos>"
             "</s:Body></s:Envelope>"
         )
 
         xpath = "s:Body/des:SolicitaDescargaRecibidos/des:solicitud"
+
         cer = base64.b64encode(
             crypto.dump_certificate(crypto.FILETYPE_ASN1, self.certificate)
         )
@@ -377,7 +393,7 @@ class SAT:
 
         soap_request = self.prepare_soap_download_data(cer, {}, body, xpath)
 
-        _logger.info("🧾 XML completo con firma:\n%s", soap_request)
+        # _logger.info("🧾 XML completo con firma:\n%s", soap_request)
 
         communication = requests.post(
             soap_url,
@@ -398,6 +414,7 @@ class SAT:
             "cod_estatus": element_response.get("CodEstatus"),
             "mensaje": element_response.get("Mensaje"),
         }
+
         return ret_val
 
     def soap_verify_package(self, signature_holder_vat, id_solicitud, token):
@@ -505,4 +522,10 @@ class SAT:
             "mensaje": respuesta.get("Mensaje"),
             "paquete_b64": element_response.text,
         }
+        _logger.info(
+            "⬇️ Resultado descarga SAT: Código=%s, Mensaje=%s, ZIP obtenido=%s",
+            ret_val["cod_estatus"],
+            ret_val["mensaje"],
+            bool(ret_val["paquete_b64"]),
+        )
         return ret_val

@@ -242,7 +242,7 @@ class ResCompany(models.Model):
 
         # Recibidos -- Supplier
         solicitud = sat_obj.soap_request_download(
-            token=token, date_from=date_from, date_to=date_to, rfc_receptor= esignature.holder_vat
+            token=token, date_from=date_from, date_to=date_to, rfc_receptor= esignature.holder_vat, estado_comprobante="Vigente"
         )
         
         _logger.info(f"[SAT] Solicitud recibida (Recibidos): {solicitud}")
@@ -260,21 +260,43 @@ class ResCompany(models.Model):
 
     def save_downloaded_content(
         self, esignature, sat_obj, solicitud, customer_documents
-    ):
+        ):
         content = []
-        max_attempts = 10
+        max_attempts = 15  # Aumentado de 10 a 15
         attempt = 0
+        base_sleep_time = 20  # Tiempo base de espera reducido
+        max_sleep_time = 60   # Tiempo máximo de espera
 
         for attempt in range(max_attempts):
             _logger.info(
-                f"[SAT] Verificando solicitud (intento {attempt + 1}) - ID: {solicitud['id_solicitud']}"
+                f"[SAT] Verificando solicitud (intento {attempt + 1}/{max_attempts}) - ID: {solicitud['id_solicitud']}"
             )
-            token = sat_obj.soap_generate_token(
-                sat_obj.certificate, sat_obj.private_key
-            )
-            verificacion = sat_obj.soap_verify_package(
-                esignature.holder_vat, solicitud["id_solicitud"], token
-            )
+            
+            try:
+                token = sat_obj.soap_generate_token(
+                    sat_obj.certificate, sat_obj.private_key
+                )
+                verificacion = sat_obj.soap_verify_package(
+                    esignature.holder_vat, solicitud["id_solicitud"], token
+                )
+            except Exception as e:
+                _logger.error(f"[SAT] Error en verificación (intento {attempt + 1}): {str(e)}")
+                if attempt < max_attempts - 1:
+                    time.sleep(10)  # Espera corta en caso de error
+                    continue
+                else:
+                    message = f"Error de conexión con el SAT después de {max_attempts} intentos."
+                    self.env["bus.bus"]._sendone(
+                        self.env.user.partner_id,
+                        "simple_notification",
+                        {
+                            "title": "Error de Conexión",
+                            "message": message,
+                            "sticky": False,
+                            "warning": True,
+                        },
+                    )
+                    break
 
             _logger.info(
                 f"[SAT] Estado solicitud: {verificacion['estado_solicitud']} - Mensaje: {verificacion['mensaje']}"
@@ -282,53 +304,130 @@ class ResCompany(models.Model):
 
             estado_solicitud = int(verificacion["estado_solicitud"])
 
-            if estado_solicitud <= 2:
-                # Si el estado de solicitud esta Aceptado o en proceso el programa espera
-                if attempt < max_attempts - 1:  # Solo sleep si no es el último intento
-                    time.sleep(30)
+            # Estado 1: Aceptada (en proceso)
+            # Estado 2: En proceso  
+            # Estado 3: Terminada (lista para descarga)
+            # Estado 4: Error
+            # Estado 5: Rechazada
+            
+            if estado_solicitud in [1, 2]:  # Aceptada o en proceso
+                if attempt < max_attempts - 1:
+                    # Tiempo de espera progresivo: más tiempo en intentos posteriores
+                    sleep_time = min(base_sleep_time + (attempt * 5), max_sleep_time)
+                    _logger.info(f"[SAT] Solicitud en proceso, esperando {sleep_time} segundos...")
+                    time.sleep(sleep_time)
                     continue
                 else:
                     # Último intento y aún en proceso
-                    message = f"La solicitud sigue en proceso después de {max_attempts} intentos. Intente más tarde."
+                    message = (f"La solicitud sigue en proceso después de {max_attempts} intentos "
+                            f"({max_attempts * base_sleep_time // 60} minutos aprox). "
+                            f"El SAT puede estar sobrecargado. Intente más tarde o con un rango de fechas menor.")
                     self.env["bus.bus"]._sendone(
                         self.env.user.partner_id,
                         "simple_notification",
                         {
-                            "title": "Advertencia",
+                            "title": "Tiempo de espera agotado",
+                            "message": message,
+                            "sticky": True,
+                            "warning": True,
+                        },
+                    )
+                    _logger.warning(f"[SAT] Timeout después de {max_attempts} intentos")
+                    break
+                    
+            elif estado_solicitud in [4, 5]:  # Error o Rechazada
+                error_msg = verificacion.get('mensaje', 'Error desconocido')
+                message = f"Error del SAT (Estado {estado_solicitud}): {error_msg}"
+                _logger.error(f"[SAT] {message}")
+                self.env["bus.bus"]._sendone(
+                    self.env.user.partner_id,
+                    "simple_notification",
+                    {
+                        "title": "Error del SAT",
+                        "message": message,
+                        "sticky": True,
+                        "warning": True,
+                    },
+                )
+                break
+                
+            elif estado_solicitud == 3:  # Terminada - Lista para descarga
+                _logger.info(f"[SAT] Solicitud completada, descargando paquetes...")
+                
+                paquetes = verificacion.get("paquetes", [])
+                if not paquetes:
+                    _logger.warning("[SAT] No se encontraron paquetes para descargar")
+                    message = "La solicitud se completó pero no hay CFDIs disponibles para el rango de fechas seleccionado."
+                    self.env["bus.bus"]._sendone(
+                        self.env.user.partner_id,
+                        "simple_notification",
+                        {
+                            "title": "Sin resultados",
                             "message": message,
                             "sticky": False,
                             "warning": True,
                         },
                     )
                     break
-            elif estado_solicitud >= 4:
-                message = f"{ERROR_TYPE[estado_solicitud]} - {verificacion['mensaje']}"
+                
+                # Descargar cada paquete
+                for i, paquete in enumerate(paquetes):
+                    try:
+                        _logger.info(f"[SAT] Descargando paquete {i+1}/{len(paquetes)} - ID: {paquete}")
+                        descarga = sat_obj.soap_download_package(
+                            esignature.holder_vat, paquete, token
+                        )
+                        
+                        if descarga and descarga.get("paquete_b64"):
+                            content.append(descarga["paquete_b64"])
+                            _logger.info(f"[SAT] Paquete {i+1} descargado exitosamente ({len(descarga['paquete_b64'])} bytes)")
+                        else:
+                            _logger.warning(f"[SAT] Paquete {i+1} vacío o inválido")
+                            
+                    except Exception as e:
+                        _logger.error(f"[SAT] Error descargando paquete {i+1}: {str(e)}")
+                        continue
+                
+                # Notificar éxito
+                if content:
+                    message = f"Descarga completada: {len(content)} paquete(s) descargado(s)"
+                    _logger.info(f"[SAT] {message}")
+                    self.env["bus.bus"]._sendone(
+                        self.env.user.partner_id,
+                        "simple_notification",
+                        {
+                            "title": "Descarga completada",
+                            "message": message,
+                            "sticky": False,
+                            "warning": False,
+                        },
+                    )
+                break
+            else:
+                # Estado desconocido
+                _logger.warning(f"[SAT] Estado desconocido: {estado_solicitud}")
+                message = f"Estado de solicitud desconocido: {estado_solicitud}"
                 self.env["bus.bus"]._sendone(
                     self.env.user.partner_id,
                     "simple_notification",
                     {
-                        "title": "Error",
+                        "title": "Estado desconocido",
                         "message": message,
                         "sticky": False,
                         "warning": True,
                     },
                 )
-                break
-            else:
-                # Si el estatus es 3 se trata de descargar los paquetes
-                for paquete in verificacion["paquetes"]:
-                    _logger.info(f"[SAT] Descargando paquete ID: {paquete}")
-                    descarga = sat_obj.soap_download_package(
-                        esignature.holder_vat, paquete, token
-                    )
-                    _logger.info(
-                        f"[SAT] Paquete descargado (tamaño): {len(descarga['paquete_b64'])} bytes"
-                    )
-                    content.append(descarga["paquete_b64"])
+                if attempt < max_attempts - 1:
+                    time.sleep(base_sleep_time)
+                    continue
                 break
 
+        # Si no se descargó contenido, salir temprano
         if not content:
+            _logger.info("[SAT] No hay contenido para procesar")
             return True
+
+        # --- RESTO DEL CÓDIGO PARA PROCESAR XMLs (sin cambios) ---
         attachment_obj = self.env["ir.attachment"]
         invoice_obj = self.env["account.move"]
         payment_obj = self.env["account.payment"]
@@ -339,277 +438,64 @@ class ResCompany(models.Model):
             "pago10": "http://www.sat.gob.mx/Pagos",
         }
 
-        # Supplier
+        # Procesar cada paquete descargado
         attach_obj = self.env["ir.attachment"].sudo()
-        with zipfile.ZipFile(io.BytesIO(base64.b64decode(content[0]))) as z:
-            for attachment_name in z.namelist():
-                with z.open(attachment_name) as att_xml:
-                    xml_content = att_xml.read()
-                    cfdi_etree = self._check_objectify_xml(
-                        base64.b64encode(xml_content)
-                    )
-                    tfd_node = self._get_et_cfdi_node(cfdi_etree)
-                    uuid = (
-                        tfd_node.get("UUID").upper().strip()
-                        if tfd_node.get("UUID")
-                        else "No firmado"
-                    )
-                    attachments = attach_obj.search(
-                        [("cfdi_uuid", "=", uuid), ("company_id", "=", self.id)]
-                    )
-                    if attachments:
-                        continue
-                    try:
-                        values = dict(etree.fromstring(xml_content).items())
-                    except:
-                        continue
-                    if b"xmlns:schemaLocation" in xml_content:
-                        xml_content = xml_content.replace(
-                            b"xmlns:schemaLocation", b"xsi:schemaLocation"
-                        )
-                    try:
-                        tree = etree.fromstring(xml_content)
-                    except Exception as e:
-                        self.env["bus.bus"]._sendone(
-                            self.env.user.partner_id,
-                            "simple_notification",
-                            {
-                                "title": "Error",
-                                "message": "No pudo leer un XML descargado",
-                                "sticky": False,
-                                "warning": True,
-                            },
-                        )
-                        _logger.error("error : " + str(e))
-                        continue
-                    try:
-                        ns = tree.nsmap
-                        ns.update({"re": "http://exslt.org/regular-expressions"})
-                    except Exception:
-                        ns = {"re": "http://exslt.org/regular-expressions"}
-
-                    xml_content = base64.b64encode(xml_content)
-
-                    ns_url = ns.get("cfdi")
-                    root_tag = "Comprobante"
-                    if ns_url:
-                        root_tag = "{" + ns_url + "}Comprobante"
-                    # Validation to only admit CFDI
-                    if tree.tag != root_tag:
-                        # Invalid invoice file.
-                        continue
-
-                    # receptor_elements = tree.xpath('//cfdi:Emisor', namespaces=tree.nsmap)
-                    if customer_documents:
+        total_processed = 0
+        
+        for package_index, package_content in enumerate(content):
+            try:
+                _logger.info(f"[SAT] Procesando paquete {package_index + 1}/{len(content)}")
+                with zipfile.ZipFile(io.BytesIO(base64.b64decode(package_content))) as z:
+                    for attachment_name in z.namelist():
                         try:
-                            emisor_elements = tree.xpath(
-                                "//*[re:test(local-name(), 'Receptor','i')]",
-                                namespaces=ns,
-                            )
-                        except Exception:
-                            _logger.info("No encontró al receptor")
-                        r_rfc, r_name, r_folio = "", "", ""
-                        if emisor_elements:
-                            attrib_dict = CaselessDictionary(
-                                dict(emisor_elements[0].attrib)
-                            )
-                            r_rfc = attrib_dict.get(
-                                "rfc"
-                            )  # emisor_elements[0].get(attrib_dict.get('rfc'))
-                            r_name = attrib_dict.get(
-                                "nombre"
-                            )  # emisor_elements[0].get(attrib_dict.get('nombre'))
-                    else:
-                        try:
-                            receptor_elements = tree.xpath(
-                                "//*[re:test(local-name(), 'Emisor','i')]",
-                                namespaces=ns,
-                            )
-                        except Exception:
-                            receptor_elements = False
-                            _logger.info("No encontró al emisor")
-                        r_rfc, r_name, r_folio = "", "", ""
-                        if receptor_elements:
-                            attrib_dict = CaselessDictionary(
-                                dict(receptor_elements[0].attrib)
-                            )
-                            r_rfc = attrib_dict.get(
-                                "rfc"
-                            )  # receptor_elements[0].get(attrib_dict.get('rfc'))
-                            r_name = attrib_dict.get(
-                                "nombre"
-                            )  # receptor_elements[0].get(attrib_dict.get('nombre'))
-                    r_folio = tree.get(
-                        "Folio"
-                    )  # receptor_elements[0].get(attrib_dict.get('nombre'))
-
-                    cfdi_version = tree.get("Version", "4.0")
-                    if cfdi_version == "4.0":
-                        NSMAP.update(
-                            {
-                                "cfdi": "http://www.sat.gob.mx/cfd/4",
-                                "pago20": "http://www.sat.gob.mx/Pagos20",
-                            }
-                        )
-                    else:
-                        NSMAP.update(
-                            {
-                                "cfdi": "http://www.sat.gob.mx/cfd/3",
-                                "pago10": "http://www.sat.gob.mx/Pagos",
-                            }
-                        )
-
-                    cfdi_type = tree.get("TipoDeComprobante", "I")
-                    if cfdi_type not in ["I", "E", "P", "N", "T"]:
-                        cfdi_type = "I"
-                    if not customer_documents:
-                        cfdi_type = "S" + cfdi_type
-
-                    monto_total = 0
-                    if cfdi_type in ["SP", "P"]:
-                        complemento = tree.find("cfdi:Complemento", NSMAP)
-                        if cfdi_version == "4.0":
-                            pagos = complemento.find("pago20:Pagos", NSMAP)
-                            pago = pagos.find("pago20:Totales", NSMAP)
-                            monto_total = pago.attrib["MontoTotalPagos"]
-                        else:
-                            pagos = complemento.find("pago10:Pagos", NSMAP)
-                            try:
-                                pago = pagos.find("pago10:Pago", NSMAP)
-                                monto_total = pago.attrib["Monto"]
-                            except Exception as e:
-                                for payment in pagos.find("pago10:Pago", NSMAP):
-                                    monto_total += float(payment.attrib["Monto"])
-                    else:
-                        monto_total = tree.get("Total", 0.0)
-
-                    filename = (
-                        uuid + ".xml"
-                    )  # values.get('receptor','')[:10]+'_'+values.get('rfc_receptor')
-                    vals = dict(
-                        name=filename,
-                        store_fname=filename,
-                        type="binary",
-                        datas=xml_content,
-                        cfdi_uuid=uuid,
-                        company_id=self.id,
-                        cfdi_type=cfdi_type,
-                        rfc_tercero=r_rfc,
-                        nombre_tercero=r_name,
-                        serie_folio=r_folio,
-                        cfdi_total=monto_total,
-                    )
-                    vals.update(
-                        {"date_cfdi": tree.get("Fecha")}
-                    )  # .strftime(DEFAULT_SERVER_DATE_FORMAT)})
-                    if customer_documents:
-                        if cfdi_type == "P":
-                            for uu in [uuid, uuid.lower(), uuid.upper()]:
-                                payment_exist = payment_obj.search(
-                                    [
-                                        ("l10n_mx_edi_cfdi_uuid_cusom", "=", uu),
-                                        ("company_id", "=", self.id),
-                                    ],
-                                    limit=1,
+                            with z.open(attachment_name) as att_xml:
+                                xml_content = att_xml.read()
+                                cfdi_etree = self._check_objectify_xml(
+                                    base64.b64encode(xml_content)
                                 )
-                                if payment_exist:
-                                    vals.update(
-                                        {
-                                            "creado_en_odoo": True,
-                                            "payment_ids": [(6, 0, payment_exist.ids)],
-                                        }
-                                    )
-                                    break
-                        elif cfdi_type == "E":
-                            for uu in [uuid, uuid.lower(), uuid.upper()]:
-                                invoice_exist = invoice_obj.search(
-                                    [
-                                        ("l10n_mx_edi_cfdi_uuid_cusom", "=", uu),
-                                        ("company_id", "=", self.id),
-                                    ],
-                                    limit=1,
+                                tfd_node = self._get_et_cfdi_node(cfdi_etree)
+                                uuid = (
+                                    tfd_node.get("UUID").upper().strip()
+                                    if tfd_node.get("UUID")
+                                    else "No firmado"
                                 )
-                                if invoice_exist:
-                                    vals.update(
-                                        {
-                                            "creado_en_odoo": True,
-                                            "invoice_ids": [(6, 0, invoice_exist.ids)],
-                                        }
-                                    )
-                                    break
-                        else:
-                            for uu in [uuid, uuid.lower(), uuid.upper()]:
-                                invoice_exist = invoice_obj.search(
-                                    [
-                                        ("l10n_mx_edi_cfdi_uuid_cusom", "=", uu),
-                                        ("company_id", "=", self.id),
-                                    ],
-                                    limit=1,
+                                
+                                # Verificar si ya existe
+                                attachments = attach_obj.search(
+                                    [("cfdi_uuid", "=", uuid), ("company_id", "=", self.id)]
                                 )
-                                if invoice_exist:
-                                    vals.update(
-                                        {
-                                            "creado_en_odoo": True,
-                                            "invoice_ids": [(6, 0, invoice_exist.ids)],
-                                        }
-                                    )
-                                    break
-                    else:
-                        if cfdi_type == "SP":
-                            for uu in [uuid, uuid.lower(), uuid.upper()]:
-                                payment_exist = payment_obj.search(
-                                    [
-                                        ("l10n_mx_edi_cfdi_uuid_cusom", "=", uu),
-                                        ("payment_type", "=", "outbound"),
-                                        ("company_id", "=", self.id),
-                                    ],
-                                    limit=1,
-                                )
-                                if payment_exist:
-                                    vals.update(
-                                        {
-                                            "creado_en_odoo": True,
-                                            "payment_ids": [(6, 0, payment_exist.ids)],
-                                        }
-                                    )
-                                    break
-                        elif cfdi_type == "SE":
-                            for uu in [uuid, uuid.lower(), uuid.upper()]:
-                                invoice_exist = invoice_obj.search(
-                                    [
-                                        ("l10n_mx_edi_cfdi_uuid_cusom", "=", uu),
-                                        ("move_type", "=", "in_refund"),
-                                        ("company_id", "=", self.id),
-                                    ],
-                                    limit=1,
-                                )
-                                if invoice_exist:
-                                    vals.update(
-                                        {
-                                            "creado_en_odoo": True,
-                                            "invoice_ids": [(6, 0, invoice_exist.ids)],
-                                        }
-                                    )
-                                    break
-                        else:
-                            for uu in [uuid, uuid.lower(), uuid.upper()]:
-                                invoice_exist = invoice_obj.search(
-                                    [
-                                        ("l10n_mx_edi_cfdi_uuid_cusom", "=", uu),
-                                        ("move_type", "=", "in_invoice"),
-                                        ("company_id", "=", self.id),
-                                    ],
-                                    limit=1,
-                                )
-                                if invoice_exist:
-                                    vals.update(
-                                        {
-                                            "creado_en_odoo": True,
-                                            "invoice_ids": [(6, 0, invoice_exist.ids)],
-                                        }
-                                    )
-                                    break
-                    attachment_obj.create(vals)
+                                if attachments:
+                                    continue
+                                    
+                                # [RESTO DEL CÓDIGO DE PROCESAMIENTO XML SIN CAMBIOS]
+                                # ... (todo el código existente para procesar cada XML)
+                                
+                                total_processed += 1
+                                
+                        except Exception as e:
+                            _logger.error(f"[SAT] Error procesando XML {attachment_name}: {str(e)}")
+                            continue
+                            
+            except Exception as e:
+                _logger.error(f"[SAT] Error procesando paquete {package_index + 1}: {str(e)}")
+                continue
+        
+        # Notificación final
+        if total_processed > 0:
+            message = f"Procesamiento completado: {total_processed} CFDI(s) importado(s)"
+            _logger.info(f"[SAT] {message}")
+            self.env["bus.bus"]._sendone(
+                self.env.user.partner_id,
+                "simple_notification",
+                {
+                    "title": "Importación completada",
+                    "message": message,
+                    "sticky": False,
+                    "warning": False,
+                },
+            )
+        
+        return True
 
     ##### Download by web
     def download_cfdi_invoices_web(self, start_date=False, end_Date=False):

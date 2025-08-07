@@ -69,7 +69,7 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='to_agency']" position="after">
-                <field name="exclude_from_xml" readonly="1" string="Excluido del XML"
+                <field name="include_from_xml" readonly="1" string="Incluir en XML"
                     attrs="{'invisible': [('move_type', '!=', 'in_invoice')]}" />
             </xpath>
 

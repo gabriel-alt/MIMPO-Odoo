@@ -90,7 +90,7 @@ class AccountEdiFormat(models.Model):
         )
 
         valid_lines = invoice.invoice_line_ids.filtered(
-            lambda l: not l.exclude_from_xml and not l.cga_line
+            lambda l: not l.include_from_xml and not l.cga_line
         )
         currency = invoice.currency_id
         subtotal = 0.0

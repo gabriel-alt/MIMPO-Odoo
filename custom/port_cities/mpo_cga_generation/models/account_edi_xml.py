@@ -12,7 +12,7 @@ class AccountEdiXmlCii(models.AbstractModel):
         """ Inherit Export Invoice Vals """
         
         valid_lines = invoice.invoice_line_ids.filtered(
-            lambda l: not l.exclude_from_xml
+            lambda l: not l.include_from_xml
         )
         
         currency = invoice.currency_id

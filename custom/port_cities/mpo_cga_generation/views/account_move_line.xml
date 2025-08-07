@@ -8,7 +8,7 @@
 
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']"
                 position="after">
-                <field name="exclude_from_xml" string="Excluido del XML" readonly="1" />
+                <field name="include_from_xml" string="Incluir en XML" readonly="1" />
             </xpath>
 
         </field>

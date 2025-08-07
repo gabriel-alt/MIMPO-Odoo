@@ -101,17 +101,69 @@ class AccountMove(models.Model):
         readonly=True,
     )
 
-    exclude_from_xml = fields.Boolean(
-        string="Exclude from XML",
-        compute="_compute_exclude_from_xml",
+    include_from_xml = fields.Boolean(
+        string="Include from XML",
+        compute="_compute_include_from_xml",
         help="Exclude this move from XML generation.",
         store=True,
     )
 
+    # modifica el total, impuesto para que coincida con lo que se va a timbrar
+    """def _compute_amount(self):
+        for move in self:
+            _logger.debug(
+                "Computing amounts for move %s (%s)", move.name, move.id
+            )
+            total_untaxed, total_untaxed_currency = 0.0, 0.0
+            total_tax, total_tax_currency = 0.0, 0.0
+            total_residual, total_residual_currency = 0.0, 0.0
+            total, total_currency = 0.0, 0.0
+
+            lines = move.line_ids.filtered(lambda l: l.include_from_xml)
+
+            for line in lines:
+                if move.is_invoice(True):
+                    if line.display_type == "tax" or (
+                        line.display_type == "rounding" and line.tax_repartition_line_id
+                    ):
+                        total_tax += line.balance
+                        total_tax_currency += line.amount_currency
+                        total += line.balance
+                        total_currency += line.amount_currency
+                    elif line.display_type in ("product", "rounding"):
+                        total_untaxed += line.balance
+                        total_untaxed_currency += line.amount_currency
+                        total += line.balance
+                        total_currency += line.amount_currency
+                    elif line.display_type == "payment_term":
+                        total_residual += line.amount_residual
+                        total_residual_currency += line.amount_residual_currency
+                else:
+                    if line.debit:
+                        total += line.balance
+                        total_currency += line.amount_currency
+
+            sign = move.direction_sign
+            move.amount_untaxed = sign * total_untaxed_currency
+            move.amount_tax = sign * total_tax_currency
+            move.amount_total = sign * total_currency
+            move.amount_residual = -sign * total_residual_currency
+            move.amount_untaxed_signed = -total_untaxed
+            move.amount_tax_signed = -total_tax
+            move.amount_total_signed = (
+                abs(total) if move.move_type == "entry" else -total
+            )
+            move.amount_residual_signed = total_residual
+            move.amount_total_in_currency_signed = (
+                abs(move.amount_total)
+                if move.move_type == "entry"
+                else -(sign * move.amount_total)
+            )"""
+
     @api.depends("to_agency")
-    def _compute_exclude_from_xml(self):
+    def _compute_include_from_xml(self):
         for record in self:
-            record.exclude_from_xml = not bool(record.to_agency)
+            record.include_from_xml = bool(record.to_agency)
 
     @api.depends(
         "partner_id",
@@ -157,26 +209,6 @@ class AccountMove(models.Model):
         "partner_expense_line_ids.total_expense",
         "partner_expense_line_ids.subtotal_expense_currency",
     )
-
-    # En esta función se calcula el total de gastos efectuados por cuenta del cliente e ignora los que sean to_agency
-    def _compute_expense_amount(self):
-        """Compute Expense Amount"""
-
-        for move in self:
-            total_expense = 0.0
-            total_expense_currency = 0.0
-            for line in move.partner_expense_line_ids:
-                # total_expense_currency += line.subtotal_expense_currency
-                if not line.to_agency:
-                    total_expense += line.subtotal_expense
-                    total_expense_currency += line.subtotal_expense_currency
-            move.update(
-                {
-                    "total_expense": total_expense,
-                    "total_expense_currency": total_expense_currency,
-                }
-            )
-
     @api.depends(
         "sir_id",
         "date",
@@ -365,7 +397,7 @@ class AccountMove(models.Model):
                     "partner_id": self.partner_id.id,
                     "quantity": line.quantity,
                     "analytic_distribution": line.analytic_distribution,
-                    "price_unit": type_sign * price,
+                    "price_unit": abs(price),
                     # 'debit': type_sign * line.company_id.currency_id.round(
                     #     line.credit / line.exchange_rate),
                     # 'credit': type_sign * line.company_id.currency_id.round(
@@ -379,6 +411,8 @@ class AccountMove(models.Model):
                     "sir_id": self.sir_id.id,
                     "cga_line": True,
                     "display_type": "product",
+                    "include_from_xml": line.move_id.to_agency
+                    and line.move_id.journal_id.type != "bank",
                 }
                 vals_list.append(vals)
         for vals in vals_list:
@@ -409,6 +443,7 @@ class AccountMove(models.Model):
                 else:
                     tr_bal = line.amount_currency
                 exp_amount = line.amount_currency
+            # aqui se agrega el fondo confiado a la linea
             tf_line = {
                 "account_id": line.account_id.id,
                 "trust_fund_account_id": line.account_id.id,
@@ -426,8 +461,7 @@ class AccountMove(models.Model):
                 "expense_bill_currency_id": move.currency_id.id,
                 "expense_amount_currency": type_sign * -1 * exp_amount,
                 "cga_line": True,
-                # "exclude_in_xml": True,  # Exclude from XML
-                #    'display_type': 'product'
+                "include_from_xml": False,
             }
             items.append((0, 0, tf_line))
         new_items = self._get_new_expense_items(type_sign=type_sign)
@@ -563,7 +597,6 @@ class AccountMove(models.Model):
             line.write(
                 {
                     "expense_move_id": self.id,
-                    "exclude_from_xml": exclude,
                 }
             )
             _logger.info(
@@ -574,7 +607,7 @@ class AccountMove(models.Model):
                 move.move_type,
                 exclude,
             )
-            
+
         if self.move_type == "out_invoice" and bill_lines:
             self.generate_cga_expense_entries()
             self._compute_tax_totals()
@@ -642,7 +675,7 @@ class AccountMove(models.Model):
     def _get_lines_for_xml_and_totals(self):
         self.ensure_one()
         currency = self.currency_id
-        lines = self.invoice_line_ids.filtered(lambda l: not l.exclude_from_xml)
+        lines = self.invoice_line_ids.filtered(lambda l: not l.include_from_xml)
 
         total = 0.0
         total_tax = 0.0
@@ -772,7 +805,9 @@ class AccountMoveLine(models.Model):
         precompute=True,
     )
 
-    exclude_from_xml = fields.Boolean(default=False, string="Excluir del XML")
+    include_from_xml = fields.Boolean(
+        default=True, string="Excluir del XML", store=True
+    )
 
     @api.depends("origin_expense_line_ids", "currency_id")
     def _compute_expense_bill_currency_id(self):
