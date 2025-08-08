@@ -96,7 +96,7 @@ class ResPartner(models.Model):
             res['is_supplier'] = True
         return res
 
-    #esta funcion consulta a la api del SIR para obtener el RFC y CURP del representante legal por defecto
+    #esta funcion consulta a la api del SIR para obtener el RFC y CURP del representante legal por defecto.
     '''@api.model
     def create(self, vals):
         #_logger.warning(f"Valores (Create): {vals}")
