@@ -96,7 +96,8 @@ class ResPartner(models.Model):
             res['is_supplier'] = True
         return res
 
-    @api.model
+    #esta funcion consulta a la api del SIR para obtener el RFC y CURP del representante legal por defecto
+    '''@api.model
     def create(self, vals):
         #_logger.warning(f"Valores (Create): {vals}")
         curp_representante_legal = ""
@@ -185,16 +186,19 @@ class ResPartner(models.Model):
             response = requests.post(url+'Create', headers=headers, data=body)
             _logger.info('response: %s', str(response))
             if response.status_code == 200:
-               my_json = response.content.decode('utf8').replace("'", '"')
-               data = json.loads(my_json)
-               _logger.info('*'*10)
-               _logger.info('Status 200: %s', str(data['Mensaje']))
-               _logger.info('*'*10)
-               res.partner_ref = str(data['Clave'])
+                try:
+                    data = json.loads()
+                    _logger.info('*'*10)
+                    _logger.info('Status 200: %s', str(data['Mensaje']))
+                    _logger.info('*'*10)
+                    res.partner_ref = str(data['Clave'])
+                except Exception as e:
+                    _logger.error("Error al decodificar JSON: %s", str(e))
+                    raise ValidationError('La respuesta del servidor no es JSON válido.')
             else:
-                raise ValidationError(_('The certificate content is invalid.'))
+                raise ValidationError('The certificate content is invalid.')
             _logger.info('*'*10)
-        return res
+        return res'''
 
     def write(self, vals):
         res = super(ResPartner, self).write(vals)

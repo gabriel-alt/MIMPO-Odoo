@@ -108,12 +108,12 @@ class AccountMove(models.Model):
         store=True,
     )
 
+    l10n_mx_edi_payment_policy = fields.Selection(default="PPD")
+
     # modifica el total, impuesto para que coincida con lo que se va a timbrar
-    """def _compute_amount(self):
+    '''def _compute_amount(self):
         for move in self:
-            _logger.debug(
-                "Computing amounts for move %s (%s)", move.name, move.id
-            )
+            _logger.debug("Computing amounts for move %s (%s)", move.name, move.id)
             total_untaxed, total_untaxed_currency = 0.0, 0.0
             total_tax, total_tax_currency = 0.0, 0.0
             total_residual, total_residual_currency = 0.0, 0.0
@@ -158,7 +158,7 @@ class AccountMove(models.Model):
                 abs(move.amount_total)
                 if move.move_type == "entry"
                 else -(sign * move.amount_total)
-            )"""
+            )'''
 
     @api.depends("to_agency")
     def _compute_include_from_xml(self):
