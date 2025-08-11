@@ -182,12 +182,13 @@ class AccountMove(models.Model):
                 self.write({'message_main_attachment_id': invoice_att.id})
         return True
 
-    @api.model_create_multi
+    # Funcion que creaba la factura al guardar como borrador, se ha comentado porque no es necesario
+    '''@api.model_create_multi
     def create(self, vals_list):
         res = super(AccountMove, self).create(vals_list)
         for move in res:
             move._generate_mimpo_pdf_action()
-        return res
+        return res'''
 
     def _post(self, soft=True):
         """ Inherit Post """
