@@ -108,7 +108,6 @@ class AccountMove(models.Model):
         store=True,
     )
 
-    l10n_mx_edi_payment_policy = fields.Selection(default="PPD")
 
     # modifica el total, impuesto para que coincida con lo que se va a timbrar
     '''def _compute_amount(self):
@@ -174,22 +173,9 @@ class AccountMove(models.Model):
         "invoice_payment_term_id.line_ids",
     )
     def _compute_l10n_mx_edi_payment_policy(self):
-        non_draft = self.env["account.move"]
         for move in self:
-            if not move.l10n_mx_edi_payment_policy_draft:
-                non_draft |= move
-            else:
-                move.l10n_mx_edi_payment_policy = move.l10n_mx_edi_payment_policy_draft
-        super(AccountMove, non_draft)._compute_l10n_mx_edi_payment_policy()
-        for move in non_draft:
-            if (
-                move.is_invoice(include_receipts=True)
-                and move.partner_id
-                and move.partner_id.l10n_mx_edi_payment_policy
-            ):
-                move.l10n_mx_edi_payment_policy = (
-                    move.partner_id.l10n_mx_edi_payment_policy
-                )
+            # Siempre "PUE" o el valor que quieras por defecto
+            move.l10n_mx_edi_payment_policy = "PPD"
 
     def _inverse_l10n_mx_edi_payment_policy(self):
         for move in self:
